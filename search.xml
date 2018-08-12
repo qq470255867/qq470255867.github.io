@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hello java]]></title>
+    <url>%2F2018%2F08%2F12%2Fhello%20java(1)%2F</url>
+    <content type="text"><![CDATA[分类测试]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F08%2F12%2Fhello%20java%2F</url>
+    <content type="text"><![CDATA[分类测试]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F08%2F12%2Fjava%2F</url>
+    <content type="text"><![CDATA[title: new Typesdate:categories: java description: ���������ݼ���ҵķ�����java]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F08%2F12%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[耗时三天十几个小时，踩过过无数个坑，博客终于千呼万唤出来了。今天太累了，明天会把基本的步骤写出来，做为供自己反思（zhuangbi）和他人学习。 万里长征的第一步，开始 加油!！！]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[php categorie test]]></title>
+    <url>%2F2018%2F08%2F12%2Fphp%20%E5%88%86%E7%B1%BB%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[test]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+  </entry>
+</search>

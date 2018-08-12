@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>冰笑风云</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="www.icygrin.club/"/>
+  <updated>2018-08-12T07:27:50.249Z</updated>
+  <id>www.icygrin.club/</id>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello java</title>
+    <link href="www.icygrin.club/2018/08/12/hello%20java(1)/"/>
+    <id>www.icygrin.club/2018/08/12/hello java(1)/</id>
+    <published>2018-08-12T07:28:42.513Z</published>
+    <updated>2018-08-12T07:27:50.249Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;分类测试&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="www.icygrin.club/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="www.icygrin.club/2018/08/12/hello%20java/"/>
+    <id>www.icygrin.club/2018/08/12/hello java/</id>
+    <published>2018-08-12T06:51:58.706Z</published>
+    <updated>2018-08-12T07:22:25.659Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;分类测试&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="www.icygrin.club/categories/hexo/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="www.icygrin.club/2018/08/12/java/"/>
+    <id>www.icygrin.club/2018/08/12/java/</id>
+    <published>2018-08-12T06:04:58.036Z</published>
+    <updated>2018-08-12T06:07:05.445Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: new Types&lt;br&gt;date:&lt;br&gt;categories: java&lt;/p&gt;
+&lt;h2 id=&quot;description-���������ݼ��&quot;&gt;&lt;a href=&quot;#description-���������ݼ��&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="www.icygrin.club/2018/08/12/hello-world/"/>
+    <id>www.icygrin.club/2018/08/12/hello-world/</id>
+    <published>2018-08-12T04:46:21.189Z</published>
+    <updated>2018-08-12T09:35:23.774Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>php categorie test</title>
+    <link href="www.icygrin.club/2018/08/12/php%20%E5%88%86%E7%B1%BB%E6%B5%8B%E8%AF%95/"/>
+    <id>www.icygrin.club/2018/08/12/php 分类测试/</id>
+    <published>2018-08-11T16:00:00.000Z</published>
+    <updated>2018-08-12T07:41:49.207Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;test&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="php" scheme="www.icygrin.club/categories/php/"/>
+    
+    
+  </entry>
+  
+</feed>
