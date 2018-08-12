@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.icygrin.club/"/>
-  <updated>2018-08-12T13:40:47.199Z</updated>
+  <updated>2018-08-12T13:46:39.675Z</updated>
   <id>www.icygrin.club/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -16,7 +16,7 @@
     <link href="www.icygrin.club/2018/08/12/pic-test/"/>
     <id>www.icygrin.club/2018/08/12/pic-test/</id>
     <published>2018-08-12T13:10:38.000Z</published>
-    <updated>2018-08-12T13:40:47.199Z</updated>
+    <updated>2018-08-12T13:46:39.675Z</updated>
     
     <summary type="html">
     
@@ -24,7 +24,8 @@
       
         
         
-          &lt;p&gt;插个图片吧&lt;img src=&quot;/pic-test）/测试图片.jpg&quot;
+          &lt;p&gt;插个图片吧&lt;/p&gt;
+
         
       
     
