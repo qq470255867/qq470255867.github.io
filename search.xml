@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pic test]]></title>
+    <url>%2F2018%2F08%2F12%2Fpic-test%2F</url>
+    <content type="text"><![CDATA[插个图片吧]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[如何利用优秀的hexo+github建立一个属于自己博客]]></title>
     <url>%2F2018%2F08%2F12%2F%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%BC%98%E7%A7%80%E7%9A%84hexo-github%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E5%8D%9A%E5%AE%A2(1)%2F</url>
     <content type="text"><![CDATA[内事不决问百度，外事不决问谷歌 1.环境搭建1.1下载git 地址link git是个啥？ 根据网上介绍git是一个最优秀的版本控制软件没有之一。 顾名思义，版本控制系统是任何能让你了解到一个文件的历史，以及它的发展过程的系统。 git在这里有啥子用呢？ 接下来大部分操作都会用到git命令服务窗口 包括安装hexo以及hexo的各种插件，将本地关联到github服务器，让hexo生成页面等等。 1.2下载node.js hexo是一款基于Node.js的静态博客框架，因此安装之前必须先安装Node.js 地址一路安装下去没什么好说的。 1.3安装hexo !]]></content>
@@ -15,11 +20,6 @@
       <categories>
         <category>hexo</category>
       </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2018%2F08%2F12%2Fjava%2F</url>
-    <content type="text"><![CDATA[title: new Typesdate:categories: java description: ���������ݼ���ҵķ�����java]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>

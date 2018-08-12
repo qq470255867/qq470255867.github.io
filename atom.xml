@@ -6,10 +6,33 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.icygrin.club/"/>
-  <updated>2018-08-12T12:56:18.883Z</updated>
+  <updated>2018-08-12T13:11:30.790Z</updated>
   <id>www.icygrin.club/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pic test</title>
+    <link href="www.icygrin.club/2018/08/12/pic-test/"/>
+    <id>www.icygrin.club/2018/08/12/pic-test/</id>
+    <published>2018-08-12T13:10:38.000Z</published>
+    <updated>2018-08-12T13:11:30.790Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;插个图片吧&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>如何利用优秀的hexo+github建立一个属于自己博客</title>
@@ -59,30 +82,6 @@
     </summary>
     
       <category term="hexo" scheme="www.icygrin.club/categories/hexo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="www.icygrin.club/2018/08/12/java/"/>
-    <id>www.icygrin.club/2018/08/12/java/</id>
-    <published>2018-08-12T06:04:58.036Z</published>
-    <updated>2018-08-12T06:07:05.445Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: new Types&lt;br&gt;date:&lt;br&gt;categories: java&lt;/p&gt;
-&lt;h2 id=&quot;description-���������ݼ��&quot;&gt;&lt;a href=&quot;#description-���������ݼ��&quot;
-        
-      
-    
-    </summary>
     
     
   </entry>
