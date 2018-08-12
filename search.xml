@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何利用优秀的hexo+github建立一个属于自己博客]]></title>
+    <url>%2F2018%2F08%2F12%2F%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%BC%98%E7%A7%80%E7%9A%84hexo-github%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[hah]]></title>
     <url>%2F2018%2F08%2F12%2F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95%2F</url>
     <content type="text"><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[如何利用优秀的hexo+github建立一个属于自己博客]]></title>
-    <url>%2F2018%2F08%2F12%2F%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%BC%98%E7%A7%80%E7%9A%84hexo%2Bgithub%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[==内事不决问百度，外事不决问谷歌== 好了开始吧 1.环境搭建1.1下载git 地址link 安装完成后![image] git是个啥？ 根据网上介绍git是一个最优秀的==版本控制软件==没有之一。 顾名思义，版本控制系统是任何能让你了解到一个文件的历史，以及它的发展过程的系统。 git在这里有啥子用呢？ 接下来大部分操作都会用到git命令服务窗口 包括安装hexo以及hexo的各种插件，将本地关联到github服务器，让hexo生成页面等等。 1.2下载node.js]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello java]]></title>
