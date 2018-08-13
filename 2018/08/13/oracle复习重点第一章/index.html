@@ -88,17 +88,17 @@
 <meta property="og:site_name" content="冰笑风云">
 <meta property="og:description" content="第一章1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；逻辑存储结构包括数据块、区、段、表空间和模式对象。 数据块、区、段和表空间 数据块（database block） ：数据块是数据库读/写数据的最小储存单元，数据块的大小通常设置为os块大小的整数倍。常见大小为2k或者4k。 区（extent） ：由一组连续的数据块所组成的逻辑单位。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/images/数据文件.JPG">
-<meta property="og:image" content="/images/813重做日志文件写入过程">
-<meta property="og:image" content="/images/813二者的关系.JPG">
+<meta property="og:image" content="/images/数据文件.jpg">
+<meta property="og:image" content="/images/813重做日志文件写入过程.jpg">
+<meta property="og:image" content="/images/813二者的关系.jpg">
 <meta property="og:image" content="/images/813后台进程.JPG">
-<meta property="og:image" content="/13/oracle复习重点第一章/813后台进程.JPG">
+<meta property="og:image" content="/13/oracle复习重点第一章/813后台进程.jpg">
 <meta property="og:image" content="/images/813oracle体系结构示意图.jpg">
-<meta property="og:updated_time" content="2018-08-13T06:10:18.110Z">
+<meta property="og:updated_time" content="2018-08-13T06:26:47.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oracle复习重点第一章">
 <meta name="twitter:description" content="第一章1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；逻辑存储结构包括数据块、区、段、表空间和模式对象。 数据块、区、段和表空间 数据块（database block） ：数据块是数据库读/写数据的最小储存单元，数据块的大小通常设置为os块大小的整数倍。常见大小为2k或者4k。 区（extent） ：由一组连续的数据块所组成的逻辑单位。">
-<meta name="twitter:image" content="/images/数据文件.JPG">
+<meta name="twitter:image" content="/images/数据文件.jpg">
 
 
 
@@ -424,16 +424,16 @@
 <p>Oracle的模式对象包括<strong>表、视图、序列、同义词、索引等 21个对象</strong>。<br>用户使用的一系列的模式对象的集合称为<strong>用户的方案</strong>。<br>表是数据库中存放用户数据的对象。它包含一组列描述当前实体的属性，每个列都有一个名字和若干个属性。</p>
 <h3 id="2、oracle的外部结构：数据文件、日志文件和控制文件；-掌握功能"><a href="#2、oracle的外部结构：数据文件、日志文件和控制文件；-掌握功能" class="headerlink" title="2、oracle的外部结构：数据文件、日志文件和控制文件；(掌握功能)"></a>2、oracle的外部结构：数据文件、日志文件和控制文件；(掌握功能)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[物理存储结构哦]--&gt;B(数据文件)</span><br><span class="line">A[物理存储结构哦]--&gt;c(控制文件)</span><br><span class="line">A[物理存储结构哦]--&gt;d(日志文件)</span><br></pre></td></tr></table></figure>
 <p>物理存储结构是从物理存储的角度分析数据库的组成，也就是系统创建和使用的操作系统物理文件。</p>
-<h4 id="数据文件"><a href="#数据文件" class="headerlink" title="数据文件"></a>数据文件</h4><p>数据文件用于保存数据库中的全部数据。如表、数据和索引。数据文件一般以*.dbf命名。数据库、表空间和数据文件之间的关系如图所示：一个Oracle数据库是由一个或多个表空间构成的， Oracle数据库的每个表空间由一个或多个数据文件构成，这些文件由Oracle所在的操作系统管理<br><img src="/images/数据文件.JPG" alt="image"></p>
+<h4 id="数据文件"><a href="#数据文件" class="headerlink" title="数据文件"></a>数据文件</h4><p>数据文件用于保存数据库中的全部数据。如表、数据和索引。数据文件一般以*.dbf命名。数据库、表空间和数据文件之间的关系如图所示：一个Oracle数据库是由一个或多个表空间构成的， Oracle数据库的每个表空间由一个或多个数据文件构成，这些文件由Oracle所在的操作系统管理<br><img src="/images/数据文件.jpg" alt="image"></p>
 <hr>
 <h4 id="重做日志文件"><a href="#重做日志文件" class="headerlink" title="重做日志文件"></a>重做日志文件</h4><p>重做日志文件（Redo Log Files）用于记录数据库所做任何变更。这些变更被记录在联机重做日志文件（Online Redo Log File）中。当数据库中的数据遭到破坏时，可以用这些日志来恢复数据库。通常以*.log命名。<br><strong>重做日志文件记录对数据库的所有修改信息，用于故障恢复</strong></p>
-<h5 id="重做日志文件写入过程"><a href="#重做日志文件写入过程" class="headerlink" title="重做日志文件写入过程"></a>重做日志文件写入过程</h5><p><img src="/images/813重做日志文件写入过程" alt="image"></p>
+<h5 id="重做日志文件写入过程"><a href="#重做日志文件写入过程" class="headerlink" title="重做日志文件写入过程"></a>重做日志文件写入过程</h5><p><img src="/images/813重做日志文件写入过程.jpg" alt="image"></p>
 <hr>
 <h4 id="控制文件"><a href="#控制文件" class="headerlink" title="控制文件"></a>控制文件</h4><p>每一个Oracle数据库，都有相应的控制文件，它们是较小的二进制文件。用于记录数据库的物理结构。通常以*.ctl命名。它们包括：</p>
 <ul>
 <li>（1）Oracle数据库名称与建立时间；</li>
 <li>（2）数据文件与重置日志文件名称及其所在位置；</li>
-<li>（3）日志记录序列码（Log Sequence Number）。<br><strong>控制文件是记录数据库物理结构的二进制文件</strong>。<h5 id="二者的关系"><a href="#二者的关系" class="headerlink" title="二者的关系"></a>二者的关系</h5><img src="/images/813二者的关系.JPG" alt="image"><h4 id="数据库实例"><a href="#数据库实例" class="headerlink" title="数据库实例"></a>数据库实例</h4></li>
+<li>（3）日志记录序列码（Log Sequence Number）。<br><strong>控制文件是记录数据库物理结构的二进制文件</strong>。<h5 id="二者的关系"><a href="#二者的关系" class="headerlink" title="二者的关系"></a>二者的关系</h5><img src="/images/813二者的关系.jpg" alt="image"><h4 id="数据库实例"><a href="#数据库实例" class="headerlink" title="数据库实例"></a>数据库实例</h4></li>
 <li>数据库实例是Oracle为了完成用户服务而启动的一系列的程序。</li>
 <li>它包含系统全局区（SGA）和后台进程两部分。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">a[oracle实例]--&gt;|分配|b(系统全局区SGA)</span><br><span class="line">a[oracle实例]--&gt;|启动|c(后台进程)</span><br></pre></td></tr></table></figure>
 </li>
@@ -487,7 +487,7 @@
 </tr>
 </tbody>
 </table>
-<p><img src="/13/oracle复习重点第一章/813后台进程.JPG" alt="image"></p>
+<p><img src="/13/oracle复习重点第一章/813后台进程.jpg" alt="image"></p>
 <p><strong>Oracle的体系结构示意图</strong><br><img src="/images/813oracle体系结构示意图.jpg" alt="image"></p>
 <h5 id="其他概念—进程结构"><a href="#其他概念—进程结构" class="headerlink" title="其他概念—进程结构"></a>其他概念—进程结构</h5><ul>
 <li>用户进程 : 当用户要求连接到 Oracle 服务器时启动的一种进程。</li>
