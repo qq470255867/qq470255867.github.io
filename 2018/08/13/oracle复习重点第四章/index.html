@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="联系方式   qq 470255867微信 zl3515014">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="www.icygrin.club/about/index.html">
+<meta name="description" content="第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp;  选择和投影的区别选择：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle复习重点第四章">
+<meta property="og:url" content="www.icygrin.club/2018/08/13/oracle复习重点第四章/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="联系方式   qq 470255867微信 zl3515014">
+<meta property="og:description" content="第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp;  选择和投影的区别选择：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T09:22:59.253Z">
+<meta property="og:updated_time" content="2018-08-13T06:12:21.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="联系方式   qq 470255867微信 zl3515014">
+<meta name="twitter:title" content="oracle复习重点第四章">
+<meta name="twitter:description" content="第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp;  选择和投影的区别选择：">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="www.icygrin.club/about/"/>
+  <link rel="canonical" href="www.icygrin.club/2018/08/13/oracle复习重点第四章/"/>
 
 
 
 
 
-  <title>关于我 | 冰笑风云</title>
+  <title>oracle复习重点第四章 | 冰笑风云</title>
   
 
 
@@ -296,38 +296,197 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.icygrin.club/2018/08/13/oracle复习重点第四章/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于我</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <blockquote>
-<p>联系方式</p>
-</blockquote>
+          <h1 class="post-title" itemprop="name headline">oracle复习重点第四章</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-13T14:12:48+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><ul>
+<li><strong>SELECT语句（包括SELECT、FROM等子句）</strong>；</li>
+<li><strong>连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）</strong>；</li>
+<li><strong>子查询</strong>；</li>
+<li><strong>分组函数，group by子句，having子句，排序</strong></li>
+<li><strong>视图创建，注意一些选项：froce、with read only和with check option</strong></li>
+<li><strong>可更新视图的概念</strong></li>
+<li><strong>了解替换变量：&amp;，&amp;&amp;</strong></li>
+</ul>
+<p><strong>选择和投影的区别</strong><br>选择：单目运算，其运算对象是一个表。该运算按给定的条件，从表中选出满足条件的行形成一个新表作为运算结果。<br>投影：单目运算，该运算从表中选出指定的列组成一个新表。</p>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><ul>
+<li>连接：把两个表中的行按着给定的条件（=、&gt;、&lt;、&gt;=、&lt;=、!=）拼接而形成的新表。</li>
+<li>等值连接：如果连接两个表的条件是要求某些列值相等，则称该连接为等值连接。（属性名可以不同，但是要求列值相同）</li>
+<li>自然连接：两个关系具有相同属性时(属性名和列值都相同)，进行的等值连接，并且去掉重复的属性.</li>
+</ul>
 <hr>
-<p>qq 470255867<br>微信 zl3515014</p>
+<p>等值连接与自然连接的区别：</p>
+<pre><code>1. 等值连接中不要求列名相同，只要列值相同即可。而自然连接要求列名和列值都要相同，才能进行自然连接。
+2. 等值连接不去除重复列，而自然连接要求去掉重复列，也可以说，自然连接是去掉重复列的等值连接。
+</code></pre><hr>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>SQL查询语句的步骤：</p>
+<ol>
+<li>编译：服务器进程在共享池中搜索是否有相同的SQL语句；检查SQL语句的语法；处理之后，或返回错误，或将SQL语句和执行计划装入共享的SQL区</li>
+<li>执行：SQL语句获取执行所需的所有资源和信息，服务器进程执行SQL语句</li>
+<li>提取数据：服务器进程选择所需的数据行，并在需要时进行排序，最后将结果返回给用户进程</li>
+</ol>
+<p>SQL的SELECT语句可以实现对表的选择、投影及连接操作，其功能十分强大。SELECT语句比较复杂，其主要的子句语法格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT &lt;列&gt;                	  		/*指定要选择的列及其限定*/</span><br><span class="line">	FROM  &lt;表或视图&gt;                	/*FROM子句，指定表或视图*/</span><br><span class="line">	[ WHERE  &lt;条件表达式&gt; ]         	/*WHERE子句，指定查询条件*/</span><br><span class="line">	[ GROUP BY &lt;分组表达式&gt; ]   	/*GROUP BY子句，指定分组表达式*/</span><br><span class="line">	[ HAVING &lt;分组条件表达式&gt; ]          	/*HAVING子句，指定分组统计条件*/</span><br><span class="line">	[ ORDER BY &lt;排序表达式&gt; [ ASC | DESC ]] /*ORDER子句，指定排序表达式和顺序*/</span><br></pre></td></tr></table></figure>
+<h5 id="修改查询结果中的列标题"><a href="#修改查询结果中的列标题" class="headerlink" title="修改查询结果中的列标题"></a>修改查询结果中的列标题</h5><p>可以在列名之后使用AS子句指定一个列别名来替代查询结果的列标题名。<br>【例】  查询XSB表中计算机专业同学的学号、姓名和总学分，结果中各列的标题分别指定为num、name和score。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT 学号 AS num, 姓名 AS name, 总学分 AS score</span><br><span class="line">	FROM XSB</span><br><span class="line">	WHERE 专业= &apos;计算机&apos;;</span><br><span class="line">也可以省略AS关键字，写成：</span><br><span class="line">SELECT 学号 num, 姓名 name, 总学分 score</span><br><span class="line">	FROM XSB</span><br><span class="line">	WHERE 专业=&apos;计算机&apos;;</span><br></pre></td></tr></table></figure>
+<p><strong>消除结果集中的重复行</strong><br>可以使用DISTINCT关键字消除结果集中的重复行，其格式是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT  [ ALL | DISTINCT ]  &lt;列名&gt; [ , &lt;列名&gt;…]</span><br></pre></td></tr></table></figure>
+<p>关键字DISTINCT的含义是对结果集中的重复行只选择一个，保证行的唯一性。<br>【例】  对XSCJ数据库的XSB表只选择专业和总学分，消除结果集中的重复行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT 专业 AS 专业,总学分 AS 总学分</span><br><span class="line">	FROM XSB;</span><br></pre></td></tr></table></figure>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/12/pic-test/" rel="next" title="pic test">
+                <i class="fa fa-chevron-left"></i> pic test
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/13/oralce复习重点第二章/" rel="prev" title="oracle复习重点第三章">
+                oracle复习重点第三章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -360,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -447,6 +615,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">1.</span> <span class="nav-text">第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接"><span class="nav-number">1.1.</span> <span class="nav-text">连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">1.2.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改查询结果中的列标题"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">修改查询结果中的列标题</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
