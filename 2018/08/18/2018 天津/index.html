@@ -81,24 +81,26 @@
 
 
 
-<meta name="description" content="第一章1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；逻辑存储结构包括数据块、区、段、表空间和模式对象。 数据块、区、段和表空间 数据块（database block） ：数据块是数据库读/写数据的最小储存单元，数据块的大小通常设置为os块大小的整数倍。常见大小为2k或者4k。 区（extent） ：由一组连续的数据块所组成的逻辑单位。">
+<meta name="description" content="后来多少人想起了他们会在那样的地方告别，也忘记了告别的时候要再用力一点，多一句话说不定就是最后一句，多看一眼也说不定就是最后一眼吧。2018 相聚有时，后会无期   天津之眼摩天轮 1- 天津的美丽地标，拍摄夜景、乘坐观光都十分浪漫  门票 70元 景点介绍“天津之眼是一座横跨在海河上的摩天轮，就像是桥上的一只眼睛，这里也是天津最著名的的地标之一，每到夜晚华灯初上时，天津之眼的彩灯柔美，无数游客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oracle复习重点第一章">
-<meta property="og:url" content="www.icygrin.club/2018/08/13/oracle复习重点第一章/index.html">
+<meta property="og:title" content="2018 天津">
+<meta property="og:url" content="www.icygrin.club/2018/08/18/2018 天津/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="第一章1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；逻辑存储结构包括数据块、区、段、表空间和模式对象。 数据块、区、段和表空间 数据块（database block） ：数据块是数据库读/写数据的最小储存单元，数据块的大小通常设置为os块大小的整数倍。常见大小为2k或者4k。 区（extent） ：由一组连续的数据块所组成的逻辑单位。">
+<meta property="og:description" content="后来多少人想起了他们会在那样的地方告别，也忘记了告别的时候要再用力一点，多一句话说不定就是最后一句，多看一眼也说不定就是最后一眼吧。2018 相聚有时，后会无期   天津之眼摩天轮 1- 天津的美丽地标，拍摄夜景、乘坐观光都十分浪漫  门票 70元 景点介绍“天津之眼是一座横跨在海河上的摩天轮，就像是桥上的一只眼睛，这里也是天津最著名的的地标之一，每到夜晚华灯初上时，天津之眼的彩灯柔美，无数游客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/images/数据文件.jpg">
-<meta property="og:image" content="/images/813重做日志文件写入过程.jpg">
-<meta property="og:image" content="/images/813二者的关系.jpg">
-<meta property="og:image" content="/images/813后台进程.jpg">
-<meta property="og:image" content="www.icygrin.club/2018/08/13/oracle复习重点第一章/images/813后台进程2.jpg">
-<meta property="og:image" content="/images/813oracle体系结构示意图.jpg">
-<meta property="og:updated_time" content="2018-08-13T06:35:22.063Z">
+<meta property="og:image" content="/images/818天津地图.JPG">
+<meta property="og:image" content="/images/天津之眼.JPG">
+<meta property="og:image" content="/images/818意大利风情区.JPG">
+<meta property="og:image" content="/images/818古文化街.JPG">
+<meta property="og:image" content="/images/818五大道.JPG">
+<meta property="og:image" content="/images/818瓷房子.JPG">
+<meta property="og:image" content="/images/818世纪钟广场.JPG">
+<meta property="og:image" content="/images/818西开教堂.JPG">
+<meta property="og:updated_time" content="2018-08-18T08:15:07.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="oracle复习重点第一章">
-<meta name="twitter:description" content="第一章1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；逻辑存储结构包括数据块、区、段、表空间和模式对象。 数据块、区、段和表空间 数据块（database block） ：数据块是数据库读/写数据的最小储存单元，数据块的大小通常设置为os块大小的整数倍。常见大小为2k或者4k。 区（extent） ：由一组连续的数据块所组成的逻辑单位。">
-<meta name="twitter:image" content="/images/数据文件.jpg">
+<meta name="twitter:title" content="2018 天津">
+<meta name="twitter:description" content="后来多少人想起了他们会在那样的地方告别，也忘记了告别的时候要再用力一点，多一句话说不定就是最后一句，多看一眼也说不定就是最后一眼吧。2018 相聚有时，后会无期   天津之眼摩天轮 1- 天津的美丽地标，拍摄夜景、乘坐观光都十分浪漫  门票 70元 景点介绍“天津之眼是一座横跨在海河上的摩天轮，就像是桥上的一只眼睛，这里也是天津最著名的的地标之一，每到夜晚华灯初上时，天津之眼的彩灯柔美，无数游客">
+<meta name="twitter:image" content="/images/818天津地图.JPG">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="www.icygrin.club/2018/08/13/oracle复习重点第一章/"/>
+  <link rel="canonical" href="www.icygrin.club/2018/08/18/2018 天津/"/>
 
 
 
 
 
-  <title>oracle复习重点第一章 | 冰笑风云</title>
+  <title>2018 天津 | 冰笑风云</title>
   
 
 
@@ -315,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.icygrin.club/2018/08/13/oracle复习重点第一章/">
+    <link itemprop="mainEntityOfPage" href="www.icygrin.club/2018/08/18/2018 天津/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -332,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">oracle复习重点第一章</h1>
+          <h1 class="post-title" itemprop="name headline">2018 天津</h1>
         
 
         <div class="post-meta">
@@ -344,8 +346,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-13T14:13:07+08:00">
-                2018-08-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-18T16:15:30+08:00">
+                2018-08-18
               </time>
             
 
@@ -367,8 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/oracle/" itemprop="url" rel="index">
-                    <span itemprop="name">oracle</span>
+                  <a href="/categories/旅行/" itemprop="url" rel="index">
+                    <span itemprop="name">旅行</span>
                   </a>
                 </span>
 
@@ -404,97 +406,66 @@
       
 
       
-        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h3 id="1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；"><a href="#1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；" class="headerlink" title="1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；"></a>1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；</h3><p>逻辑存储结构包括<strong>数据块、区、段、表空间和模式对象。</strong></p>
-<h4 id="数据块、区、段和表空间"><a href="#数据块、区、段和表空间" class="headerlink" title="数据块、区、段和表空间"></a>数据块、区、段和表空间</h4><ul>
-<li><strong>数据块</strong>（database block） ：数据块是数据库读/写数据的最小储存单元，数据块的大小通常设置为os块大小的整数倍。常见大小为2k或者4k。</li>
-<li><strong>区</strong>（extent） ：由一组连续的数据块所组成的逻辑单位。 </li>
-<li><strong>段</strong>（segment）  ：由一个或多个不连续的区的集合，Oracle数据库包括数据段、索引段、临时段、回滚段等。</li>
-<li><strong>表空间</strong>（Tablespace）：由若干个段组成，它是最大的逻辑存储单元，Oracle数据库被划分为一个或多个称为表空间的逻辑结构。<h4 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h4>一个数据库从逻辑上说是由一个或多个表空间所组成，一个表空间由若干段组成，一个段是由若干区所组成，一个区是由一组连续的数据块组成，而一个数据块对应硬盘上的一个或多个物理块。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[数据库]--&gt;B(表空间)</span><br><span class="line">A[数据库]--&gt;C(表空间)</span><br><span class="line">A[数据库]--&gt;D(表空间)</span><br><span class="line">C[表空间]--&gt;E(段)</span><br><span class="line">C[表空间]--&gt;f(段)</span><br><span class="line">C[表空间]--&gt;g(段)</span><br><span class="line">E[段]--&gt;H(区)</span><br><span class="line">E[段]--&gt;I(区)</span><br><span class="line">H[区]--&gt;J(一连串的数据快)</span><br><span class="line">J[一连串的数据块]--&gt;K(对应硬盘上一个或多个物理块)</span><br></pre></td></tr></table></figure>
-<p>Oracle数据库被划分为一个或多个称为表空间的逻辑结构，<strong>系统默认创建的表空间包括</strong>：</p>
+        <blockquote>
+<p>后来多少人想起了他们会在那样的地方告别，也忘记了告别的时候要再用力一点，多一句话说不定就是最后一句，多看一眼也说不定就是最后一眼吧。2018 相聚有时，后会无期</p>
+</blockquote>
+<p><img src="/images/818天津地图.JPG" alt=""></p>
+<h2 id="天津之眼摩天轮"><a href="#天津之眼摩天轮" class="headerlink" title="天津之眼摩天轮"></a>天津之眼摩天轮</h2><p><img src="/images/天津之眼.JPG" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 天津的美丽地标，拍摄夜景、乘坐观光都十分浪漫</span><br></pre></td></tr></table></figure>
 <ul>
-<li>（1）EXAMPLE表空间是示例表空间</li>
-<li>（2）SYSTEM表空间是系统表空间</li>
-<li>（3）SYSAUX表空间是辅助系统表空间</li>
-<li>（4）TEMP表空间是临时表空间</li>
-<li>（5）UNDOTBSI表空间是重做表空间。</li>
-<li>（6）USERS表空间是用户表空间</li>
+<li>门票 70元</li>
+<li>景点介绍<br>“<br>天津之眼是一座横跨在海河上的摩天轮，就像是桥上的一只眼睛，这里也是天津最著名的的地标之一，每到夜晚华灯初上时，天津之眼的彩灯柔美，无数游客会来到这里，拍摄全景或是乘坐观光，享受别样的浪漫。</li>
 </ul>
-<p>Oracle的模式对象包括<strong>表、视图、序列、同义词、索引等 21个对象</strong>。<br>用户使用的一系列的模式对象的集合称为<strong>用户的方案</strong>。<br>表是数据库中存放用户数据的对象。它包含一组列描述当前实体的属性，每个列都有一个名字和若干个属性。</p>
-<h3 id="2、oracle的外部结构：数据文件、日志文件和控制文件；-掌握功能"><a href="#2、oracle的外部结构：数据文件、日志文件和控制文件；-掌握功能" class="headerlink" title="2、oracle的外部结构：数据文件、日志文件和控制文件；(掌握功能)"></a>2、oracle的外部结构：数据文件、日志文件和控制文件；(掌握功能)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[物理存储结构哦]--&gt;B(数据文件)</span><br><span class="line">A[物理存储结构哦]--&gt;c(控制文件)</span><br><span class="line">A[物理存储结构哦]--&gt;d(日志文件)</span><br></pre></td></tr></table></figure>
-<p>物理存储结构是从物理存储的角度分析数据库的组成，也就是系统创建和使用的操作系统物理文件。</p>
-<h4 id="数据文件"><a href="#数据文件" class="headerlink" title="数据文件"></a>数据文件</h4><p>数据文件用于保存数据库中的全部数据。如表、数据和索引。数据文件一般以*.dbf命名。数据库、表空间和数据文件之间的关系如图所示：一个Oracle数据库是由一个或多个表空间构成的， Oracle数据库的每个表空间由一个或多个数据文件构成，这些文件由Oracle所在的操作系统管理<br><img src="/images/数据文件.jpg" alt="image"></p>
-<hr>
-<h4 id="重做日志文件"><a href="#重做日志文件" class="headerlink" title="重做日志文件"></a>重做日志文件</h4><p>重做日志文件（Redo Log Files）用于记录数据库所做任何变更。这些变更被记录在联机重做日志文件（Online Redo Log File）中。当数据库中的数据遭到破坏时，可以用这些日志来恢复数据库。通常以*.log命名。<br><strong>重做日志文件记录对数据库的所有修改信息，用于故障恢复</strong></p>
-<h5 id="重做日志文件写入过程"><a href="#重做日志文件写入过程" class="headerlink" title="重做日志文件写入过程"></a>重做日志文件写入过程</h5><p><img src="/images/813重做日志文件写入过程.jpg" alt="image"></p>
-<hr>
-<h4 id="控制文件"><a href="#控制文件" class="headerlink" title="控制文件"></a>控制文件</h4><p>每一个Oracle数据库，都有相应的控制文件，它们是较小的二进制文件。用于记录数据库的物理结构。通常以*.ctl命名。它们包括：</p>
+<p>游玩天津之眼一般有两种方式，乘坐或是远观拍照。乘坐摩天轮70元每人，如果想要独享，还可以花400块包一个包厢（限坐5人或以下）。摩天轮运营一圈大约是30分钟，座舱内有空调，可以缓慢舒适的观赏周围开阔的景色，尤其夜晚天黑后华灯初上，十分漂亮。</p>
+<p>如果要拍摄摩天轮，最佳的位置是在摩天轮南侧的金刚桥上，站在桥上，三岔河口（海河、南运河、北运河交汇处）就在眼前，柔美的天津之眼展开在眼前，周围是海河两岸的美丽建筑，随便一按就是漂亮的标志照片。</p>
 <ul>
-<li>（1）Oracle数据库名称与建立时间；</li>
-<li>（2）数据文件与重置日志文件名称及其所在位置；</li>
-<li>（3）日志记录序列码（Log Sequence Number）。<br><strong>控制文件是记录数据库物理结构的二进制文件</strong>。<h5 id="二者的关系"><a href="#二者的关系" class="headerlink" title="二者的关系"></a>二者的关系</h5><img src="/images/813二者的关系.jpg" alt="image"><h4 id="数据库实例"><a href="#数据库实例" class="headerlink" title="数据库实例"></a>数据库实例</h4></li>
-<li>数据库实例是Oracle为了完成用户服务而启动的一系列的程序。</li>
-<li>它包含系统全局区（SGA）和后台进程两部分。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">a[oracle实例]--&gt;|分配|b(系统全局区SGA)</span><br><span class="line">a[oracle实例]--&gt;|启动|c(后台进程)</span><br></pre></td></tr></table></figure>
+<li>特别提示<br>摩天轮目前每天上午9:30开始运营，下午到票售罄时即结束，每到节假日时摩天轮旁都会排起大长队，常常五六点钟票就售完了，所以若有条件还请避开节假日。</li>
+</ul>
+<p>##　意大利风情区<br><img src="/images/818意大利风情区.JPG" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 古老典雅的红顶意式建筑群，漫步其中，仿佛置身欧洲小镇。</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>景点介绍<br>意大利风情区位于天津市中心，在这里有200余栋地中海风格的典雅建筑。漫步其中，就好像行走在浪漫的欧洲小镇，众多的名人故居、影视剧取景地也为游人的旅程增色不少。</li>
+</ul>
+<p>意大利风情区就在海河的旁边，从海河边（北安桥）走过来，首先看到是高高的有尖顶的钟楼，再往前，看到精致的镂空铜马车，标志着意大利风情区到了。沿街随意逛逛，看看红顶意式建筑群，欧式雕塑，踱步到马可波罗广场。<strong>马可波罗广场</strong>是景区的标志性建筑之一，中央柯林斯式的石柱上站着手持橄榄枝的和平女神。往西走，是威尼斯广场的“飞狮许愿池”，它远没有《罗马假日》电影里真正的罗马许愿池的气魄和鼎盛人气，可与整个意大利风情区营造的气氛融合，也依稀有电影的感觉了。的确有众多影视剧来这里取景，比如《建国大业》、《金粉世家》等，游人可以在这里找到剧中熟悉的场景，同时，也吸引了很多拍婚纱照的爱侣。</p>
+<p>除此之外，景区拥有众多名人故居。<strong>梁启超</strong>故居，大名鼎鼎的“饮冰室”就在这里；民国大总统、大军阀曹锟故居现在是渤海商品交易所；袁世凯故居、冯国璋旧宅现已改为饭店；还有曹禺故居、张廷谔旧宅等。参观一下介绍天津历史和未来城市规划的天津市规划展览馆也不错，记得带好身份证领取免费门票。</p>
+<p>到了夜晚，意式建筑亮了灯，西餐厅、咖啡店里的烛光、灯光摇曳，酒吧变得热闹，意大利风情区的景色和氛围更加迷人。去布置得颇具特色，堆满啤酒罐和啤酒桶的巴伐利亚啤酒坊来杯啤酒；或者去酒吧中比较出名的13CLUB坐坐，摇滚乐是它的特色，唐朝、纸娃娃等摇滚乐队都来这里演出过，具体演出场次和门票可关注网站：<a href="http://site.douban.com/tj13club/room/559651/" target="_blank" rel="noopener">http://site.douban.com/tj13club/room/559651/</a></p>
+<p>意大利风情区有不少店铺，出售精致的工艺品、小玩意儿，不过价钱略贵，建议看看就好。</p>
+<h2 id="古文化街"><a href="#古文化街" class="headerlink" title="古文化街"></a>古文化街</h2><p><img src="/images/818古文化街.JPG" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-天津老字号店铺和手工艺品集中地，逛街购物、品尝美食的好去处。</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>景点介绍<br>古文化街位于天津市南开区，以天后宫为中心，南起水阁大街，北到通北路。这里是天津最著名的老字号和手工艺品店铺集中地。可以找到杨柳青年画、泥人张、魏记风筝等众多的手工艺品，还能品尝到经典的天津美食。</li>
+</ul>
+<p>古文化街目前有上百家店堂，大多是天津老字号店铺，充满浓郁的民间特色。这里有出售景泰蓝、苏绣、漆器等的综合性店铺乔香阁；有出售土特产的果仁张、皮糖张、崩豆张；最负盛名的还是民间工艺品店铺，拥有神态逼真的彩绘泥塑的“泥人张”，使用木板印绘年画的杨柳青年画，制作形态各异的风筝的“风筝魏”等，都是游客到古文化街必须去逛一逛的店铺。逛街的同时还可以享受天津特色美食，狗不理包子，煎饼果子，天津大麻花等，绝对满足吃货的胃口。<strong>店铺早上8:30左右开张，晚上17:30左右打烊，可以注意一下逛街的时间。</strong></p>
+<p>除了逛街、吃美食，古文化街还有不少名胜古迹，可以好好逛逛看看。天后宫位于古文化街中心，也是古文化街古迹的核心，祭祀保佑出海远航平安的天后娘娘，已有600余年历史。现在是天津民俗博物馆的所在地，馆内介绍了天津城历史、民俗，陈列着明代天津城砖、清代漕运模型、清代水机等文物。戏楼又称“津门老戏楼”，可以看相声和变戏法表演。大狮子胡同是近代思想家、教育家严复故居所在地，原房屋已不在，现在旧址上建天演广场，铸有严复铜像。另外还有通庆里、玉皇阁等等，各有特色。</p>
+<p>每年的农历3月23日是天后娘娘的生日，届时古文化街会举行皇会（最初叫“娘娘会”，因乾隆下江南时曾游此会于是得名“皇会”），天后宫前广场、宫南、宫北一带都能看到表演，有龙灯舞、狮子舞、少林会、高跷、法鼓、旱船、地秧歌、武术以及京戏、评剧、梆子等，是整个天津最热闹的庙会之一。    </p>
+<h2 id="五大道"><a href="#五大道" class="headerlink" title="五大道"></a>五大道</h2><p><img src="/images/818五大道.JPG" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 众多民国风云人物的寓居之处，在栋栋洋房之间看旧日津门缩影。</span><br></pre></td></tr></table></figure></p>
+<p>-景点介绍<br>五大道位于天津和平区，以区域内五个主要的道路命名，实际有二十多条街道。这里曾经是英租界，在民国时期，清朝遗老、北洋政府里很多官员名流都曾在这里寓居，一栋栋优美典雅的洋房仿佛在诉说着津门曾经的风云故事。</p>
+<p>-五大道总述<br>目前来到五大道游览，主要就是观看街道上2000多所花园式的欧式建筑，其中名人故居就有三百多处，张学良、顾维钧、吉鸿昌、爱新觉罗载振等众多清末民初的名流都在这里留下了名字。这里的建筑整体是欧式，但形式多样各有特色。街区优雅浪漫，不少影视剧组来此取景，拍婚纱照的也爱把五大道的小洋房当背景。不过大多数的洋房目前都铁门紧闭，并不能进入。</p>
+<p>-游玩方式<br>初到五大道，如果摸不清东南西北，可以先到长沙路101号的民园广场，看看曾经的欧式体育馆，这里也相当于是五大道的集散中心。广场附近的游客中心里，可以拿一份地图（也有付费购买的更清晰版），上面标注了五大道很多故居、著名建筑的所在地，根据地图参观游玩即可。另外，在这里也可以选择乘坐马车和骑自行车，马车每人80元，自行车大约每小时10元左右，都是游玩五大道的经典方式。</p>
+<p>-参观重点<br>五大道内，很多的点都很值得参观，整个下来大约要大半天时间，其中有几处建筑是参观的重点。疙瘩楼在河北路，墙上一粒一粒烧过火的砖形成的疙瘩已经十分特别，而且还是一座瓷片贴满的洋房；马场道117号的天津外国语学院是电视剧《金粉世家》的取景地；清朝庆亲王载振的公馆建筑中西合璧，在重庆道；蔡成勋故居是五大道唯一的中式建筑，在这里显得十分特别，位于大理道；同样在大理道的睦南公园每年春天都有鲜花开放，给游人带来惊喜。另外，在这些建筑中，很多都提供餐饮或者下午茶服务，虽然价格较贵，但是想想在民国名流的家中用餐，格调还是蛮高的。</p>
+<h2 id="瓷房子"><a href="#瓷房子" class="headerlink" title="瓷房子"></a>瓷房子</h2><p><img src="/images/818瓷房子.JPG" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 精美的中国古代瓷器密密麻麻贴满墙壁，奢华和创意程度令人惊叹！</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>景点介绍<br>“<br>瓷房子是一座动用了无数私藏古瓷器、汉白玉石雕、水晶、玛瑙、古董装饰而成的法式建筑。房子的墙上密密麻麻贴满了精美的中国古代瓷器，庭院和楼内堆满了古董，铺天盖地的瓷器古董常让初到瓷房子的游客眼花缭乱。</li>
+</ul>
+<p>瓷房子的围墙由数百个民国和晚清时期的古瓷瓶垒砌串联而成，名平安墙。房顶用古瓷片拼成的巨龙盘旋出“China”的图案，巨龙后是碎瓷片拼出的2008年奥运主体育场鸟巢。注意看房子外围右侧，有一竖排的瓷猫从顶层延伸到一层墙角，瓷猫周边镶嵌满水晶、玛瑙，如此兴师动众装饰的却是一根下水管道，令人赞叹。</p>
+<p>整幢楼共有五层，地下室不对外开放，一到四层供游客参观。每一层楼内都摆放着许多雕刻细腻的古代木制家具，红色墙壁上用瓷片贴出古今中外的名人字画。一层中央放着一只宋代大瓷缸。二楼和三楼都有阳台可以观景，一定要抬头看阳台的天花板，天花板是由一个个整只的古代瓷器盘子贴出来的，越往中间的盘子越价值不菲。由于每一层中央都是镂空的，从四楼可以一直看到一楼中央的大瓷缸。</p>
+<p>面朝瓷房子，左手边有一间同样覆盖满精美瓷器的小房间是厕所，看一看就好，为了在水晶、玛瑙与瓷器堆中上一回脱俗、唯美的厕所，厕所门前经常排长队。</p>
+<p>瓷房子的右手边就是出口了，别直接走出去了，出口所在的小房间有“镇馆之宝”。在瓷房子庭院中所见古董石像有些没有头部，头都在出口的耳房这，其中最大的一颗佛头就是“镇馆之宝”了，佛眉心间有个原来是放红宝石用的大凹槽。出口的这间房间不允许照相。</p>
+<p>若光看这幢瓷房子还不过瘾，在天津五大道有一幢疙瘩楼（河北路283号），和瓷房子有异曲同工之妙，离得也不远，可以过去看看。</p>
+<h2 id="世纪钟广场"><a href="#世纪钟广场" class="headerlink" title="世纪钟广场"></a>世纪钟广场</h2><p><img src="/images/818世纪钟广场.JPG" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 天津地标，大钟庞大而精密，是很多游客合影留念的必到之处。</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>景点介绍<br>世纪钟广场位于海河北岸，天津火车站旁，广场上有一座巨大的机械钟，是天津的地标建筑，很多到天津游玩的游客都会来这里拍照留念。</li>
+</ul>
+<p>世纪钟高达40米左右，大部分由金属制成，在世纪钟旁边就能看到内部的钟表骨架，众多的零件咬合在一起，共同支撑着前面表盘的分秒不差，做工的精密让人赞叹。世纪钟整个呈黑色，上面有代表12星座的浮雕等装饰，每天晚上世纪钟广场会亮起暖黄灯光，结合钟表本身的复古感觉很有质感。世纪钟广场周围则是海河两边的繁华街区，所以到这里拍摄夜景也是很多游客的选择。</p>
+<p>##　西开教堂<br><img src="/images/818西开教堂.JPG" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 天津主教堂，参观繁复精美的建筑和雕塑，还可以参加弥撒活动。</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>景点介绍<br>西开教堂位于繁华的滨江道商业街的最南端，始建于1917年，是天主教天津教区的主教堂。教堂建筑风格庄重大气，教堂内的雕塑也都繁复精美，另外弥撒和天主教节日的活动对外开放，可以参与其中，感受浓厚的宗教氛围。</p>
+</li>
+<li><p>外部参观<br>教堂外部用红黄相间花砖砌成，三座呈品字形排列、高耸入云的塔楼上浮盖着绿色铜片，经过岁月的冲刷，斑驳的绿色在阳光的照耀下反而闪烁出具有历史感的光彩，塔楼顶上各有一个青铜十字架。</p>
+</li>
+<li><p>内部建筑<br>走进教堂，映入眼帘的首先是湖蓝、白色、淡黄构成的内部主色调，给人一种清新的感觉，只在恰到好处的位置上雕刻着各种花纹，14根立柱从门口排列到祭台，气度不凡。教堂四周列着一座座精美的教徒铜像，墙壁上则挂着一幅幅记述耶稣受难故事的油画，教堂内还有圣母、耶稣、天使等的彩色塑像。另外，一扇扇彩绘玻璃窗也很迷人。在教堂的一侧你会发现一个木质小房间，顶上有小小的十字架，那是供神甫接待信徒忏悔告解用的“告解亭”。</p>
+</li>
+<li><p>宗教活动<br>西开教堂的弥撒活动对外开放，非教徒同样可以参加，不过弥撒时间不可以在教堂里跑来跑去到处参观，静静地坐在后排，不能大声喧哗、不要拍照，去感受繁华都市中内心的那一份宁静就好。另外也有很多天主教节日的活动，也和弥撒一样对外开放。具体弥撒和天主教节日活动时间可见官网：<a href="http://www.tj-church.org/About/misa/" target="_blank" rel="noopener">http://www.tj-church.org/About/misa/</a></p>
 </li>
 </ul>
-<h5 id="系统全局区"><a href="#系统全局区" class="headerlink" title="系统全局区"></a>系统全局区</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">a[SGA的内存结构]--&gt;b(数据高速缓冲区)</span><br><span class="line">a[SGA的内存结构]--&gt;c(共享池)</span><br><span class="line">a[SGA的内存结构]--&gt;d(重做速缓冲区)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>SGA是系统为实例分配的一组共享内存缓冲区，用于存放数据库系统信息。多个进程可以同时对SGA中的数据进行访问和相互通信。</li>
-</ul>
-<h5 id="数据高速缓冲区"><a href="#数据高速缓冲区" class="headerlink" title="数据高速缓冲区"></a>数据高速缓冲区</h5><p>数据高速缓冲区存放着数据库最近使用过的数据块。当用户访问相同的数据时，可以直接在数据缓冲区中提取，而不必再到数据文件中读取。</p>
-<ul>
-<li>获取和修改数据的时候大大地提高了性能</li>
-<li>通过LRU算法管理可用空间<h5 id="共享池"><a href="#共享池" class="headerlink" title="共享池"></a>共享池</h5>共享池相当于程序高速缓冲区。用来储存最近执行过的SQL语句和最近使用过的数据定义。<strong>它由库缓冲区和数据字典缓冲区组成</strong>。共享池使得用户可以共享已经编译解析过的程序代码，从而降低了重复执行相同代码的开销，提高数据库的性能。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">a[共享缓冲区]--&gt;b[库缓冲区]</span><br><span class="line">a[共享缓冲区]--&gt;d[数据字典]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="重做日志缓冲区"><a href="#重做日志缓冲区" class="headerlink" title="重做日志缓冲区"></a>重做日志缓冲区</h5><p>对数据库进行修改的任何事务在记录到重做日志之前都必须首先放到重做日志缓冲区中。重做日志缓冲区是专为此开辟的一块内存区域，重做日志缓存中的内容将被LGWR后台进程随时写入重做日志文件。</p>
-<ul>
-<li>记录实例做出的修改</li>
-<li>是循环缓冲区<h4 id="后台进程"><a href="#后台进程" class="headerlink" title="后台进程"></a>后台进程</h4><img src="/images/813后台进程.jpg" alt="image"><br><strong>数据库的物理结构和内存结构之间的关系是由后台进程来维持的。</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>进程名</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>日志写进程<strong>LGWR</strong></td>
-<td>将重做日志记录写到联机日志文件</td>
-</tr>
-<tr>
-<td>数据库写进程<strong>DBWR</strong></td>
-<td>将修改过的数据库写回到数据文件</td>
-</tr>
-<tr>
-<td>系统监控进程<strong>SMON</strong></td>
-<td>对有故障的实例进行恢复</td>
-</tr>
-<tr>
-<td>进程监控进程<strong>PMON</strong></td>
-<td>清理异常终止的进程所占用的资源</td>
-</tr>
-<tr>
-<td>检查点进程<strong>CKPT</strong></td>
-<td>定期检查数据库</td>
-</tr>
-<tr>
-<td>归档进程<strong>ARCH</strong></td>
-<td>将已写满的联机日志文件复制到归档日志文件</td>
-</tr>
-</tbody>
-</table>
-<p><img src="images/813后台进程2.jpg" alt="image"></p>
-<p><strong>Oracle的体系结构示意图</strong><br><img src="/images/813oracle体系结构示意图.jpg" alt="image"></p>
-<h5 id="其他概念—进程结构"><a href="#其他概念—进程结构" class="headerlink" title="其他概念—进程结构"></a>其他概念—进程结构</h5><ul>
-<li>用户进程 : 当用户要求连接到 Oracle 服务器时启动的一种进程。</li>
-<li>服务器进程 : 直接和 Oracle 服务器交互的一段程序。它响应用户要    求，向服务器发起呼叫并返回结果给用户。</li>
-<li>后台进程 : 用于维持数据库的物理结构和存储结构间的关系附加进程<h5 id="其他概念—程序全局区"><a href="#其他概念—程序全局区" class="headerlink" title="其他概念—程序全局区"></a>其他概念—程序全局区</h5>程序全局区（PGA）：是用户进程私有的内存区域，不能共享。PGA在用户进程连接到数据库后，在创建会话时被自动分配，当一个用户会话结束，PGA被释放。</li>
-</ul>
-<hr>
 
       
     </div>
@@ -519,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/oralce复习重点第二章/" rel="next" title="oracle复习重点第三章">
-                <i class="fa fa-chevron-left"></i> oracle复习重点第三章
+              <a href="/2018/08/17/词法分析-正规式、NFA和DFA之间的转化：/" rel="next" title="词法分析-正规式、NFA和DFA之间的转化：">
+                <i class="fa fa-chevron-left"></i> 词法分析-正规式、NFA和DFA之间的转化：
               </a>
             
           </div>
@@ -528,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/16/编译原理：短语、直接短语、句柄、素短语/" rel="prev" title="编译原理：短语、直接短语、句柄、素短语">
-                编译原理：短语、直接短语、句柄、素短语 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -689,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、基本概念（表空间、模式等）、默认的表空间、表空间与数据文件之间的关系，表空间与段、区和数据块之间的关系；</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据块、区、段和表空间"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">数据块、区、段和表空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、oracle的外部结构：数据文件、日志文件和控制文件；-掌握功能"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、oracle的外部结构：数据文件、日志文件和控制文件；(掌握功能)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据文件"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">数据文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重做日志文件"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">重做日志文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#重做日志文件写入过程"><span class="nav-number">1.0.2.2.1.</span> <span class="nav-text">重做日志文件写入过程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制文件"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">控制文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#二者的关系"><span class="nav-number">1.0.2.3.1.</span> <span class="nav-text">二者的关系</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库实例"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">数据库实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#系统全局区"><span class="nav-number">1.0.2.4.1.</span> <span class="nav-text">系统全局区</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据高速缓冲区"><span class="nav-number">1.0.2.4.2.</span> <span class="nav-text">数据高速缓冲区</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#共享池"><span class="nav-number">1.0.2.4.3.</span> <span class="nav-text">共享池</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重做日志缓冲区"><span class="nav-number">1.0.2.4.4.</span> <span class="nav-text">重做日志缓冲区</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后台进程"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">后台进程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#其他概念—进程结构"><span class="nav-number">1.0.2.5.1.</span> <span class="nav-text">其他概念—进程结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他概念—程序全局区"><span class="nav-number">1.0.2.5.2.</span> <span class="nav-text">其他概念—程序全局区</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#天津之眼摩天轮"><span class="nav-number">1.</span> <span class="nav-text">天津之眼摩天轮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#古文化街"><span class="nav-number">2.</span> <span class="nav-text">古文化街</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五大道"><span class="nav-number">3.</span> <span class="nav-text">五大道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瓷房子"><span class="nav-number">4.</span> <span class="nav-text">瓷房子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#世纪钟广场"><span class="nav-number">5.</span> <span class="nav-text">世纪钟广场</span></a></li></ol></div>
             
 
           </div>
