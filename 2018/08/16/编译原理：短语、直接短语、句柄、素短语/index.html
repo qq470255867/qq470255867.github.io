@@ -88,12 +88,12 @@
 <meta property="og:site_name" content="冰笑风云">
 <meta property="og:description" content="概念12如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;+γ，则称γ是句型αγβ的相对于变量A的短语 如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;γ，则称γ是句型αγβ的相对于变量A的直接（简单）短语 最左直接短语叫做句柄 其实最简单的判断方法直接画出语法树了。 文法S-&amp;gt;(L)|aS|aL-&amp;gt;L,S|S分析(S,(a)) 1.先画出语法树 2.判断短语1一个句型的语法树中任一子树">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/images/813语法树.JPG">
-<meta property="og:updated_time" content="2018-08-16T14:18:12.155Z">
+<meta property="og:image" content="/images/816语法树.JPG">
+<meta property="og:updated_time" content="2018-08-18T08:28:52.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理：短语、直接短语、句柄、素短语">
 <meta name="twitter:description" content="概念12如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;+γ，则称γ是句型αγβ的相对于变量A的短语 如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;γ，则称γ是句型αγβ的相对于变量A的直接（简单）短语 最左直接短语叫做句柄 其实最简单的判断方法直接画出语法树了。 文法S-&amp;gt;(L)|aS|aL-&amp;gt;L,S|S分析(S,(a)) 1.先画出语法树 2.判断短语1一个句型的语法树中任一子树">
-<meta name="twitter:image" content="/images/813语法树.JPG">
+<meta name="twitter:image" content="/images/816语法树.JPG">
 
 
 
@@ -402,7 +402,7 @@
         <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果Ｓ-&gt;* αＡβ and A-&gt;+γ，则称γ是句型αγβ的相对于变量A的短语 </span><br><span class="line">如果Ｓ-&gt;* αＡβ and A-&gt;γ，则称γ是句型αγβ的相对于变量A的直接（简单）短语 最左直接短语叫做句柄</span><br></pre></td></tr></table></figure>
 <p>其实最简单的判断方法直接画出语法树了。</p>
 <p>文法<br>S-&gt;(L)|aS|a<br>L-&gt;L,S|S<br>分析(S,(a))</p>
-<h2 id="1-先画出语法树"><a href="#1-先画出语法树" class="headerlink" title="1.先画出语法树"></a>1.先画出语法树</h2><p><img src="/images/813语法树.JPG" alt="image"></p>
+<h2 id="1-先画出语法树"><a href="#1-先画出语法树" class="headerlink" title="1.先画出语法树"></a>1.先画出语法树</h2><p><img src="/images/816语法树.JPG" alt="image"></p>
 <h2 id="2-判断短语"><a href="#2-判断短语" class="headerlink" title="2.判断短语"></a>2.判断短语</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个句型的语法树中任一子树叶节点所组成的符号串都是该句型的短语。</span><br></pre></td></tr></table></figure>
 <p>很明显的，最下面的a是S的叶子节点、最左边的S是L的叶子节点。<br>其他的叶子节点从左往右分别是(,,,(,),)<br>在树的第四层的(,L,)都是子树S的孩子，因为短语都是叶子节点，所以这边的短语有(a)<br>在树的第三层的L,,,S都是子树L的孩子，因为短语都是叶子节点，所以这边的短语有S,(a)<br>在树的第二层的(,L,)都是根节点S的孩子，因为短语都是叶子节点，所以这边的短语有(S,(a))</p>
 <p>所以短语有<strong>a   (a)   S,(a)   (S,(a))   S</strong></p>

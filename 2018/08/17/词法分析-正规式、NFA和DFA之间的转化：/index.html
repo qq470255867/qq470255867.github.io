@@ -89,10 +89,10 @@
 <meta property="og:description" content="坚持  正规式与NFAg关系对照图注意优先级关系，闭包运算*最高，连接运算.次之，或运算最低 考题构造正则式1a*b|7C(ab)*b 对应的DFA。ε 1)先画出对应的NFA12345678910graph LRX--&amp;gt;|ε|11--&amp;gt;|a|11--&amp;gt;|ε|2X--&amp;gt;|ε|33--&amp;gt;|a|55--&amp;gt;|b|33--&amp;gt;|ε|42--&amp;gt;|b|Y4--&amp;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/images/817转化.JPG">
-<meta property="og:image" content="/images/817NFA1.JGP">
+<meta property="og:image" content="/images/817NFA1.JPG">
 <meta property="og:image" content="/images/817NFA2.JPG">
 <meta property="og:image" content="/images/817DFA2.JPG">
-<meta property="og:updated_time" content="2018-08-17T11:57:55.381Z">
+<meta property="og:updated_time" content="2018-08-18T08:26:02.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="词法分析-正规式、NFA和DFA之间的转化：">
 <meta name="twitter:description" content="坚持  正规式与NFAg关系对照图注意优先级关系，闭包运算*最高，连接运算.次之，或运算最低 考题构造正则式1a*b|7C(ab)*b 对应的DFA。ε 1)先画出对应的NFA12345678910graph LRX--&amp;gt;|ε|11--&amp;gt;|a|11--&amp;gt;|ε|2X--&amp;gt;|ε|33--&amp;gt;|a|55--&amp;gt;|b|33--&amp;gt;|ε|42--&amp;gt;|b|Y4--&amp;">
@@ -409,8 +409,8 @@
 <h1 id="考题"><a href="#考题" class="headerlink" title="考题"></a>考题</h1><p>构造正则式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a*b|7C(ab)*b</span><br></pre></td></tr></table></figure></p>
 <p>对应的DFA。<br>ε</p>
 <h3 id="1-先画出对应的NFA"><a href="#1-先画出对应的NFA" class="headerlink" title="1)先画出对应的NFA"></a>1)先画出对应的NFA</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">X--&gt;|ε|1</span><br><span class="line">1--&gt;|a|1</span><br><span class="line">1--&gt;|ε|2</span><br><span class="line">X--&gt;|ε|3</span><br><span class="line">3--&gt;|a|5</span><br><span class="line">5--&gt;|b|3</span><br><span class="line">3--&gt;|ε|4</span><br><span class="line">2--&gt;|b|Y</span><br><span class="line">4--&gt;|b|Y</span><br></pre></td></tr></table></figure>
-<p><img src="/images/817NFA1.JGP" alt="image"><br><img src="/images/817NFA2.JPG" alt="image"></p>
-<h3 id="2-确定化DFA"><a href="#2-确定化DFA" class="headerlink" title="2)确定化DFA"></a>2)确定化DFA</h3><p>这个表是从NFA到DFA的时候必须要用到的。第一列第一行I的意思是从NFA的起始节点经过任意个ε所能到达的结点集合。<br>X| Ia|Ib<br>—|—| —<br>{X,1,2,3,4} |{1,2,5} | {Y}<br>{1,2,5}|{1,2} | {3,4,Y}<br>{Y}|- |-<br>{1,2}|{1,2} |{Y}<br>{3,4,Y} |{5} |{Y}<br> {5}|- |{3,4}<br> {3,4}|{5} |{Y}</p>
+<p><img src="/images/817NFA1.JPG" alt="image"><br><img src="/images/817NFA2.JPG" alt="image"></p>
+<h3 id="2-确定化DFA"><a href="#2-确定化DFA" class="headerlink" title="2)确定化DFA"></a>2)确定化DFA</h3><p>这个表是从NFA到DFA的时候必须要用到的。第一列第一行I的意思是从NFA的起始节点经过任意个ε所能到达的结点集合。<br>X|Ia|Ib<br>—|—| —<br>{X,1,2,3,4} |{1,2,5} | {Y}<br>{1,2,5}|{1,2} | {3,4,Y}<br>{Y}|- |-<br>{1,2}|{1,2} |{Y}<br>{3,4,Y} |{5} |{Y}<br>{5}|- |{3,4}<br>{3,4}|{5} |{Y}</p>
 <table>
 <thead>
 <tr>
