@@ -81,19 +81,21 @@
 
 
 
-<meta name="description" content="概念12如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;+γ，则称γ是句型αγβ的相对于变量A的短语 如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;γ，则称γ是句型αγβ的相对于变量A的直接（简单）短语 最左直接短语叫做句柄 其实最简单的判断方法直接画出语法树了。 文法S-&amp;gt;(L)|aS|aL-&amp;gt;L,S|S分析(S,(a)) 1.先画出语法树 2.判断短语1一个句型的语法树中任一子树">
+<meta name="description" content="千里之行始于足下  FA的最小化就是寻求最小状态DFA 最小状态DFA的含义:  1.没有多余状态(死状态)除多余状态  什么是多余状态？从这个状态没有通路到达终态；S1从开始状态出发，任何输入串也不能到达的那个状态。S2  如何消除多余状态？1删除！ ##　2. 没有两个状态是互相等价（不可区别）两个状态s和t等价的条件：兼容性（一致性）条件——同是终态或同是非终态传播性（蔓延性）条件——对于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理：短语、直接短语、句柄、素短语">
-<meta property="og:url" content="www.icygrin.club/2018/08/16/编译原理：短语、直接短语、句柄、素短语/index.html">
+<meta property="og:title" content="DFA最小化--分割法">
+<meta property="og:url" content="www.icygrin.club/2018/08/17/DFA最小化--分割法/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="概念12如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;+γ，则称γ是句型αγβ的相对于变量A的短语 如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;γ，则称γ是句型αγβ的相对于变量A的直接（简单）短语 最左直接短语叫做句柄 其实最简单的判断方法直接画出语法树了。 文法S-&amp;gt;(L)|aS|aL-&amp;gt;L,S|S分析(S,(a)) 1.先画出语法树 2.判断短语1一个句型的语法树中任一子树">
+<meta property="og:description" content="千里之行始于足下  FA的最小化就是寻求最小状态DFA 最小状态DFA的含义:  1.没有多余状态(死状态)除多余状态  什么是多余状态？从这个状态没有通路到达终态；S1从开始状态出发，任何输入串也不能到达的那个状态。S2  如何消除多余状态？1删除！ ##　2. 没有两个状态是互相等价（不可区别）两个状态s和t等价的条件：兼容性（一致性）条件——同是终态或同是非终态传播性（蔓延性）条件——对于">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/images/813语法树.JPG">
-<meta property="og:updated_time" content="2018-08-16T14:18:12.155Z">
+<meta property="og:image" content="/images/817多余状态.JPG">
+<meta property="og:image" content="/images/817DFA最小化.JPG">
+<meta property="og:image" content="/images/817结果.JPG">
+<meta property="og:updated_time" content="2018-08-18T08:16:21.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编译原理：短语、直接短语、句柄、素短语">
-<meta name="twitter:description" content="概念12如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;+γ，则称γ是句型αγβ的相对于变量A的短语 如果Ｓ-&amp;gt;* αＡβ and A-&amp;gt;γ，则称γ是句型αγβ的相对于变量A的直接（简单）短语 最左直接短语叫做句柄 其实最简单的判断方法直接画出语法树了。 文法S-&amp;gt;(L)|aS|aL-&amp;gt;L,S|S分析(S,(a)) 1.先画出语法树 2.判断短语1一个句型的语法树中任一子树">
-<meta name="twitter:image" content="/images/813语法树.JPG">
+<meta name="twitter:title" content="DFA最小化--分割法">
+<meta name="twitter:description" content="千里之行始于足下  FA的最小化就是寻求最小状态DFA 最小状态DFA的含义:  1.没有多余状态(死状态)除多余状态  什么是多余状态？从这个状态没有通路到达终态；S1从开始状态出发，任何输入串也不能到达的那个状态。S2  如何消除多余状态？1删除！ ##　2. 没有两个状态是互相等价（不可区别）两个状态s和t等价的条件：兼容性（一致性）条件——同是终态或同是非终态传播性（蔓延性）条件——对于">
+<meta name="twitter:image" content="/images/817多余状态.JPG">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="www.icygrin.club/2018/08/16/编译原理：短语、直接短语、句柄、素短语/"/>
+  <link rel="canonical" href="www.icygrin.club/2018/08/17/DFA最小化--分割法/"/>
 
 
 
 
 
-  <title>编译原理：短语、直接短语、句柄、素短语 | 冰笑风云</title>
+  <title>DFA最小化--分割法 | 冰笑风云</title>
   
 
 
@@ -310,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.icygrin.club/2018/08/16/编译原理：短语、直接短语、句柄、素短语/">
+    <link itemprop="mainEntityOfPage" href="www.icygrin.club/2018/08/17/DFA最小化--分割法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -327,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编译原理：短语、直接短语、句柄、素短语</h1>
+          <h1 class="post-title" itemprop="name headline">DFA最小化--分割法</h1>
         
 
         <div class="post-meta">
@@ -339,8 +341,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T22:18:35+08:00">
-                2018-08-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-17T19:16:21+08:00">
+                2018-08-17
               </time>
             
 
@@ -399,20 +401,32 @@
       
 
       
-        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果Ｓ-&gt;* αＡβ and A-&gt;+γ，则称γ是句型αγβ的相对于变量A的短语 </span><br><span class="line">如果Ｓ-&gt;* αＡβ and A-&gt;γ，则称γ是句型αγβ的相对于变量A的直接（简单）短语 最左直接短语叫做句柄</span><br></pre></td></tr></table></figure>
-<p>其实最简单的判断方法直接画出语法树了。</p>
-<p>文法<br>S-&gt;(L)|aS|a<br>L-&gt;L,S|S<br>分析(S,(a))</p>
-<h2 id="1-先画出语法树"><a href="#1-先画出语法树" class="headerlink" title="1.先画出语法树"></a>1.先画出语法树</h2><p><img src="/images/813语法树.JPG" alt="image"></p>
-<h2 id="2-判断短语"><a href="#2-判断短语" class="headerlink" title="2.判断短语"></a>2.判断短语</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个句型的语法树中任一子树叶节点所组成的符号串都是该句型的短语。</span><br></pre></td></tr></table></figure>
-<p>很明显的，最下面的a是S的叶子节点、最左边的S是L的叶子节点。<br>其他的叶子节点从左往右分别是(,,,(,),)<br>在树的第四层的(,L,)都是子树S的孩子，因为短语都是叶子节点，所以这边的短语有(a)<br>在树的第三层的L,,,S都是子树L的孩子，因为短语都是叶子节点，所以这边的短语有S,(a)<br>在树的第二层的(,L,)都是根节点S的孩子，因为短语都是叶子节点，所以这边的短语有(S,(a))</p>
-<p>所以短语有<strong>a   (a)   S,(a)   (S,(a))   S</strong></p>
-<h2 id="3-判断直接（简单）短语"><a href="#3-判断直接（简单）短语" class="headerlink" title="3.判断直接（简单）短语"></a>3.判断直接（简单）短语</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当子树不包含其他更小的子树时，该子树叶节点所组成的字符串就是该句型的直接短语</span><br></pre></td></tr></table></figure>
-<p>短语包含直接短语，我们可以直接在短语中判断。<br>这里只有第五层的S和第三层的L不包含其他更下的子树，所以有a和S是直接短语。<br>其中(a)的父节点S包含L，S,(a)的父节点L包含L和S， (S,(a))的父节点S包含L</p>
-<h2 id="4-判断句柄"><a href="#4-判断句柄" class="headerlink" title="4.判断句柄"></a>4.判断句柄</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">句柄是最左边的直接短语</span><br></pre></td></tr></table></figure>
-<p>因为S处于最左边，所以S是直接短语</p>
-<h2 id="5-判断素短语"><a href="#5-判断素短语" class="headerlink" title="5.判断素短语"></a>5.判断素短语</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">素短语是一个短语，它至少含有一个终结符，而且除他之外不含有其他素短语</span><br></pre></td></tr></table></figure>
-<p>。</p>
-<p>短语包含素短语，我们可以直接在短语中判断。<br>因为S可以推导出其他字符，(a);S,(a);(S,(a))都包含其他素短语a，所以符合条件的只有a。</p>
+        <blockquote>
+<p>千里之行始于足下</p>
+</blockquote>
+<p>FA的最小化就是寻求最小状态DFA</p>
+<p>最小状态DFA的含义: </p>
+<h2 id="1-没有多余状态-死状态"><a href="#1-没有多余状态-死状态" class="headerlink" title="1.没有多余状态(死状态)"></a>1.没有多余状态(死状态)</h2><p><img src="/images/817多余状态.JPG" alt=""><br>除多余状态 </p>
+<h3 id="什么是多余状态？"><a href="#什么是多余状态？" class="headerlink" title="什么是多余状态？"></a>什么是多余状态？</h3><p>从这个状态没有通路到达终态；S1<br>从开始状态出发，任何输入串也不能到达的那个状态。S2 </p>
+<h3 id="如何消除多余状态？"><a href="#如何消除多余状态？" class="headerlink" title="如何消除多余状态？"></a>如何消除多余状态？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">删除！</span><br></pre></td></tr></table></figure>
+<p>##　2. 没有两个状态是互相等价（不可区别）<br>两个状态s和t等价的条件：<br>兼容性（一致性）条件——同是终态或同是非终态<br>传播性（蔓延性）条件——对于所有输入符号，状态s和状态t必须转换到等价的状态里。</p>
+<p>DFA的最小化—例子，第一步都是固定的。分成终态和非终态</p>
+<ul>
+<li>１．将Ｍ的状态分为两个子集一个由终态k1=｛Ｃ，Ｄ，Ｅ，Ｆ｝组成，一个由非终态k2=｛Ｓ，Ａ，Ｂ｝组成，</li>
+<li></li>
+<li>２．考察｛Ｓ，Ａ，Ｂ｝是否可分．</li>
+<li><img src="/images/817DFA最小化.JPG" alt=""></li>
+<li>因为Ａ经过a到达C属于k1.而S经过a到达A属于k2.B经过a到达A属于k2，所以K2继续划分为{S，B},{A},</li>
+<li></li>
+<li>３．考察｛Ｓ，Ｂ｝是否可再分：</li>
+<li></li>
+<li>B经过b到达D属于k1.S经过b到达B属于k2，所以S，B可以划分。划分为{S},{B}</li>
+<li></li>
+<li>４．考察｛Ｃ，Ｄ，Ｅ，Ｆ｝是否可再分： </li>
+<li>因为Ｃ，Ｄ，Ｅ，Ｆ经过a和b到达的状态都属于｛Ｃ，Ｄ，Ｅ，Ｆ｝=k1所以相同，所以不可再分：</li>
+<li></li>
+<li>５．｛Ｃ，Ｄ，Ｅ，Ｆ｝以｛Ｄ｝来代替则，因为CDEF相同，你也可以用C来代替。无所谓的最小化的ＤＦＡ如图，：<br><img src="/images/817结果.JPG" alt=""></li>
+</ul>
 
       
     </div>
@@ -437,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/oracle复习重点第一章/" rel="next" title="oracle复习重点第一章">
-                <i class="fa fa-chevron-left"></i> oracle复习重点第一章
+              <a href="/2018/08/17/编译原理中，形式语言里怎么区分文法类型/" rel="next" title="编译原理中，形式语言里怎么区分文法类型">
+                <i class="fa fa-chevron-left"></i> 编译原理中，形式语言里怎么区分文法类型
               </a>
             
           </div>
@@ -447,8 +461,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/17/编译原理中，形式语言里怎么区分文法类型/" rel="prev" title="编译原理中，形式语言里怎么区分文法类型">
-                编译原理中，形式语言里怎么区分文法类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/17/词法分析-正规式、NFA和DFA之间的转化：/" rel="prev" title="词法分析-正规式、NFA和DFA之间的转化：">
+                词法分析-正规式、NFA和DFA之间的转化： <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-先画出语法树"><span class="nav-number">1.1.</span> <span class="nav-text">1.先画出语法树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-判断短语"><span class="nav-number">1.2.</span> <span class="nav-text">2.判断短语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-判断直接（简单）短语"><span class="nav-number">1.3.</span> <span class="nav-text">3.判断直接（简单）短语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-判断句柄"><span class="nav-number">1.4.</span> <span class="nav-text">4.判断句柄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-判断素短语"><span class="nav-number">1.5.</span> <span class="nav-text">5.判断素短语</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-没有多余状态-死状态"><span class="nav-number">1.</span> <span class="nav-text">1.没有多余状态(死状态)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是多余状态？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是多余状态？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何消除多余状态？"><span class="nav-number">1.2.</span> <span class="nav-text">如何消除多余状态？</span></a></li></ol></li></ol></div>
             
 
           </div>
