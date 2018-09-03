@@ -89,9 +89,9 @@
 <meta property="og:description" content="唯离散者，方查其荣辱  一、LR分析的基本原理1、LR分析的基本思想LR方法的基本思想就是，在规范归约的过程中，一方面要记住已移进和归约出的整个字符串，也就是说要记住历史；一方面能够根据所用的产生式的推测未来可能碰到的输入符号，也就是说能够对未来进行展望。这样，当一串貌似句柄的字符串出现在分析栈的顶部时，我们希望能够根据历史和展望以及现实的输入符号这三部分的材料，决定出现在栈顶的这一串符号是否就">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/831LR0分析.JPG">
-<meta property="og:image" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/831项目集规范族.JPG">
-<meta property="og:image" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/831分析表.JPG">
-<meta property="og:updated_time" content="2018-09-03T15:20:07.476Z">
+<meta property="og:image" content="/images/831项目集规范族.JPG">
+<meta property="og:image" content="/images/831分析表.JPG">
+<meta property="og:updated_time" content="2018-09-03T15:30:44.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理LR0分析法">
 <meta name="twitter:description" content="唯离散者，方查其荣辱  一、LR分析的基本原理1、LR分析的基本思想LR方法的基本思想就是，在规范归约的过程中，一方面要记住已移进和归约出的整个字符串，也就是说要记住历史；一方面能够根据所用的产生式的推测未来可能碰到的输入符号，也就是说能够对未来进行展望。这样，当一串貌似句柄的字符串出现在分析栈的顶部时，我们希望能够根据历史和展望以及现实的输入符号这三部分的材料，决定出现在栈顶的这一串符号是否就">
@@ -451,7 +451,7 @@
 <p>构造它的 LR(0) 分析表。</p>
 <p>解：加入非终结符 S’ ，方法的增广文法为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">S&apos;-&gt;S </span><br><span class="line">S-&gt;a </span><br><span class="line">S-&gt;^ </span><br><span class="line">S-&gt;(T) </span><br><span class="line">T -&gt;T,S </span><br><span class="line">T -&gt;S</span><br></pre></td></tr></table></figure>
-<p>下面构造它的 LR(0) 项目集规范族为：<br><img src="831项目集规范族.JPG" alt=""><br>从上表可看出,不存在移进归约冲突以及归约归约冲突，该文法是 LR(0) 文法。 从而有下面的 LR(0) 分析表<br><img src="831分析表.JPG" alt=""></p>
+<p>下面构造它的 LR(0) 项目集规范族为：<br><img src="/images/831项目集规范族.JPG" alt=""><br>从上表可看出,不存在移进归约冲突以及归约归约冲突，该文法是 LR(0) 文法。 从而有下面的 LR(0) 分析表<br><img src="/images/831分析表.JPG" alt=""></p>
 
       
     </div>
