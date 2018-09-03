@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="欢迎">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冰笑风云">
-<meta property="og:url" content="www.icygrin.club/categories/hexo/index.html">
+<meta name="description" content="♪ 流浪–卢焱  后台进程 后台进程负责保证数据库的稳定工作，每当数据库启动时，这些后台进程会自动启动，并且持续整 个实例的生命周期，每个进程负责一个独特的任务，表2-4 是一些最重要的后台进程。     进 程 缩 写 描 述     Database Writer DBWn 负责把脏数据写回磁盘   Log Writer LGWR 负责把日志数据写到联机日志文件   Checkpoint C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle后台进程详解">
+<meta property="og:url" content="www.icygrin.club/2018/09/03/Oracle后台进程详解/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="欢迎">
+<meta property="og:description" content="♪ 流浪–卢焱  后台进程 后台进程负责保证数据库的稳定工作，每当数据库启动时，这些后台进程会自动启动，并且持续整 个实例的生命周期，每个进程负责一个独特的任务，表2-4 是一些最重要的后台进程。     进 程 缩 写 描 述     Database Writer DBWn 负责把脏数据写回磁盘   Log Writer LGWR 负责把日志数据写到联机日志文件   Checkpoint C">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-03T14:29:03.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冰笑风云">
-<meta name="twitter:description" content="欢迎">
+<meta name="twitter:title" content="Oracle后台进程详解">
+<meta name="twitter:description" content="♪ 流浪–卢焱  后台进程 后台进程负责保证数据库的稳定工作，每当数据库启动时，这些后台进程会自动启动，并且持续整 个实例的生命周期，每个进程负责一个独特的任务，表2-4 是一些最重要的后台进程。     进 程 缩 写 描 述     Database Writer DBWn 负责把脏数据写回磁盘   Log Writer LGWR 负责把日志数据写到联机日志文件   Checkpoint C">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="www.icygrin.club/categories/hexo/"/>
+  <link rel="canonical" href="www.icygrin.club/2018/09/03/Oracle后台进程详解/"/>
 
 
 
 
 
-  <title>Category: hexo | 冰笑风云</title>
+  <title>Oracle后台进程详解 | 冰笑风云</title>
   
 
 
@@ -145,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,55 +294,263 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>hexo<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.icygrin.club/2018/09/03/Oracle后台进程详解/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/08/12/如何利用优秀的hexo-github建立一个属于自己博客(1)/" itemprop="url">
-              
-                <span itemprop="name">如何利用优秀的hexo+github建立一个属于自己博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Oracle后台进程详解</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-12T20:56:30+08:00"
-              content="2018-08-12" >
-          08-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T23:15:22+08:00">
+                2018-09-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>♪ 流浪–卢焱</p>
+</blockquote>
+<h1 id="后台进程"><a href="#后台进程" class="headerlink" title="后台进程"></a>后台进程</h1><ul>
+<li>后台进程负责保证数据库的稳定工作，每当数据库启动时，这些后台进程会自动启动，并且持续整 个实例的生命周期，每个进程负责一个独特的任务，表2-4 是一些最重要的后台进程。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>进 程</th>
+<th>缩 写</th>
+<th>描 述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database Writer</td>
+<td>DBWn</td>
+<td>负责把脏数据写回磁盘</td>
+</tr>
+<tr>
+<td>Log Writer</td>
+<td>LGWR</td>
+<td>负责把日志数据写到联机日志文件</td>
+</tr>
+<tr>
+<td>Checkpoint</td>
+<td>CKPT</td>
+<td>负责检查点操作</td>
+</tr>
+<tr>
+<td>Process Monitor</td>
+<td>PMON</td>
+<td>负责维护用户进程</td>
+</tr>
+<tr>
+<td>System Monitor</td>
+<td>SMON</td>
+<td>负责实例恢复</td>
+</tr>
+<tr>
+<td>Archiver</td>
+<td>ARCn</td>
+<td>负责归档操作，生成归档日志</td>
+</tr>
+<tr>
+<td>Manageability Monitor</td>
+<td>MMON</td>
+<td>和AW R有关</td>
+</tr>
+<tr>
+<td>Manageability Monitor Light</td>
+<td>MMNL</td>
+<td>和AW R有关</td>
+</tr>
+<tr>
+<td>Memory Manager</td>
+<td>MMAN</td>
+<td>和自动SGA管理有关</td>
+</tr>
+<tr>
+<td>Job Queue Coordination Process</td>
+<td>CJQO</td>
+<td>定时任务进程</td>
+</tr>
+<tr>
+<td>Recover Writer</td>
+<td>RVWR</td>
+<td>和Flashback Database 功能有关</td>
+</tr>
+<tr>
+<td>Change Tracking Writer</td>
+<td>CTWR</td>
+<td>跟踪数据块变化，支持快速增量备份</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1．DBWn"><a href="#1．DBWn" class="headerlink" title="1．DBWn"></a>1．DBWn</h2><p>Oracle 对于数据的修改都是在内存中进行的，Oracle不会直接修改磁盘上的数据，因此Oracle在修改数据之前必须把数据从磁盘读入到SGA(系统全局区)。<br>这个模式就遇到两个问题：首先，如何确保SGA中有足够的空间来装载这些数据？其次，修改后的数据终将写回到磁盘上，这又是如何完成的？我们就带着这两个问题来了解DBWn 进程的功能。</p>
+<p><strong>DBWn （Database Writer）进程的显式作用是负责把 SGA中被修改的数据同步到磁盘文件中。</strong><br>每当SGA 缓存中的空闲空间变得过小时，DBWR进程就通过把脏数据写到磁盘来释放空间。DBWn 进程使用的是LRU（Least Recently Used ）算法工作的，也就是根据数据从最后一次被使用以来的 时间决定释放那些数据，越久没有用到的数据越先被清除。因此 DBWn 的隐式的作用是保证 Buffer Cache 中空闲数据块的数量，避免 Server Process 从磁盘把数据读入内存时没有空间可用。</p>
+<p>DBWn 的写时机包括：</p>
+<p>检查点，即数据库的检查点动作会触发 DBWn 进程工作；<br>如果一个 Sever Process 在寻找可空闲数据块时， 超过了一定阈值仍然没能找到空闲块，就 会触发 DBWn 进程工作；<br>每 3 秒自动唤醒一次。<br>对于一个大型数据库或者修改非常频繁的系统而言，仅靠一个DBWn 进程为所有数据文件的写 操作提供服务，可能会力不从心。因此，Oracle 允许同时运行多个 DBWn 进程，以分担繁重的写负 载。这就是 DBWn 中n 的来历。数据库中最多可以使用 20 个DBWn 进程（n 从0~9 ，a~i）。数据库 初始化参数DB_WRITER_PROCESSES 就是用来定义DBWn 进程数量。如果没有定义这个参数， Oracle 缺省时按照 CPU 的数量来决定需要的进程个数。每8 个CPU 分配一个进程。</p>
+<p>Oracle 推荐在增加 DBWn 进程数量之前，要先考虑使用异步 IO，有可能异步 IO就能够解决问 题，不需要增加进程数量。</p>
+<h2 id="2．LGWR-（Log-Writer）"><a href="#2．LGWR-（Log-Writer）" class="headerlink" title="2．LGWR （Log Writer）"></a>2．LGWR （Log Writer）</h2><p><strong>LGWR 进程的作用是吧LogBuffer中的日志内容写到联机日志文件中，从而释放Log用户Buffer空间。</strong><br>数据库的所有修改操作（增、删、改）都会生成日志，这些日志最初先保存在Redo LogBuffer中，然后在某个时刻由LGWR进程写入到磁盘的联机日志文件中。</p>
+<p>触发LGWR 写操作的原因有几种：</p>
+<p>用户提交，即用户发出 Commit 指令时会触发 LGWR 写操作；<br>每三秒钟定时唤醒；<br>如果使用的 Log Buffer 超过了配置的 1/3 时，即 1/3 满会触发 LGWR 的写操作；<br>Log Buffer 中的日志数量超过 1MB 时，即 1MB 限制也会触发 LGWR 的写操作；<br>由 DBWR 进程触发<br>（1）提前写。</p>
+<p>Oracle 使用的是提前写（Write-Ahead）机制，即和一个数据块相关联的的 Redo记录必须先于 数据块本身被记录到磁盘中。这就意味着，当DBWn 进程试图把一个脏数据块写到磁盘上之前， DBWn 进程会先确定和这个数据块相关联的所有Redo记录都已经被写到联机日志文件中了，如果 没有满足这个前提条件，那么 DBWn 进程就会通知 LGWR 进程，等待 LGWR 进程把相关日志都写 完后，DBWn 进程再把数据块内容写到磁盘文件中。</p>
+<p>（2）快速提交。</p>
+<p>每当用户发出Commit命令时，Oracle 只是会把Redo Log Buffer 中的记录写到日志文件中，同 时会在日志中写入一条代表事务已经提交的记录（Commit Record）。但是这个事务所修改到的数据 块并不会被写到数据文件中。或者说Oracle 对Commit操作成功的定义是这样的：只要这个事务的 Redo Record被写到日志文件中，这个事务就算是 Commit成功了，至于事务修改的数据是否记录到 数据文件没有任何关系。这也就是Oracle 的快速提交（Fast Commit）机制。</p>
+<p>提前写（Write Ahead）和快速提交（Fast Commit）是 Oracle 两个很重要的运行机制，这两个机 制保证了事务提交不必等待数据写到磁盘，而之所以采用这种机制，也是平衡性能和可用性的结果。</p>
+<p>对于一个繁忙的OLTP 系统来说，同时会有大量的事务发生，因此同时会有大量的Commit请 求，这时LGWR 进程就可以把许多的 Commit请求批量的写入日志文件，而不是针对每个Commit 请求立即处理，这种机制也叫做Group Commit。</p>
+<h2 id="3．CKPT（Checkpoint）"><a href="#3．CKPT（Checkpoint）" class="headerlink" title="3．CKPT（Checkpoint）"></a>3．CKPT（Checkpoint）</h2><p>所谓检查点，代表着数据库的一致性状态。在检查点时刻，数据文件的内容和SGA 中的内容 完全一致，也就是说在 SGA 中进行的所有数据修改都被写回到数据文件上，而数据库的一致性状态 也正是从这个角度来描述的。</p>
+<p>注意：检查点所代表的数据一致和事务隔离级别所说的读一致性不是一个概念，后者是从数据完整性角度 来说的。而检查点的数据一致仅指内存和磁盘的数据一样，是从恢复的角度来说的，二者一定不能 混淆。虽然在检查点时刻，系统中会有很多未提交事务，修改后的脏数据最终可能被提交，永久生 效，也有可能回滚，还原成修改前的样子，但这不是检查点所关心的。检查点只关心恢复操作是否 可以从这一时刻开始。</p>
+<p>在发生检查点机制时，会同时有 DBWn 、LGWR 、CKPT 三组进程的活动。首先，DBWR进程 要把脏数据写入的磁盘数据文件中，当然这个操作也会触发 LGWR 的工作。而 CKPT 进程只负责更 新控制文件中的检查点记录，它的任务量并不像 DBWn 进程和 LGWR 进程那么繁重.</p>
+<h2 id="4．PMON（Process-Monitor）"><a href="#4．PMON（Process-Monitor）" class="headerlink" title="4．PMON（Process Monitor）"></a>4．PMON（Process Monitor）</h2><p>这个后台进程用来监控用户进程的。用户进程可能由各种原因导致异常终止，比如网络故障、用户机器断电等。这时用户进程对应着的服务进程可能还占用着系统资源，如果这些资源不及时释 放，就会影响正常用户的工作。</p>
+<p><strong>PMON 进程就负责在发现用户进程异常中止后的清理工作，以确保释放占用的资源。</strong><br>比如，一个用户进程可以在异常中止之前正在处理事务，使用了若干锁，突然用户计算机断电了，这些锁没 有被正常释放，而且这些锁永远不会有机会被正常释放，其他用户可能就要永久等待这些锁。这时 就需要PMON 进程强行进行清理工作，释放这些被占用的资源，以保证其他用户不会因为这些异常 中止进程的干扰。PMON 进程定期被唤醒，==其他进程也会在需要时主动唤醒PMON== 进程。</p>
+<h2 id="5．SMON（System-Monitor）"><a href="#5．SMON（System-Monitor）" class="headerlink" title="5．SMON（System Monitor）"></a>5．SMON（System Monitor）</h2><p>如果遭遇数据库异常关闭，SGA中还没有来得及写到磁盘的信息就丢失了，数据库再次启动时，就先要进行恢复工作，这种恢复叫做实例恢复（Instance Recovery ）。<strong>SMON 进程负责实例恢复</strong>，实例恢复分成3 个阶段。</p>
+<p>前滚（Roll Forward）：这一阶段是读取联机日志，找到最后一次检查点之后的日志内容， 并重做这些日志，把数据库恢复到上次实例关闭时的状态，这时系统包含着提交和未提交的 事务。<br>打开数据库：为了减少用户等待时间，Oracle 选择尽可能早地打开数据库，打开数据库以 后，再继续进行恢复工作。现在用户就可以使用数据库。<br>回滚（Roll Back） ：SMON 进程回滚未提交的事务，Server Process 也可以进行部分回滚工作。<br>除了实例恢复，SMON 进程还负责部分空间管理工作，包括：</p>
+<p>如果使用字典管理表空间（DMT） ，SMON 进程需要合并空闲 Extents，以避免磁盘碎片， 这个功能叫做 Coalesce，这个任务每 3 秒执行一次；<br>SMON 进程负责清理临时段，以释放空间；<br>SMON 进程也是定期被唤醒或者被其他进程主动唤醒。</p>
+<h2 id="6．ARCn（Archiver）"><a href="#6．ARCn（Archiver）" class="headerlink" title="6．ARCn（Archiver）"></a>6．ARCn（Archiver）</h2><p>归档（Archiver）进程负责归档模式的数据库的归档操作。我们知道每个数据库都必须要创建 至少两组联机日志，这些日志是循环使用的，也就是一组日志写满后，LGWR 就切换到另一组日志 继续写入，周而复始。因此稍早产生日志终将被新的日志覆盖掉，这是非归档模式。而归档模式比 非归档模式多出的处理就是，在发生日志切换时，ARCn 进程被唤醒，把之前写满的日志做一个文 件拷贝，这个拷贝被保存到一个特殊的目录下——归档目录，这个拷贝就叫做归档日志。每个联机 日志能够被覆盖的前提条件也相应地多了一个，除了要完成检查点，还必须完成归档操作。</p>
+<p><strong>归档模式就是确保数据库所有操作日志都被保留下来，这样能够最大程度的保证数据库的可恢 复性。</strong></p>
+<p>ARCn 进程就是完成这个拷贝动作，和DBWn 进程一样，ARCn 进程可以有多个，最多是 10 个（n 取值范围为 0~9 ）。数据库的初始化参数 LOG_ARCHIVE_MAX_PROCESSES 就是定义数据库 启动时运行的ARCn 的个数。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/03/编译原理 LL1分析法/" rel="next" title="编译原理LL1分析法">
+                <i class="fa fa-chevron-left"></i> 编译原理LL1分析法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +558,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -369,8 +582,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,6 +678,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#后台进程"><span class="nav-number">1.</span> <span class="nav-text">后台进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1．DBWn"><span class="nav-number">1.1.</span> <span class="nav-text">1．DBWn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．LGWR-（Log-Writer）"><span class="nav-number">1.2.</span> <span class="nav-text">2．LGWR （Log Writer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3．CKPT（Checkpoint）"><span class="nav-number">1.3.</span> <span class="nav-text">3．CKPT（Checkpoint）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4．PMON（Process-Monitor）"><span class="nav-number">1.4.</span> <span class="nav-text">4．PMON（Process Monitor）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5．SMON（System-Monitor）"><span class="nav-number">1.5.</span> <span class="nav-text">5．SMON（System Monitor）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6．ARCn（Archiver）"><span class="nav-number">1.6.</span> <span class="nav-text">6．ARCn（Archiver）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -615,6 +853,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
