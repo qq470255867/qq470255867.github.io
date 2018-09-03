@@ -81,17 +81,21 @@
 
 
 
-<meta name="description" content="#java say hello world">
-<meta property="og:type" content="website">
-<meta property="og:title" content="java">
-<meta property="og:url" content="www.icygrin.club/java/index.html">
+<meta name="description" content="唯离散者，方查其荣辱  一、LR分析的基本原理1、LR分析的基本思想LR方法的基本思想就是，在规范归约的过程中，一方面要记住已移进和归约出的整个字符串，也就是说要记住历史；一方面能够根据所用的产生式的推测未来可能碰到的输入符号，也就是说能够对未来进行展望。这样，当一串貌似句柄的字符串出现在分析栈的顶部时，我们希望能够根据历史和展望以及现实的输入符号这三部分的材料，决定出现在栈顶的这一串符号是否就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理LR0分析法">
+<meta property="og:url" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="#java say hello world">
+<meta property="og:description" content="唯离散者，方查其荣辱  一、LR分析的基本原理1、LR分析的基本思想LR方法的基本思想就是，在规范归约的过程中，一方面要记住已移进和归约出的整个字符串，也就是说要记住历史；一方面能够根据所用的产生式的推测未来可能碰到的输入符号，也就是说能够对未来进行展望。这样，当一串貌似句柄的字符串出现在分析栈的顶部时，我们希望能够根据历史和展望以及现实的输入符号这三部分的材料，决定出现在栈顶的这一串符号是否就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T05:48:31.726Z">
+<meta property="og:image" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/831LR0分析.JPG">
+<meta property="og:image" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/831项目集规范族.JPG">
+<meta property="og:image" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/831分析表.JPG">
+<meta property="og:updated_time" content="2018-09-03T14:38:55.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java">
-<meta name="twitter:description" content="#java say hello world">
+<meta name="twitter:title" content="编译原理LR0分析法">
+<meta name="twitter:description" content="唯离散者，方查其荣辱  一、LR分析的基本原理1、LR分析的基本思想LR方法的基本思想就是，在规范归约的过程中，一方面要记住已移进和归约出的整个字符串，也就是说要记住历史；一方面能够根据所用的产生式的推测未来可能碰到的输入符号，也就是说能够对未来进行展望。这样，当一串貌似句柄的字符串出现在分析栈的顶部时，我们希望能够根据历史和展望以及现实的输入符号这三部分的材料，决定出现在栈顶的这一串符号是否就">
+<meta name="twitter:image" content="www.icygrin.club/2018/09/03/编译原理LR0分析法/831LR0分析.JPG">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="www.icygrin.club/java/"/>
+  <link rel="canonical" href="www.icygrin.club/2018/09/03/编译原理LR0分析法/"/>
 
 
 
 
 
-  <title>java | 冰笑风云</title>
+  <title>编译原理LR0分析法 | 冰笑风云</title>
   
 
 
@@ -296,34 +300,210 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.icygrin.club/2018/09/03/编译原理LR0分析法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">java</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>#java say hello world</p>
-
+          <h1 class="post-title" itemprop="name headline">编译原理LR0分析法</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T22:41:38+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编译原理LR0分析法/" itemprop="url" rel="index">
+                    <span itemprop="name">编译原理LR0分析法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <blockquote>
+<p>唯离散者，方查其荣辱</p>
+</blockquote>
+<h1 id="一、LR分析的基本原理"><a href="#一、LR分析的基本原理" class="headerlink" title="一、LR分析的基本原理"></a>一、LR分析的基本原理</h1><h2 id="1、LR分析的基本思想"><a href="#1、LR分析的基本思想" class="headerlink" title="1、LR分析的基本思想"></a>1、LR分析的基本思想</h2><p>LR方法的基本思想就是，在规范归约的过程中，一方面要记住已移进和归约出的整个字符串，也就是说要<strong>记住历史</strong>；一方面能够根据所用的产生式的推测未来可能碰到的输入符号，也就是说能够<strong>对未来进行展望</strong>。<br>这样，当一串貌似句柄的字符串出现在分析栈的顶部时，我们希望能够根据历史和展望以及现实的输入符号这三部分的材料，决定出现在栈顶的这一串符号是否就是我们要找的句柄。</p>
+<h2 id="2、LR分析器的构成"><a href="#2、LR分析器的构成" class="headerlink" title="2、LR分析器的构成"></a>2、LR分析器的构成</h2><p>采用下推自动机这种数据模型。包括以下几个部分：<br>    1.输入带<br>    2.分析栈：包括状态栈和文法符号栈两部分。(s0,#)为分析开始前预先放在栈里的初始状态和句子括号。<br>    3.LR 分析表：包括动作表和状态转移表两张表。<br>    <img src="831LR0分析.JPG" alt=""></p>
+<h2 id="3、LR分析表是LR分析器的核心部分"><a href="#3、LR分析表是LR分析器的核心部分" class="headerlink" title="3、LR分析表是LR分析器的核心部分"></a>3、LR分析表是LR分析器的核心部分</h2><p>一张LR分析表包括两部分：动作表(ACTION)和状态转换表(GOTO)。它们都是二维数组。ACTION[s,a]规定了当状态s面临输入符号a时应采取什么动作(移进、归约、接受和报错)，而GOTO[s,X]规定了当状态s面对文法符号X(终结符或非终结符)时的下一状态是什么。</p>
+<p>   显然， GOTO[s,X]定义了一个以文法符号为字母表的DFA。</p>
+<p>   不同的 LR 分析法构造LR分析表的方法都不同，由此产生了不同的LR分析法。</p>
+<h2 id="4、LR分析算法"><a href="#4、LR分析算法" class="headerlink" title="4、LR分析算法"></a>4、LR分析算法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">置ip指向输入串w的第一个符号</span><br><span class="line">　　令Si为栈顶状态</span><br><span class="line">　　a是ip指向的符号（当前输入符号）</span><br><span class="line">　　BEGIN(重复开始)</span><br><span class="line">　　IFACTION[Si,a]=SjTHEN</span><br><span class="line"></span><br><span class="line">                BEGIN</span><br><span class="line"></span><br><span class="line">           PUSH j,a (进栈)</span><br><span class="line">　　　　      ip前进(指向下一输入符号)</span><br><span class="line">　　　    END</span><br><span class="line">　　ELSEIFACTION[Si,a]=rj(若第j条产生式为A→β) THEN </span><br><span class="line">　　        BEGIN</span><br><span class="line">　　　　      pop|β| 项</span><br><span class="line">　　　　      若当前栈顶状态为Sk</span><br><span class="line">　　　　      pushGOTO[Sk,A] 和A(进栈)</span><br><span class="line">　　　　END</span><br><span class="line">　　ELSEIFACTION[Si,a]=acc THEN </span><br><span class="line">　　　　return (成功）</span><br><span class="line">　　ELSE error</span><br><span class="line">　　END. (重复结束)</span><br></pre></td></tr></table></figure>
+<h1 id="二、LR（0）分析器"><a href="#二、LR（0）分析器" class="headerlink" title="二、LR（0）分析器"></a>二、LR（0）分析器</h1><h2 id="1、可归前缀与规范句型的活前缀"><a href="#1、可归前缀与规范句型的活前缀" class="headerlink" title="1、可归前缀与规范句型的活前缀"></a>1、可归前缀与规范句型的活前缀</h2><p>文法G[S]：<br>(1) S → aAcBe[1]<br>(2) A → b[2]<br>(3) A → Ab[3]<br>(4) B → d[4]</p>
+<p>S → ÞaAcBe[1]<br>  → ÞaAcd[4]e[1]<br>  → ÞaAb[3]cd[4]e[1]<br>  → Þab[2]b[3]cd[4]e[1]</p>
+<p>每次归约句型的前部分依次为：<br>ab[2]<br>aAb[3]<br>aAcd[4]<br>aAcBe[1]</p>
+<p>规范句型的这种前部分符号串称为可归前缀</p>
+<p>我们把形成可归前缀之前包括可归前缀在内的所有规范句型的前缀都称为活前缀</p>
+<p>（活前缀就是可归前缀的前缀）如下：</p>
+<p> e,a,ab<br> e ,a,aA,aAb<br> e ,a,aA,aAc,aAcd<br> e ,a,aA,aAc,aAcB,aAcBe</p>
+<h1 id="三、LR分析"><a href="#三、LR分析" class="headerlink" title="三、LR分析"></a>三、LR分析</h1><h2 id="（一）LR分析构造识别活前缀的有穷自动机"><a href="#（一）LR分析构造识别活前缀的有穷自动机" class="headerlink" title="（一）LR分析构造识别活前缀的有穷自动机"></a>（一）LR分析构造识别活前缀的有穷自动机</h2><p>项目（item）：在每个产生式的右部适当位置添加一个圆点构成项目。</p>
+<p>根据圆点所在的位置和圆点后是终结符还是非终结符把项目分为以下几种：</p>
+<p>移进项目，形如 A→a•ab</p>
+<p>待约项目，形如 A→a•Bb</p>
+<p>归约项目，形如 A→a•</p>
+<p>接受项目，形如S’ →S•</p>
+<p>根据圆点所在的位置和圆点后是终结符还是非终结符把项目分为以下几种：</p>
+<pre><code>移进项目，形如 A →a . ab
+待约项目，形如 A→a . Bb
+归约项目，形如 A→a .
+接受项目，形如 S’→S.
+</code></pre><p>把文法的所有产生式的项目都引出，每个项目都为NFA的一个状态。其中</p>
+<p>文法的第一个产生式的第一个项目为文法的初态</p>
+<p>文法的接受项目为文法的句子识别态</p>
+<p>文法的每一个产生式的归约项目为文法的句柄识别态</p>
+<p>构造步骤：</p>
+<p>项目圆点的左部表示分析过程的某个时刻用该产生式归约时句柄已识别的部分，圆点右部表示待识别的部分。</p>
+<p>构造识别活前缀的NFA：<br>1、把文法的所有产生式的项目都引出，每个项目都为NFA的一个状态<br>2、确定初态、句柄识别态、句子识别态<br>3、确定状态之间的转换关系<br>  <em>若项目i为 X → X1X2…Xi-1• Xi…Xn<br>  项目j为 X → X1X2…Xi-1 Xi •Xi+1…Xn<br>  则从状态i到状态j连一条标记为Xi的箭弧
+  </em>若i为X→g•Ad，k为A→•b，则从状态i画标  记为 e的箭弧到状态k</p>
+<h2 id="（二）将非确定的有限自动机转换成确定的有穷自动机"><a href="#（二）将非确定的有限自动机转换成确定的有穷自动机" class="headerlink" title="（二）将非确定的有限自动机转换成确定的有穷自动机"></a>（二）将非确定的有限自动机转换成确定的有穷自动机</h2><p>方法一：（采用子集构造法）</p>
+<p>方法二：通过构造文法G的LR（0）的项目集规范族来直接构造识别活前缀的DFA</p>
+<p>LR(0)项目集规范族的构造</p>
+<p>构成识别一个文法活前缀的DFA项目集（状态）的全体称为这个文法的LR(0)项目集规范族</p>
+<p>（1）通过闭包函数(CLOSURE)来求DFA一个状态的项目集，找出所有的等价的项目。</p>
+<p>如果I是文法G’的一个项目集，定义和构造I的闭包CLOSURE(I)如下：<br>a)I的项目都在CLOSURE(I)中<br>b)若A→a• Bb属于CLOSURE(I)，则每一形如B→• g的项目也属于CLOSURE(I)<br>c)重复b)直到CLOSURE(I)不再扩大</p>
+<p>（2）定义转换函数如下：<br>GOTO（I，X）=CLOSURE（J）<br>其中：I为包含某一项目集的状态，X为一文法符号<br> J={任何形如A→aX •b的项目|A→a•X b属于I}</p>
+<p>圆点不在产生式右部最左边的项目称为核，唯一的例外是S’ → • S。因此用GOTO（I，X）转换函数得到的J为转向后状态所含项目集的核</p>
+<p>使用闭包函数（CLOSURE）和转向函数(GOTO(I,X))构造文法G’的LR(0)的项目集规范族，步骤如下：</p>
+<p>a)置项目S’→ •S为初态集的核，然后对核求闭包CLOSURE（{S’→ •S}）得到初态的项目集<br>b)对初态集或其它所构造的项目集应用转换函数GOTO(I，X)=CLOSURE(J)求出新状态J的项目集<br>c)重复b)直到不出现新的项目集为止</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>已知文法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S-&gt;a|^|(T) </span><br><span class="line">T-&gt;T,S|S</span><br></pre></td></tr></table></figure>
+<p>构造它的 LR(0) 分析表。</p>
+<p>解：加入非终结符 S’ ，方法的增广文法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">S&apos;-&gt;S </span><br><span class="line">S-&gt;a </span><br><span class="line">S-&gt;^ </span><br><span class="line">S-&gt;(T) </span><br><span class="line">T -&gt;T,S </span><br><span class="line">T -&gt;S</span><br></pre></td></tr></table></figure>
+<p>下面构造它的 LR(0) 项目集规范族为：<br><img src="831项目集规范族.JPG" alt=""><br>从上表可看出,不存在移进归约冲突以及归约归约冲突，该文法是 LR(0) 文法。 从而有下面的 LR(0) 分析表<br><img src="831分析表.JPG" alt=""></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/26/2018 天津,随笔/" rel="next" title="2018 天津">
+                <i class="fa fa-chevron-left"></i> 2018 天津
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -356,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -443,6 +632,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、LR分析的基本原理"><span class="nav-number">1.</span> <span class="nav-text">一、LR分析的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、LR分析的基本思想"><span class="nav-number">1.1.</span> <span class="nav-text">1、LR分析的基本思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、LR分析器的构成"><span class="nav-number">1.2.</span> <span class="nav-text">2、LR分析器的构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、LR分析表是LR分析器的核心部分"><span class="nav-number">1.3.</span> <span class="nav-text">3、LR分析表是LR分析器的核心部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、LR分析算法"><span class="nav-number">1.4.</span> <span class="nav-text">4、LR分析算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、LR（0）分析器"><span class="nav-number">2.</span> <span class="nav-text">二、LR（0）分析器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、可归前缀与规范句型的活前缀"><span class="nav-number">2.1.</span> <span class="nav-text">1、可归前缀与规范句型的活前缀</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、LR分析"><span class="nav-number">3.</span> <span class="nav-text">三、LR分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）LR分析构造识别活前缀的有穷自动机"><span class="nav-number">3.1.</span> <span class="nav-text">（一）LR分析构造识别活前缀的有穷自动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）将非确定的有限自动机转换成确定的有穷自动机"><span class="nav-number">3.2.</span> <span class="nav-text">（二）将非确定的有限自动机转换成确定的有穷自动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题"><span class="nav-number">3.3.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
