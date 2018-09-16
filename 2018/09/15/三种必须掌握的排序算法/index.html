@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="从简入奢易，从奢入俭难  求First集，Follow集，Select集First集合： First集合顾名思义就是求一个文法符号串所可能推导出的符号串的第一个终结符的集合。  First（X）就是求X所有推导出的符号串的第一个符号的集合。 求First集合可分如下几种情况: 12345678910111、单个符号的First集合：单个终结符的First集合就是它自己。2、单个非终结符的Firs">
+<meta name="description" content="异乡的孤独  冒泡排序原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。 举例说明要排序数组：int[] arr={6,3,8,2,9,1};    第一趟排序： 　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理 LL1分析法">
-<meta property="og:url" content="http://icygrin.club/2018/09/03/编译原理 LL1分析法/index.html">
+<meta property="og:title" content="三种必须掌握的排序算法">
+<meta property="og:url" content="http://icygrin.club/2018/09/15/三种必须掌握的排序算法/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="从简入奢易，从奢入俭难  求First集，Follow集，Select集First集合： First集合顾名思义就是求一个文法符号串所可能推导出的符号串的第一个终结符的集合。  First（X）就是求X所有推导出的符号串的第一个符号的集合。 求First集合可分如下几种情况: 12345678910111、单个符号的First集合：单个终结符的First集合就是它自己。2、单个非终结符的Firs">
+<meta property="og:description" content="异乡的孤独  冒泡排序原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。 举例说明要排序数组：int[] arr={6,3,8,2,9,1};    第一趟排序： 　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-03T15:26:40.562Z">
+<meta property="og:image" content="http://icygrin.club/images/冒泡时间复杂度.JPG">
+<meta property="og:image" content="http://icygrin.club/images/915插入排序.JPG">
+<meta property="og:updated_time" content="2018-09-15T02:52:49.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编译原理 LL1分析法">
-<meta name="twitter:description" content="从简入奢易，从奢入俭难  求First集，Follow集，Select集First集合： First集合顾名思义就是求一个文法符号串所可能推导出的符号串的第一个终结符的集合。  First（X）就是求X所有推导出的符号串的第一个符号的集合。 求First集合可分如下几种情况: 12345678910111、单个符号的First集合：单个终结符的First集合就是它自己。2、单个非终结符的Firs">
+<meta name="twitter:title" content="三种必须掌握的排序算法">
+<meta name="twitter:description" content="异乡的孤独  冒泡排序原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。 举例说明要排序数组：int[] arr={6,3,8,2,9,1};    第一趟排序： 　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6">
+<meta name="twitter:image" content="http://icygrin.club/images/冒泡时间复杂度.JPG">
 
 
 
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://icygrin.club/2018/09/03/编译原理 LL1分析法/"/>
+  <link rel="canonical" href="http://icygrin.club/2018/09/15/三种必须掌握的排序算法/"/>
 
 
 
 
 
-  <title>编译原理 LL1分析法 | 冰笑风云</title>
+  <title>三种必须掌握的排序算法 | 冰笑风云</title>
   
 
 
@@ -308,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/09/03/编译原理 LL1分析法/">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/09/15/三种必须掌握的排序算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -325,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编译原理 LL1分析法</h1>
+          <h1 class="post-title" itemprop="name headline">三种必须掌握的排序算法</h1>
         
 
         <div class="post-meta">
@@ -337,8 +340,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T23:25:48+08:00">
-                2018-09-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-15T10:53:13+08:00">
+                2018-09-15
               </time>
             
 
@@ -360,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编译原理/" itemprop="url" rel="index">
-                    <span itemprop="name">编译原理</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -378,9 +381,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/03/编译原理 LL1分析法/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/15/三种必须掌握的排序算法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/编译原理 LL1分析法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/15/三种必须掌握的排序算法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,58 +412,76 @@
 
       
         <blockquote>
-<p>从简入奢易，从奢入俭难</p>
+<p>异乡的孤独</p>
 </blockquote>
-<h1 id="求First集，Follow集，Select集"><a href="#求First集，Follow集，Select集" class="headerlink" title="求First集，Follow集，Select集"></a>求First集，Follow集，Select集</h1><h3 id="First集合："><a href="#First集合：" class="headerlink" title="First集合："></a>First集合：</h3><ul>
-<li>First集合顾名思义就是求一个文法符号串所可能推导出的符号串的第一个终结符的集合。</li>
-</ul>
-<p><strong>First（X）就是求X所有推导出的符号串的第一个符号的集合。</strong></p>
-<p>求First集合可分如下几种情况:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、单个符号的First集合：单个终结符的First集合就是它自己。</span><br><span class="line"></span><br><span class="line">2、单个非终结符的First集合：</span><br><span class="line"></span><br><span class="line">A--&gt;a… 产生式右部以终结符开头，根据定义，这种情况下显然可以看出a属于First(A)。</span><br><span class="line"></span><br><span class="line">A--&gt;B… 产生式右部以非终结符开头，根据定义，既然可以把A替换成B……，也可以看出First（B）属于First（A）。这是一个递归的推导。</span><br><span class="line"></span><br><span class="line">3、多个符号形成的符号串的First结合：</span><br><span class="line"></span><br><span class="line">符号串ABC…，并且A不能推导出空串ε，显然根据定义First（ABC…）=First（A）</span><br></pre></td></tr></table></figure>
-<p>符号串ABC…，并且A可能推导出空串ε，当A不是空串的时候，显然First（A）属于First（ABC…），但当A是空串的时候，ABC…就成了BC…，此时根据B是否能推出空串来决定是否将First（B）加入First （ABC…）。这是一个递归的推导，综上所述，符号串中的第一个不能推出空串的符 号前面所有符号的First集合减去空串ε都属于First（ABC…），第一个不能推出空串的 符号的First集合也属于First（ABC…）。也就是假设A、B都可以推出空串，C不能推 出空串，First（ABC…）=First（A）-ε∪First（B）-ε∪First（C）。</p>
-<p>注意：First集合中的符号一定是终结符，终结符也包括空串ε。</p>
-<h3 id="Follow集合："><a href="#Follow集合：" class="headerlink" title="Follow集合："></a>Follow集合：</h3><ul>
-<li>Follow集合也是顾名思义的，就是文法符号后面可能跟随的终结符的集合（不包括空 串ε）。</li>
-</ul>
-<p>Follow(X)就是求X后面可能跟随的符号集合。</p>
-<p>求Follow集合可分如下三种种情况:</p>
-<p>终结符的Follow集合没有定义，只有非终结符才会有Follow集合。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A–&gt;…Ua…</span><br></pre></td></tr></table></figure>
-<p>要求的Follow集合的非终结符后跟终结符</p>
-<p>根据定义，显然a属于Follow（U）。这种情况下，Follow（U）和A没有任何关系，产生式左边是什么无所谓。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A–&gt;…UP…</span><br></pre></td></tr></table></figure></p>
-<p>要求的Follow集合的非终结符后跟非终结符</p>
-<p>根据定义，显然P的第一个符号属于Follow（U），也就是First（P）属于Follow（U）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">A–&gt;…UP并且ε属于First（P）要求的Follow集合的非终结符后跟非结尾的终结符，并且结尾非终结符的First集合包含空串。</span><br></pre></td></tr></table></figure></p>
-<p>这是上一种情况的一种特例，除了要按上一种情况处理，First（P）属于Follow（U）以外还要进行分析；<br>因为当P推导为空串时，空串不能出现在Follow集合中，所以U后面跟随的应该是P后面的东西，可P已经是结束的符号，此时U后面显然就是A后面跟随的东西了。所以在这种情况下Follow（A）也属于Follow（U）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">A–&gt;…U 要求的Follow集合的非终结符在产生式结尾</span><br></pre></td></tr></table></figure></p>
-<p>这时候又要递归推导，U是A的结尾，所以U后面跟随的东西也就是A后面跟随的东西。所以Follow（A）属于Follow（U）</p>
-<h3 id="Select集合："><a href="#Select集合：" class="headerlink" title="Select集合："></a>Select集合：</h3><ul>
-<li>Select集合就是产生式左部的可能的推导结果的起始符号。</li>
-</ul>
-<p>Select（A–&gt;B）就是求这个产生式中A可能推导出起始符号集合（不包含空串ε）。</p>
-<p>求Select集合可分如下几种情况:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A–&gt;X （X为任意文法符号串，不限于非终结符或单个符号），并且X不能推导出空串 ε</span><br></pre></td></tr></table></figure>
-<p>根据定义，显然A推出的符号串起始就是X的起始，也就是First（X）.</p>
-<p><strong>Select（A–&gt;X）= First（X）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A–&gt;X （X为任意文法符号串，不限于非终结符或单个符号），并且X能推导出空串ε</span><br></pre></td></tr></table></figure>
-<p>根据定义，显然First（X）属于Select（A–&gt;X），此外，当X推导为空串时，显然A也推导为空串，那么此时推导出的符号串就会是A后面的符的推导结果。也就是Follow（A）,所以，此时Follow（A）也属于Select（A–&gt;X）。</p>
-<p><strong> Select（A–&gt;X）= First（X）U Follow（A）</strong><br>注意：Select集合中不包括空串ε，但有可能会包含#(句子括号)。</p>
-<h1 id="构造预测分析表"><a href="#构造预测分析表" class="headerlink" title="构造预测分析表"></a>构造预测分析表</h1><ul>
-<li>根据Select集预测某个开始符号遇到某个终结符将使用的文法</li>
-</ul>
-<p>具体格式如下：</p>
-<table>
-<thead>
-<tr>
-<th>//</th>
-<th>终结符</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>非终结符</td>
-<td>文法表达式</td>
-</tr>
-</tbody>
-</table>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。</p>
+<h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><p>要排序数组：int[] arr={6,3,8,2,9,1};   </p>
+<p>第一趟排序：</p>
+<p>　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6  8  2  9  1</p>
+<p>　　　　第二次排序：6和8比较，6小于8，不交换位置：3  6  8  2  9  1</p>
+<p>　　　　第三次排序：8和2比较，8大于2，交换位置：  3  6  2  8  9  1</p>
+<p>　　　　第四次排序：8和9比较，8小于9，不交换位置：3  6  2  8  9  1</p>
+<p>　　　　第五次排序：9和1比较：9大于1，交换位置：  3  6  2  8  1  9</p>
+<p>　　　　第一趟总共进行了5次比较， 排序结果：      3  6  2  8  1  9</p>
+<hr>
+<p>第二趟排序：</p>
+<p>　　　　第一次排序：3和6比较，3小于6，不交换位置：3  6  2  8  1  9</p>
+<p>　　　　第二次排序：6和2比较，6大于2，交换位置：  3  2  6  8  1  9</p>
+<p>　　　　第三次排序：6和8比较，6大于8，不交换位置：3  2  6  8  1  9</p>
+<p>　　　　第四次排序：8和1比较，8大于1，交换位置：  3  2  6  1  8  9</p>
+<p>　　　　第二趟总共进行了4次比较， 排序结果：      3  2  6  1  8  9</p>
+<hr>
+<p>第三趟排序：</p>
+<p>　　　　第一次排序：3和2比较，3大于2，交换位置：  2  3  6  1  8  9</p>
+<p>　　　　第二次排序：3和6比较，3小于6，不交换位置：2  3  6  1  8  9</p>
+<p>　　　　第三次排序：6和1比较，6大于1，交换位置：  2  3  1  6  8  9</p>
+<p>　　　　第二趟总共进行了3次比较， 排序结果：         2  3  1  6  8  9</p>
+<hr>
+<p>第四趟排序：</p>
+<p>　　　　第一次排序：2和3比较，2小于3，不交换位置：2  3  1  6  8  9</p>
+<p>　　　　第二次排序：3和1比较，3大于1，交换位置：  2  1  3  6  8  9</p>
+<p>　　　　第二趟总共进行了2次比较， 排序结果：        2  1  3  6  8  9</p>
+<hr>
+<p>第五趟排序：</p>
+<p>　　　　第一次排序：2和1比较，2大于1，交换位置：  1  2  3  6  8  9</p>
+<p>　　　　第二趟总共进行了1次比较， 排序结果：  1  2  3  6  8  9</p>
+<hr>
+<p>最终结果：1  2  3  6  8  9</p>
+<hr>
+<h3 id="NOTE：由此可见"><a href="#NOTE：由此可见" class="headerlink" title="NOTE：由此可见"></a>NOTE：由此可见</h3><p>N个数要完成排序，要排列N-1趟（最小的数已经在N-1趟时候排在了第一位）。而第i趟比较的次数是N-i次。</p>
+<p>控制循环的基本思想：用双重循环语句，外层控制循环多少趟，内层控制每一趟的循环次数，即</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>1.如果我们的数据正序，只需要走一趟即可完成排序。所需的比较次数C和记录移动次数M均达到最小值，即：Cmin=n-1;Mmin=0;所以，冒泡排序最好的时间复杂度为O(n)。</p>
+<p>　　2.如果很不幸我们的数据是反序的，则需要进行n-1趟排序。每趟排序要进行n-i次比较(1≤i≤n-1)，且每次比较都必须移动记录三次来达到交换记录位置。<br>　　<img src="/images/冒泡时间复杂度.JPG" alt=""><br>　　在这种情况下，比较和移动次数均达到最大值：冒泡排序的最坏时间复杂度为：O(n2) 。</p>
+<p>综上所述：冒泡排序总的平均时间复杂度为：O(n2) 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(int i=1;i&lt;arr.length;i++)&#123;</span><br><span class="line"></span><br><span class="line">    for(int j=1;j&lt;arr.length-i;j++)&#123;</span><br><span class="line"></span><br><span class="line">    //交换位置</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="冒泡排序的优点：每进行一趟排序，就会少比较一次"><a href="#冒泡排序的优点：每进行一趟排序，就会少比较一次" class="headerlink" title="冒泡排序的优点：每进行一趟排序，就会少比较一次"></a>冒泡排序的优点：每进行一趟排序，就会少比较一次</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package 作业;</span><br><span class="line"></span><br><span class="line">public class Bubble &#123;</span><br><span class="line">	</span><br><span class="line">	public static int[] prod(int n) &#123;//生成一组随机数的方法</span><br><span class="line">		int[] b=new int[n];</span><br><span class="line">		for(int i=0;i&lt;b.length;i++) &#123;</span><br><span class="line">			b[i]=(int) (Math.random()*100);</span><br><span class="line">			System.out.print(b[i]);</span><br><span class="line">			System.out.print(&apos; &apos;);</span><br><span class="line">							</span><br><span class="line">		&#125;</span><br><span class="line">		return b;</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;排序前&quot;);</span><br><span class="line">		int[] a=prod(5);</span><br><span class="line">		int temp;</span><br><span class="line">		for (int i = 0; i &lt; a.length-1; i++) &#123;//外层循环N-1次</span><br><span class="line"></span><br><span class="line">			for (int j = 0; j &lt; a.length-(i+1); j++) &#123;//这里想了很久才明白，i+1才是趟数</span><br><span class="line">				</span><br><span class="line">				if (a[j]&gt;a[j+1]) &#123;//这里只需要改变这个大小与号就可以控制升序or降序</span><br><span class="line">					temp=a[j];</span><br><span class="line">					a[j]=a[j+1];</span><br><span class="line">					a[j+1]=temp;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">											</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	System.out.println();</span><br><span class="line">	System.out.println(&quot;排完后&quot;);</span><br><span class="line">	for (int i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">		System.out.print(a[i]);</span><br><span class="line">		System.out.print(&quot; &quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>在要排序的一组数中，选出最小的一个数与第一个位置的数交换；然后在剩下的数当中再找最小的与第二个位置的数交换，如此循环到倒数第二个数和最后一个数比较为止。</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>数组 int[] arr={5,2,8,4,9,1};</p>
+<hr>
+<p>第一趟排序： 原始数据：5  2  8  4  9  1</p>
+<p>最小数据1，把1放在首位，也就是1和5互换位置，</p>
+<p>排序结果：1  2  8  4  9  5</p>
+<hr>
+<p>第二趟排序：</p>
+<p>第1以外的数据{2  8  4  9  5}进行比较，2最小，</p>
+<p>排序结果：1  2  8  4  9  5</p>
+<hr>
+<p>第三趟排序：</p>
+<p>除1、2以外的数据{8  4  9  5}进行比较，4最小，8和4交换</p>
+<p>排序结果：1  2  4  8  9  5</p>
+<hr>
+<p>第四趟排序：</p>
+<p>除第1、2、4以外的其他数据{8  9  5}进行比较，5最小，8和5交换</p>
+<p>排序结果：1  2  4  5  9  8</p>
+<hr>
+<p>第五趟排序：</p>
+<p>除第1、2、4、5以外的其他数据{9  8}进行比较，8最小，8和9交换</p>
+<p>排序结果：1  2  4  5  8  9</p>
+<h3 id="NOTE："><a href="#NOTE：" class="headerlink" title="NOTE："></a>NOTE：</h3><p>依旧是熟悉的N-1趟排序，排序的算法关键是掌握循环的次数。每一趟排序都是获得最小数的方法：for循环进行比较，定义一个第三个变量temp，首先前两个数比较，把较小的数放在temp中，然后用temp再去跟剩下的数据比较，如果出现比temp小的数据，就用它代替temp中原有的数据。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Selection &#123;</span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) &#123; </span><br><span class="line">	int[] a=Bubble.prod(10);//随机产生10个数</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	for (int i = 0; i &lt; a.length-1; i++) &#123;</span><br><span class="line">		int k=i;</span><br><span class="line">		for (int j = k+1; j &lt; a.length; j++) &#123;</span><br><span class="line">			</span><br><span class="line">			if (a[j]&lt;a[k]) &#123;</span><br><span class="line">				k=j; //每一次内循环的任务就是寻找最小数的下标							</span><br><span class="line">			&#125;														</span><br><span class="line">		&#125;</span><br><span class="line">		if (i!=k)//如果i=k说明最小的数就是此时与后面比较的数a[i]。 &#123;//外循环的任务就是将最小数与当前数组外循环的的数进行调换</span><br><span class="line">			int temp = a[i];</span><br><span class="line">			a[i]=a[k];</span><br><span class="line">			a[k]=temp;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Bubble.print(a);</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>排序过程的某一中间时刻，R被划分成两个子区间R[1．．i-1]（已排好序的有序区）和R[i．．n]（当前未排序的部分，可称无序区）。<br>插入排序的基本操作是将当前无序区的第1个记录R[i]插人到有序区R[1．．i-1]中适当的<br>位置上，使R[1．．i]变为新的有序区。因为这种方法每次使有序区增加1个记录，通常称增量法。<br>插入排序与打扑克时整理手上的牌非常类似。摸来的第1张牌无须整理，此后每次从桌上的牌(无序区)中摸最上面的1张并插入左手的牌(有序区)中正确的位置上。为了找到这个正确<br>的位置，须自左向右(或自右向左)将摸来的牌与左手中已有的牌逐一比较。</p>
+<p><img src="/images/915插入排序.JPG" alt=""></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>算法进行的过程中会把数组分为一部分有序数组，后面的是无序数组，找到无序数组的第一个数只需要和有序数组的最后一个数比较，无序大则break，小则继续倒序比较。关键是掌握数组前移的方法。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Insertion &#123;</span><br><span class="line">		</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int[] a=Bubble.prod(6);</span><br><span class="line">		for (int i = 1; i &lt; a.length; i++) &#123;//第一个数a[0]不做不比较</span><br><span class="line">			int key=a[i];//做比较和插入的数</span><br><span class="line">			int j =i-1;</span><br><span class="line">			for (; j &gt;=0; j--) &#123;//倒序比较，无序数组取出的第一个数key比前面有序数组最后一个a[j]（最大的数）大，就不需要与前面比较了</span><br><span class="line">				if (a[j]&lt;key) &#123;</span><br><span class="line">					break;					</span><br><span class="line">				&#125;</span><br><span class="line">				else &#123;</span><br><span class="line">					a[j+1]=a[j];//假如待插入数字不比最大的一个数字大，就依次跟前面的数字比较，同时把比较过的数字位置依次右移</span><br><span class="line">				&#125;</span><br><span class="line">					</span><br><span class="line">			&#125;</span><br><span class="line">			a[j + 1] = key; //最后找到合适的位置插入数组</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		Bubble.print(a);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -485,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/03/Oracle后台进程详解/" rel="next" title="Oracle后台进程详解">
-                <i class="fa fa-chevron-left"></i> Oracle后台进程详解
+              <a href="/2018/09/03/编译原理 LL1分析法/" rel="next" title="编译原理 LL1分析法">
+                <i class="fa fa-chevron-left"></i> 编译原理 LL1分析法
               </a>
             
           </div>
@@ -495,8 +516,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/15/三种必须掌握的排序算法/" rel="prev" title="三种必须掌握的排序算法">
-                三种必须掌握的排序算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/15/JSON语法/" rel="prev" title="JSON语法">
+                JSON语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -665,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#求First集，Follow集，Select集"><span class="nav-number">1.</span> <span class="nav-text">求First集，Follow集，Select集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First集合："><span class="nav-number">1.0.1.</span> <span class="nav-text">First集合：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Follow集合："><span class="nav-number">1.0.2.</span> <span class="nav-text">Follow集合：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Select集合："><span class="nav-number">1.0.3.</span> <span class="nav-text">Select集合：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造预测分析表"><span class="nav-number">2.</span> <span class="nav-text">构造预测分析表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举例说明"><span class="nav-number">1.1.</span> <span class="nav-text">举例说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTE：由此可见"><span class="nav-number">1.2.</span> <span class="nav-text">NOTE：由此可见</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.3.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序的优点：每进行一趟排序，就会少比较一次"><span class="nav-number">1.4.</span> <span class="nav-text">冒泡排序的优点：每进行一趟排序，就会少比较一次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.5.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">2.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTE："><span class="nav-number">2.3.</span> <span class="nav-text">NOTE：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码："><span class="nav-number">2.4.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序"><span class="nav-number">3.</span> <span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理-1"><span class="nav-number">3.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">3.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -854,9 +875,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://icygrin.club/2018/09/03/编译原理 LL1分析法/';
-          this.page.identifier = '2018/09/03/编译原理 LL1分析法/';
-          this.page.title = '编译原理 LL1分析法';
+          this.page.url = 'http://icygrin.club/2018/09/15/三种必须掌握的排序算法/';
+          this.page.identifier = '2018/09/15/三种必须掌握的排序算法/';
+          this.page.title = '三种必须掌握的排序算法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

@@ -81,17 +81,19 @@
 
 
 
-<meta name="description" content="第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp;  选择和投影的区别选择：">
+<meta name="description" content="你带着你的好过一辈子吧  第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oracle复习重点第四章">
 <meta property="og:url" content="http://icygrin.club/2018/08/13/oracle复习重点第四章/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp;  选择和投影的区别选择：">
+<meta property="og:description" content="你带着你的好过一辈子吧  第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-13T06:12:21.355Z">
+<meta property="og:image" content="http://icygrin.club/images/94汇总函数.JPG">
+<meta property="og:updated_time" content="2018-09-07T13:09:23.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oracle复习重点第四章">
-<meta name="twitter:description" content="第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp;  选择和投影的区别选择：">
+<meta name="twitter:description" content="你带着你的好过一辈子吧  第四章 SELECT语句（包括SELECT、FROM等子句）； 连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）； 子查询； 分组函数，group by子句，having子句，排序 视图创建，注意一些选项：froce、with read only和with check option 可更新视图的概念 了解替换变量：&amp;amp;，&amp;amp;&amp;amp">
+<meta name="twitter:image" content="http://icygrin.club/images/94汇总函数.JPG">
 
 
 
@@ -408,7 +410,10 @@
       
 
       
-        <h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><ul>
+        <blockquote>
+<p>你带着你的好过一辈子吧</p>
+</blockquote>
+<h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><ul>
 <li><strong>SELECT语句（包括SELECT、FROM等子句）</strong>；</li>
 <li><strong>连接查询（包括内连接和外连接，外连接又分为左外连接、右外连接和完全外连接）</strong>；</li>
 <li><strong>子查询</strong>；</li>
@@ -442,6 +447,124 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT  [ ALL | DISTINCT ]  &lt;列名&gt; [ , &lt;列名&gt;…]</span><br></pre></td></tr></table></figure>
 <p>关键字DISTINCT的含义是对结果集中的重复行只选择一个，保证行的唯一性。<br>【例】  对XSCJ数据库的XSB表只选择专业和总学分，消除结果集中的重复行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT 专业 AS 专业,总学分 AS 总学分</span><br><span class="line">	FROM XSB;</span><br></pre></td></tr></table></figure>
+<h3 id="选择行"><a href="#选择行" class="headerlink" title="选择行"></a>选择行</h3><p>选择行是选择列的特例。WHERE子句中查询条件的基本格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WHERE &lt;条件表达式&gt;::=</span><br><span class="line">	&#123; [ NOT ] &lt;判定运算&gt; | (&lt;条件表达式&gt; ) &#125;</span><br><span class="line">其中，&lt;判定运算&gt;的结果为TRUE、FALSE或UNKNOWN，经常用到的格式为：</span><br><span class="line">&lt;判定运算&gt;::=</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;    &lt;表达式1&gt; &#123; = | &lt; | &lt;= | &gt; | &gt;= | &lt;&gt; | != &#125; &lt;表达式2&gt;  	/*比较运算*/</span><br><span class="line">  	 | &lt;字符串表达式1&gt; [ NOT ] LIKE &lt;字符串表达式2&gt;  /*字符串模式匹配*/                                              </span><br><span class="line">  	 | &lt;表达式&gt; [ NOT ] BETWEEN &lt;表达式1&gt; AND &lt;表达式2&gt; /*指定范围*/</span><br><span class="line">  	 | &lt;表达式&gt; IS [ NOT ] NULL                        		/*是否空值判断*/</span><br><span class="line">  	 | &lt;表达式&gt; [ NOT ] IN ( &lt;子查询&gt; | &lt;表达式&gt; [,…n] )    	/*IN子句*/</span><br><span class="line">  	 | EXIST ( &lt;子查询&gt; )                               		/*EXIST子查询*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1．表达式比较"><a href="#1．表达式比较" class="headerlink" title="1．表达式比较"></a>1．表达式比较</h4><p>比较运算的格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;表达式1&gt; &#123; = | &lt; | &lt;= | &gt; | &gt;= | &lt;&gt; | != &#125; &lt;表达式2&gt;</span><br></pre></td></tr></table></figure>
+<p>当两个表达式值均不为空值（NULL）时，比较运算返回逻辑值TRUE（真）或FALSE（假）；而当两个表达式值中有一个为空值或都为空值时，比较运算将返回UNKNOWN。</p>
+<p>【例】  比较运算符的应用。<br>① 查询CP表中库存量在500以上的产品情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   	FROM CP</span><br><span class="line">   	WHERE 库存量&gt;500;</span><br></pre></td></tr></table></figure>
+<h4 id="2．模式匹配"><a href="#2．模式匹配" class="headerlink" title="2．模式匹配"></a>2．模式匹配</h4><p>LIKE谓词用于指出一个字符串是否与指定的字符串相匹配，其运算对象可以是char、varchar2和date类型的数据，返回逻辑值TRUE或FALSE。LIKE谓词表达式的格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;字符串表达式1&gt; [ NOT ] LIKE &lt;字符串表达式2&gt;</span><br></pre></td></tr></table></figure>
+<p>在使用LIKE时，可以使用两个通配符：“%”和“<em>”。<br>若使用带“%”通配符的LIKE进行字符串比较，模式字符串中的所有字符都有意义，包括起始或尾随空格； 而“</em>”在模糊条件中表示一个字符。</p>
+<p>【例】  查询CP表（表4.11）中产品名含有“冰箱”的产品情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   	FROM CP</span><br><span class="line">   	WHERE 产品名称 LIKE &apos;%冰箱%&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">【例】  查询XSB表中姓“王”且单名的学生情况。</span><br><span class="line">SELECT *</span><br><span class="line">   	FROM XSB</span><br><span class="line">   	WHERE 姓名 LIKE &apos;王_&apos;;</span><br></pre></td></tr></table></figure>
+<p>3．范围比较<br>用于范围比较的关键字有两个：BETWEEN和IN。<br>当要查询的条件是某个值的范围时，可以使用BETWEEN关键字。BETWEEN关键字指出查询范围，格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;表达式&gt; [ NOT ] BETWEEN &lt;表达式1&gt; AND &lt;表达式2&gt;</span><br></pre></td></tr></table></figure>
+<p>当不使用NOT时，若表达式的值在表达式1与表达式2之间（包括这两个值），则返回TRUE，否则返回FALSE；使用NOT时，返回值刚好相反。</p>
+<p>【例】  指定查询的范围。<br>① 查询CP表中价格在2000元与4000元之间的产品情况。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   	FROM CP</span><br><span class="line">   	WHERE 价格 BETWEEN 2000 AND 4000;</span><br></pre></td></tr></table></figure></p>
+<p>② 查询XSB表中不在1996年出生的学生情况。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   	FROM XSB</span><br><span class="line">   	WHERE  出生时间  NOT  BETWEEN  TO_DATE(&apos;19960101&apos;, &apos;YYYYMMDD&apos;)  </span><br><span class="line">			AND 	TO_DATE(&apos;19961231&apos;, &apos;YYYYMMDD&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>使用IN关键字可以指定一个值表，值表中列出所有可能的值，当表达式与值表中的任意一个匹配时，即返回TRUE，否则返回FALSE。其格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;表达式&gt; IN ( &lt;表达式&gt; [,…n])</span><br></pre></td></tr></table></figure>
+<p>【例】  查询CP表中库存量为“200”“300”和“500”的产品情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   	FROM CP</span><br><span class="line">   	WHERE 库存量=200 OR 库存量=300 OR 库存量=500;</span><br></pre></td></tr></table></figure>
+<p>该语句与下列语句等价：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   	FROM CP</span><br><span class="line">   	WHERE 库存量 IN (200,300,500);</span><br></pre></td></tr></table></figure>
+<h4 id="4．空值比较"><a href="#4．空值比较" class="headerlink" title="4．空值比较"></a>4．空值比较</h4><p>当需要判定一个表达式的值是否为空值时，使用IS NULL关键字，格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;表达式&gt; IS [ NOT ] NULL</span><br></pre></td></tr></table></figure>
+<p>当不使用NOT时，若表达式的值为空值，返回TRUE，否则返回FALSE；当使用NOT时，结果刚好相反。<br>【例】  查询XSB表中拥有备注信息的学生情况。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   FROM XSB</span><br><span class="line">   WHERE 备注 IS NOT NULL;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5．子查询"><a href="#5．子查询" class="headerlink" title="5．子查询"></a>5．子查询</h3><ol>
+<li>在查询是基于未知的值时应使用子查询。子查询是指嵌入在其它sql语句中的select语句,也叫嵌套查询。</li>
+<li>非相关子查询是独立于外部查询的子查询，子查询总共执行一次，执行完毕后将值传递给外部查询。 </li>
+<li>相关子查询是指子查询引用了外部查询中表的信息，这就意味着子查询要依赖于外部查询，不能独立地调用它。由于相关子查询的执行依赖于外部查询的数据，故外部查询执行一行，子查询就执行一次。</li>
+</ol>
+<p>子查询通常与谓词IN、EXIST及比较运算符结合使用。</p>
+<h5 id="（1）IN子查询。"><a href="#（1）IN子查询。" class="headerlink" title="（1）IN子查询。"></a>（1）IN子查询。</h5><p>IN子查询用于进行一个给定值是否在子查询结果集中的判断，格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;表达式&gt; [ NOT ] IN  ( &lt;子查询&gt;)</span><br></pre></td></tr></table></figure>
+<p>当表达式与子查询的结果表中的某个值相等时，IN谓词返回TRUE，否则返回FALSE；若使用了NOT，则返回的值刚好相反。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例：select * from A where id in (select id from B);</span><br></pre></td></tr></table></figure>
+<p>in()只执行一次，它查出B表中的所有id字段并缓存起来。之后，检查A表的id是否与B表中的id相等，如果相等则将A表的记录加入结果集中，直到遍历完A表的所有记录。</p>
+<p>【例】  在XSCJ数据库中查找选修了课程号为102的学生的情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT * </span><br><span class="line">	FROM XSB</span><br><span class="line">	WHERE 学号 IN</span><br><span class="line">    	( SELECT 学号 FROM CJB WHERE 课程号 = &apos;102&apos; );</span><br></pre></td></tr></table></figure>
+<p>在执行包含子查询的SELECT语句时，系统先执行子查询，产生一个结果表，再执行查询。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">【例】  查找未选修离散数学的学生的情况。</span><br><span class="line">SELECT 学号, 姓名, 专业, 总学分 </span><br><span class="line">	FROM XSB</span><br><span class="line">	WHERE 学号 NOT IN</span><br><span class="line"> 		( SELECT 学号</span><br><span class="line">			FROM CJB</span><br><span class="line">			WHERE 课程号 IN</span><br><span class="line">   				( SELECT 课程号</span><br><span class="line">    				FROM KCB</span><br><span class="line">    				WHERE  课程名 = &apos;离散数学&apos; </span><br><span class="line">				)</span><br><span class="line">		);</span><br></pre></td></tr></table></figure>
+<h5 id="（2）比较子查询。"><a href="#（2）比较子查询。" class="headerlink" title="（2）比较子查询。"></a>（2）比较子查询。</h5><p>这种子查询可以认为是IN子查询的扩展，它使表达式的值与子查询的结果进行比较运算，格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;表达式&gt; &#123; &lt; | &lt;= | = | &gt; | &gt;= | != | &lt;&gt;  &#125; &#123; ALL | SOME | ANY &#125; ( &lt;子查询&gt; )</span><br></pre></td></tr></table></figure>
+<p>其中，ALL、SOME和ANY关键字说明对比较运算的限制。ALL指定表达式要与子查询结果集中的每个值都进行比较，当表达式与每个值都满足比较的关系时，才返回TRUE，否则返回FALSE；SOME或ANY表示表达式只要与子查询结果集中的某个值满足比较的关系时，就返回TRUE，否则返回FALSE。</p>
+<p>【例】  查找比所有计算机系学生年龄都大的学生。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT * </span><br><span class="line">	FROM XSB</span><br><span class="line">	WHERE  出生时间 &lt;ALL</span><br><span class="line">			( SELECT 出生时间</span><br><span class="line">         			FROM XSB</span><br><span class="line">         			WHERE 专业= &apos;计算机&apos;</span><br><span class="line">			);</span><br></pre></td></tr></table></figure>
+<p>【例】  查找课程号206的成绩不低于课程号101的最低成绩的学生的学号、姓名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT 学号，姓名</span><br><span class="line">  FROM XSB</span><br><span class="line">  WHERE 学号 IN</span><br><span class="line">  ( SELECT 学号</span><br><span class="line">      FROM CJB</span><br><span class="line">      WHERE 课程号 = &apos;206&apos; AND 成绩 &gt;= ANY</span><br><span class="line">			( SELECT 成绩</span><br><span class="line">          		FROM CJB</span><br><span class="line">          		WHERE 课程号 = &apos;101&apos;</span><br><span class="line">			)</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+<h5 id="（3）EXISTS子查询。"><a href="#（3）EXISTS子查询。" class="headerlink" title="（3）EXISTS子查询。"></a>（3）EXISTS子查询。</h5><p>EXISTS谓词用于测试子查询的结果是否为空表，若子查询的结果集不为空，则EXISTS返回TRUE，否则返回FALSE。EXISTS还可与NOT结合使用，即NOT EXISTS，其返回值与EXIST刚好相反。格式为：<br>[ NOT ] EXISTS ( &lt;子查询&gt; )<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from A where exists (select * from B where A.id=B.id);</span><br></pre></td></tr></table></figure></p>
+<p>exists()会执行A.length次，它并不缓存exists()结果集，因为exists()结果集的内容并不重要，重要的是其内查询语句的结果集空或者非空，空则返回false，非空则返回true。</p>
+<p>【例】  查找选修206号课程的学生姓名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT 姓名</span><br><span class="line">   	FROM XSB</span><br><span class="line">   	WHERE EXISTS</span><br><span class="line">    	( SELECT *</span><br><span class="line">         	FROM CJB</span><br><span class="line">         	WHERE 学号=XSB.学号 AND 课程号= &apos;206&apos; </span><br><span class="line">	);</span><br></pre></td></tr></table></figure>
+<p>总结：<br>exists通常用在相关子查询中（执行依赖于外部查询的数据，外部查询执行一行，子查询就执行一次），而in子句通常用在非相关子查询中，先执行子查询，将子查询的结果用于外查询；如果查询的两个表大小相当，那么用in和exists的效率差别不大，如果子表数据量大时，exists效率优于in， 因为in是在内存里遍历比较，而exists只需要查询数据库。</p>
+<h2 id="连接-1"><a href="#连接-1" class="headerlink" title="连接"></a>连接</h2><ul>
+<li>在SQL中，包括符合SQL标准连接谓词的和使用关键字JION的两种连接方式</li>
+</ul>
+<h3 id="1．连接谓词"><a href="#1．连接谓词" class="headerlink" title="1．连接谓词"></a>1．连接谓词</h3><p>可以在SELECT语句的WHERE子句中使用比较运算符给出连接条件对表进行连接，将这种表示形式称为连接谓词。</p>
+<p>【例】  查找XSCJ数据库每个学生及其选修的课程情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT XSB.* ,CJB.*</span><br><span class="line">   	FROM XSB , CJB</span><br><span class="line">   	WHERE XSB.学号=CJB.学号;</span><br></pre></td></tr></table></figure>
+<p>结果表将包含XSB表和CJB表的所有行和列。</p>
+<p>【例】  查找选修了206课程且成绩在80分以上的学生姓名及成绩。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 姓名, 成绩</span><br><span class="line">   	FROM XSB , CJB</span><br><span class="line">   	WHERE XSB.学号 = CJB.学号 AND 课程号 = &apos;206 &apos; AND 成绩 &gt;= 80;</span><br></pre></td></tr></table></figure>
+<h3 id="2．以JOIN关键字指定的连接"><a href="#2．以JOIN关键字指定的连接" class="headerlink" title="2．以JOIN关键字指定的连接"></a>2．以JOIN关键字指定的连接</h3><p>Oracle的PL/SQL语言扩展了以JOIN关键字指定连接的表示方式，增强了表的连接运算能力。连接表的格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;表名&gt; &lt;连接类型&gt; &lt;表名&gt; ON &lt;条件表达式&gt;</span><br><span class="line">其中，&lt;连接类型&gt;的格式为：</span><br><span class="line">&lt;连接类型&gt;::=</span><br><span class="line">	[ INNER | &#123; LEFT | RIGHT | FULL &#125; [ OUTER ] CROSS JOIN</span><br></pre></td></tr></table></figure>
+<p>其中，INNER表示内连接，OUTER表示外连接，CROSS JOIN表示交叉连接; 使用 ON 子句指定连接条件，这个连接条件是与其它条件分开的，ON 子句使语句具有更高的可读性。</p>
+<ul>
+<li>■ 内连接：根据指定的查询条件进行连接查询，只有满足条件的数据才会出现在结果集中。其实质就是利用 where 子句对两张表形成的笛卡尔积进行筛选。</li>
+<li>■ 外连接：在内连接的基础上，将某个表中不符合条件的记录加入结果集中。一个表最多只能和一个表进行外连接。根据连接结果集中所包含不符合连接条件的记录来源的不同，外连接分为三类：左外连接 、右外连接和完全外连接。</li>
+<li>■ 交叉连接：交叉连接实际上是将两个表进行笛卡儿积运算。</li>
+</ul>
+<h4 id="（1）内连接。"><a href="#（1）内连接。" class="headerlink" title="（1）内连接。"></a>（1）内连接。</h4><p>按照ON所指定的连接条件合并两个表，返回满足条件的行。</p>
+<p>【例】  查看XSCJ数据库每个学生及其选修的课程情况。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">   	FROM XSB INNER JOIN CJB </span><br><span class="line">		ON XSB.学号 = CJB.学号;</span><br></pre></td></tr></table></figure></p>
+<p>结果表将包含XSB表和CJB表的所有字段（不去除重复学号字段）。</p>
+<p>【例】 查找选修了206课程且成绩在80分以上的学生姓名及成绩。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 姓名, 成绩</span><br><span class="line">   	FROM XSB JOIN CJB ON XSB.学号 = CJB.学号</span><br><span class="line">   	WHERE 课程号 = &apos;206&apos; AND 成绩&gt;=80;</span><br></pre></td></tr></table></figure></p>
+<p>【例】查找选修课程成绩在90分以上的学生学号、姓名、课程名及成绩。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT XSB.学号 , 姓名 , 课程名 , 成绩</span><br><span class="line">   	FROM XSB </span><br><span class="line">	JOIN CJB JOIN KCB ON CJB.课程号 = KCB.课程号</span><br><span class="line">   			ON XSB.学号 = CJB.学号</span><br><span class="line">   	WHERE 成绩&gt;=90;</span><br></pre></td></tr></table></figure>
+<p>【例】  查找不同课程但成绩相同的学生的学号、课程号和成绩。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.学号,a.课程号,b.课程号,a.成绩</span><br><span class="line">   	FROM CJB a JOIN CJB b </span><br><span class="line">	ON a.成绩=b.成绩 AND a.学号=b.学号 AND a.课程号!=b.课程号;</span><br></pre></td></tr></table></figure>
+<h4 id="（2）外连接。"><a href="#（2）外连接。" class="headerlink" title="（2）外连接。"></a>（2）外连接。</h4><p>外连接的结果表不但包含满足连接条件的行，还包括相应表中的所有行。外连接包括以下三种。</p>
+<ul>
+<li>左外连接（LEFT OUTER JOIN）：结果表中除了包括满足连接条件的行外，还包括左表的所有行；</li>
+<li>右外连接（RIGHT OUTER JOIN）：结果表中除了包括满足连接条件的行外，还包括右表的所有行；</li>
+<li>完全外连接（FULL OUTER JOIN）：结果表中除了包括满足连接条件的行外，还包括两个表的所有行。</li>
+</ul>
+<p>【例】  查找所有学生情况及他们选修的课程号，若学生未选修任何课，也要包括其情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT XSB.* , 课程号</span><br><span class="line">   	FROM XSB LEFT OUTER JOIN CJB ON XSB.学号 = CJB.学号;</span><br></pre></td></tr></table></figure>
+<p>若有学生未选任何课程，则结果表中相应行的课程号字段值为NULL。<br>【例】  查找被选修了的课程的选修情况和所有开设的课程名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT CJB.* , 课程名</span><br><span class="line">   	FROM CJB RIGHT JOIN KCB ON CJB.课程号= KCB.课程号;</span><br></pre></td></tr></table></figure>
+<p>若某课程未被选修，则结果表中相应行的学号、课程号和成绩字段值均为NULL。</p>
+<h4 id="（3）交叉连接。"><a href="#（3）交叉连接。" class="headerlink" title="（3）交叉连接。"></a>（3）交叉连接。</h4><p>交叉连接实际上是将两个表进行笛卡儿积运算，结果表是由第1个表的每一行与第2个表的每一行拼接后形成的表，因此其行数等于两表行数之积。<br>【例】  列出学生所有可能的选课情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT 学号, 姓名, 课程号, 课程名</span><br><span class="line">   	FROM XSB CROSS JOIN KCB;</span><br></pre></td></tr></table></figure>
+<h2 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h2><h3 id="1．分组函数"><a href="#1．分组函数" class="headerlink" title="1．分组函数"></a>1．分组函数</h3><p>分组函数作用于一组数据，并返回一个值。分组函数中SUM和AVG只应用于数值型的列，MAX、MIN和COUNT可以应用于字符、数值和日期类型的列。组函数忽略列的空值。<br><img src="/images/94汇总函数.JPG" alt=""></p>
+<p>在分组函数中可使用DISTINCT或ALL关键字。ALL表示对所有值进行运算。DISTINCT 表示去除重复值。默认为ALL。</p>
+<p>（1）SUM和AVG函数。这两个函数分别用于求表达式中所有值项的总和与平均值，语法格式为：<br>SUM / AVG ( [ ALL | DISTINCT ] &lt;表达式&gt; )<br>其中，表达式还可以是常量、列、函数。SUM和AVG函数只能对数值型数据进行计算。<br>【例4.36】  求选修101课程的学生的平均成绩。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(成绩) AS 课程101平均成绩</span><br><span class="line">   	FROM CJB</span><br><span class="line">   	WHERE 课程号=‘101’;</span><br></pre></td></tr></table></figure>
+<p>（2）MAX和MIN函数。MAX和MIN函数分别用于求表达式中所有值项的最大值与最小值，语法格式为：<br>MAX / MIN ( [ ALL | DISTINCT ] &lt;表达式&gt; )<br>其中，表达式的数据类型可以是数字、字符和时间日期类型。<br>【例4.37】  求选修101课程的学生的最高分和最低分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT MAX(成绩) AS 课程101的最高分, MIN(成绩) AS 课程101的最低分</span><br><span class="line">   	FROM CJB   </span><br><span class="line">   	WHERE 课程号=‘101’;</span><br></pre></td></tr></table></figure>
+<p>（3）COUNT函数。COUNT函数用于统计组中满足条件的行数或总行数，格式为：<br>COUNT ( { [ ALL | DISTINCT ] &lt;表达式&gt; } | <em> )<br>选择</em>时将统计总行数。<br>【例4.38】  学生数统计。<br>① 求学生的总人数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(*) AS 学生总数</span><br><span class="line">   	FROM XSB;</span><br><span class="line">COUNT(*)不需要任何参数。</span><br></pre></td></tr></table></figure>
+<p>③ 统计离散数学课程成绩在85分以上的人数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(成绩) AS 离散数学85分以上的人数</span><br><span class="line">   	FROM CJB</span><br><span class="line">   	WHERE 成绩&gt;=85 AND 课程号=</span><br><span class="line">       	( SELECT 课程号</span><br><span class="line">        		FROM KCB</span><br><span class="line">			WHERE 课程名= &apos;离散数学&apos;</span><br><span class="line">		);</span><br></pre></td></tr></table></figure>
+<h3 id="2．GROUP-BY子句"><a href="#2．GROUP-BY子句" class="headerlink" title="2．GROUP BY子句"></a>2．GROUP BY子句</h3><p>GROUP BY子句用于对表或视图中的数据按字段分组，语法格式为：<br>GROUP BY [ ALL ] &lt;分组表达式&gt; [,…n]<br>分组表达式通常包含字段名。指定ALL将显示所有组。使用GROUP BY子句后，SELECT子句中的列表中只能包含在GROUP BY中指出的列或在分组函数中指定的列。<br>【例4.39】  将XSB表中各专业输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 专业</span><br><span class="line">   	FROM XSB</span><br><span class="line">   	GROUP BY 专业;</span><br></pre></td></tr></table></figure>
+<p>【例4.41】  求被选修的各门课程的平均成绩和选修该课程的人数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 课程号, AVG(成绩) AS 平均成绩,COUNT(学号) AS 选修人数</span><br><span class="line">   	FROM CJB</span><br><span class="line">   	GROUP BY 课程号;</span><br></pre></td></tr></table></figure>
+<h3 id="3．HAVING子句"><a href="#3．HAVING子句" class="headerlink" title="3．HAVING子句"></a>3．HAVING子句</h3><p>使用 HAVING 子句进行过滤分组:<br>(1)行已经被分组。<br>(2)使用了组函数。<br>(3)满足HAVING 子句中条件的分组将被显示。<br>【例4.42】  查找XSCJ数据库中平均成绩在85分以上的学生的学号和平均成绩。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 学号, AVG(成绩) AS 平均成绩</span><br><span class="line">   	FROM CJB</span><br><span class="line">   	GROUP BY 学号</span><br><span class="line">   	HAVING AVG(成绩)&gt;=85;</span><br></pre></td></tr></table></figure>
+<p>【例4.43】  查找选修课程超过两门且成绩都在80分以上的学生的学号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT 学号</span><br><span class="line">   	FROM CJB</span><br><span class="line">   	WHERE 成绩&gt;=80</span><br><span class="line">   	GROUP BY 学号</span><br><span class="line">   	HAVING COUNT(*) &gt; 2;</span><br></pre></td></tr></table></figure>
+<p>【例4.44】  查找通信工程专业平均成绩在85分以上的学生的学号和平均成绩。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT 学号,AVG(成绩) AS 平均成绩</span><br><span class="line">   	FROM CJB</span><br><span class="line">   	WHERE 学号 IN </span><br><span class="line">    		( SELECT 学号</span><br><span class="line">    			FROM XSB</span><br><span class="line">    			WHERE 专业= &apos;通信工程&apos;</span><br><span class="line">		)</span><br><span class="line">	GROUP BY 学号</span><br><span class="line">   	HAVING AVG(成绩) &gt; =85;</span><br></pre></td></tr></table></figure>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>  在ORDER BY 子句在SELECT语句的结尾，可进行排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ ORDER BY &#123; &lt;排序表达式&gt; [ ASC | DESC ] &#125; [ ,…n ]</span><br></pre></td></tr></table></figure>
+<p>  系统默认值为ASC，升序<br>  DESC为降序。</p>
+<h2 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h2><p>在实际应用中，为了合并多个select语句的结果，可以使用集合操作符号 union 。使用UNION子句可以将两个或多个SELECT查询的结果合并成一个结果集，其语法格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;SELECT查询语句1&gt;</span><br><span class="line">UNION [ ALL] &lt;SELECT查询语句2&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -466,8 +589,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/12/代码高亮展示/" rel="next" title="代码高亮展示">
-                <i class="fa fa-chevron-left"></i> 代码高亮展示
+              <a href="/2018/08/12/pic-test/" rel="next" title="pic test">
+                <i class="fa fa-chevron-left"></i> pic test
               </a>
             
           </div>
@@ -565,7 +688,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -576,7 +699,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -646,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">1.</span> <span class="nav-text">第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接"><span class="nav-number">1.1.</span> <span class="nav-text">连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">1.2.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改查询结果中的列标题"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">修改查询结果中的列标题</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">1.</span> <span class="nav-text">第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接"><span class="nav-number">1.1.</span> <span class="nav-text">连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">1.2.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改查询结果中的列标题"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">修改查询结果中的列标题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择行"><span class="nav-number">1.2.1.</span> <span class="nav-text">选择行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1．表达式比较"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1．表达式比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2．模式匹配"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2．模式匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4．空值比较"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">4．空值比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5．子查询"><span class="nav-number">1.2.2.</span> <span class="nav-text">5．子查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）IN子查询。"><span class="nav-number">1.2.2.0.1.</span> <span class="nav-text">（1）IN子查询。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）比较子查询。"><span class="nav-number">1.2.2.0.2.</span> <span class="nav-text">（2）比较子查询。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）EXISTS子查询。"><span class="nav-number">1.2.2.0.3.</span> <span class="nav-text">（3）EXISTS子查询。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接-1"><span class="nav-number">1.3.</span> <span class="nav-text">连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1．连接谓词"><span class="nav-number">1.3.1.</span> <span class="nav-text">1．连接谓词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2．以JOIN关键字指定的连接"><span class="nav-number">1.3.2.</span> <span class="nav-text">2．以JOIN关键字指定的连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）内连接。"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">（1）内连接。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）外连接。"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">（2）外连接。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（3）交叉连接。"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">（3）交叉连接。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汇总"><span class="nav-number">1.4.</span> <span class="nav-text">汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1．分组函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">1．分组函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2．GROUP-BY子句"><span class="nav-number">1.4.2.</span> <span class="nav-text">2．GROUP BY子句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3．HAVING子句"><span class="nav-number">1.4.3.</span> <span class="nav-text">3．HAVING子句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">1.5.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并"><span class="nav-number">1.6.</span> <span class="nav-text">合并</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -676,7 +799,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.4k字</span>
+  <span class="post-count">博客全站共25.1k字</span>
 </div>
 <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
