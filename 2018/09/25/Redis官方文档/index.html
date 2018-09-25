@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="冰笑风云" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="This README is just a fast quick start document. You can find more detailed documentation at redis.io. What is Redis?Redis is often referred as a data structures server. What this means is that Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis官方文档">
+<meta property="og:url" content="http://icygrin.club/2018/09/25/Redis官方文档/index.html">
+<meta property="og:site_name" content="冰笑风云">
+<meta property="og:description" content="This README is just a fast quick start document. You can find more detailed documentation at redis.io. What is Redis?Redis is often referred as a data structures server. What this means is that Redis">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-25T14:45:13.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redis官方文档">
+<meta name="twitter:description" content="This README is just a fast quick start document. You can find more detailed documentation at redis.io. What is Redis?Redis is often referred as a data structures server. What this means is that Redis">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icygrin.club/2018/09/25/Redis官方文档/"/>
+
+
+
+
+
+  <title>Redis官方文档 | 冰笑风云</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冰笑风云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/09/25/Redis官方文档/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Redis官方文档</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-25T22:45:45+08:00">
+                2018-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/25/Redis官方文档/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/25/Redis官方文档/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This README is just a fast <em>quick start</em> document. You can find more detailed documentation at <a href="https://redis.io" target="_blank" rel="noopener">redis.io</a>.</p>
+<h2 id="What-is-Redis"><a href="#What-is-Redis" class="headerlink" title="What is Redis?"></a>What is Redis?</h2><p>Redis is often referred as a <em>data structures</em> server. What this means is that Redis provides access to mutable data structures via a set of commands, which are sent using a <em>server-client</em> model with TCP sockets and a simple protocol. So different processes can query and modify the same data structures in a shared way.</p>
+<p>Data structures implemented into Redis have a few special properties:</p>
+<ul>
+<li>Redis cares to store them on disk, even if they are always served and modified into the server memory. This means that Redis is fast, but that is also non-volatile.</li>
+<li>Implementation of data structures stress on memory efficiency, so data structures inside Redis will likely use less memory compared to the same data structure modeled using an high level programming language.</li>
+<li>Redis offers a number of features that are natural to find in a database, like replication, tunable levels of durability, cluster, high availability.</li>
+</ul>
+<p>Another good example is to think of Redis as a more complex version of memcached, where the operations are not just SETs and GETs, but operations to work with complex data types like Lists, Sets, ordered data structures, and so forth.</p>
+<p>If you want to know more, this is a list of selected starting points:</p>
+<ul>
+<li>Introduction to Redis data types. <a href="http://redis.io/topics/data-types-intro" target="_blank" rel="noopener">http://redis.io/topics/data-types-intro</a></li>
+<li>Try Redis directly inside your browser. <a href="http://try.redis.io" target="_blank" rel="noopener">http://try.redis.io</a></li>
+<li>The full list of Redis commands. <a href="http://redis.io/commands" target="_blank" rel="noopener">http://redis.io/commands</a></li>
+<li>There is much more inside the Redis official documentation. <a href="http://redis.io/documentation" target="_blank" rel="noopener">http://redis.io/documentation</a></li>
+</ul>
+<h2 id="Building-Redis"><a href="#Building-Redis" class="headerlink" title="Building Redis"></a>Building Redis</h2><p>Redis can be compiled and used on Linux, OSX, OpenBSD, NetBSD, FreeBSD.<br>We support big endian and little endian architectures, and both 32 bit<br>and 64 bit systems.</p>
+<p>It may compile on Solaris derived systems (for instance SmartOS) but our<br>support for this platform is <em>best effort</em> and Redis is not guaranteed to<br>work as well as in Linux, OSX, and *BSD there.</p>
+<p>It is as simple as:</p>
+<pre><code>% make
+</code></pre><p>You can run a 32 bit Redis binary using:</p>
+<pre><code>% make 32bit
+</code></pre><p>After building Redis, it is a good idea to test it using:</p>
+<pre><code>% make test
+</code></pre><h2 id="Fixing-build-problems-with-dependencies-or-cached-build-options"><a href="#Fixing-build-problems-with-dependencies-or-cached-build-options" class="headerlink" title="Fixing build problems with dependencies or cached build options"></a>Fixing build problems with dependencies or cached build options</h2><p>Redis has some dependencies which are included into the <code>deps</code> directory.<br><code>make</code> does not automatically rebuild dependencies even if something in<br>the source code of dependencies changes.</p>
+<p>When you update the source code with <code>git pull</code> or when code inside the<br>dependencies tree is modified in any other way, make sure to use the following<br>command in order to really clean everything and rebuild from scratch:</p>
+<pre><code>make distclean
+</code></pre><p>This will clean: jemalloc, lua, hiredis, linenoise.</p>
+<p>Also if you force certain build options like 32bit target, no C compiler<br>optimizations (for debugging purposes), and other similar build time options,<br>those options are cached indefinitely until you issue a <code>make distclean</code><br>command.</p>
+<h2 id="Fixing-problems-building-32-bit-binaries"><a href="#Fixing-problems-building-32-bit-binaries" class="headerlink" title="Fixing problems building 32 bit binaries"></a>Fixing problems building 32 bit binaries</h2><p>If after building Redis with a 32 bit target you need to rebuild it<br>with a 64 bit target, or the other way around, you need to perform a<br><code>make distclean</code> in the root directory of the Redis distribution.</p>
+<p>In case of build errors when trying to build a 32 bit binary of Redis, try<br>the following steps:</p>
+<ul>
+<li>Install the packages libc6-dev-i386 (also try g++-multilib).</li>
+<li>Try using the following command line instead of <code>make 32bit</code>:<br><code>make CFLAGS=&quot;-m32 -march=native&quot; LDFLAGS=&quot;-m32&quot;</code></li>
+</ul>
+<h2 id="Allocator"><a href="#Allocator" class="headerlink" title="Allocator"></a>Allocator</h2><p>Selecting a non-default memory allocator when building Redis is done by setting<br>the <code>MALLOC</code> environment variable. Redis is compiled and linked against libc<br>malloc by default, with the exception of jemalloc being the default on Linux<br>systems. This default was picked because jemalloc has proven to have fewer<br>fragmentation problems than libc malloc.</p>
+<p>To force compiling against libc malloc, use:</p>
+<pre><code>% make MALLOC=libc
+</code></pre><p>To compile against jemalloc on Mac OS X systems, use:</p>
+<pre><code>% make MALLOC=jemalloc
+</code></pre><h2 id="Verbose-build"><a href="#Verbose-build" class="headerlink" title="Verbose build"></a>Verbose build</h2><p>Redis will build with a user friendly colorized output by default.<br>If you want to see a more verbose output use the following:</p>
+<pre><code>% make V=1
+</code></pre><h2 id="Running-Redis"><a href="#Running-Redis" class="headerlink" title="Running Redis"></a>Running Redis</h2><p>To run Redis with the default configuration just type:</p>
+<pre><code>% cd src
+% ./redis-server
+</code></pre><p>If you want to provide your redis.conf, you have to run it using an additional<br>parameter (the path of the configuration file):</p>
+<pre><code>% cd src
+% ./redis-server /path/to/redis.conf
+</code></pre><p>It is possible to alter the Redis configuration by passing parameters directly<br>as options using the command line. Examples:</p>
+<pre><code>% ./redis-server --port 9999 --slaveof 127.0.0.1 6379
+% ./redis-server /etc/redis/6379.conf --loglevel debug
+</code></pre><p>All the options in redis.conf are also supported as options using the command<br>line, with exactly the same name.</p>
+<h2 id="Playing-with-Redis"><a href="#Playing-with-Redis" class="headerlink" title="Playing with Redis"></a>Playing with Redis</h2><p>You can use redis-cli to play with Redis. Start a redis-server instance,<br>then in another terminal try the following:</p>
+<pre><code>% cd src
+% ./redis-cli
+redis&gt; ping
+PONG
+redis&gt; set foo bar
+OK
+redis&gt; get foo
+&quot;bar&quot;
+redis&gt; incr mycounter
+(integer) 1
+redis&gt; incr mycounter
+(integer) 2
+redis&gt;
+</code></pre><p>You can find the list of all the available commands at <a href="http://redis.io/commands" target="_blank" rel="noopener">http://redis.io/commands</a>.</p>
+<h2 id="Installing-Redis"><a href="#Installing-Redis" class="headerlink" title="Installing Redis"></a>Installing Redis</h2><p>In order to install Redis binaries into /usr/local/bin just use:</p>
+<pre><code>% make install
+</code></pre><p>You can use <code>make PREFIX=/some/other/directory install</code> if you wish to use a<br>different destination.</p>
+<p>Make install will just install binaries in your system, but will not configure<br>init scripts and configuration files in the appropriate place. This is not<br>needed if you want just to play a bit with Redis, but if you are installing<br>it the proper way for a production system, we have a script doing this<br>for Ubuntu and Debian systems:</p>
+<pre><code>% cd utils
+% ./install_server.sh
+</code></pre><p>The script will ask you a few questions and will setup everything you need<br>to run Redis properly as a background daemon that will start again on<br>system reboots.</p>
+<p>You’ll be able to stop and start Redis using the script named<br><code>/etc/init.d/redis_&lt;portnumber&gt;</code>, for instance <code>/etc/init.d/redis_6379</code>.</p>
+<h2 id="Code-contributions"><a href="#Code-contributions" class="headerlink" title="Code contributions"></a>Code contributions</h2><p>Note: by contributing code to the Redis project in any form, including sending<br>a pull request via Github, a code fragment or patch via private email or<br>public discussion groups, you agree to release your code under the terms<br>of the BSD license that you can find in the <a href="https://github.com/antirez/redis/blob/unstable/COPYING" target="_blank" rel="noopener">COPYING</a> file included in the Redis<br>source distribution.</p>
+<p>Please see the <a href="https://github.com/antirez/redis/blob/unstable/CONTRIBUTING" target="_blank" rel="noopener">CONTRIBUTING</a> file in this source distribution for more<br>information.</p>
+<h1 id="Redis-internals"><a href="#Redis-internals" class="headerlink" title="Redis internals"></a>Redis internals</h1><p>If you are reading this README you are likely in front of a Github page<br>or you just untarred the Redis distribution tar ball. In both the cases<br>you are basically one step away from the source code, so here we explain<br>the Redis source code layout, what is in each file as a general idea, the<br>most important functions and structures inside the Redis server and so forth.<br>We keep all the discussion at a high level without digging into the details<br>since this document would be huge otherwise and our code base changes<br>continuously, but a general idea should be a good starting point to<br>understand more. Moreover most of the code is heavily commented and easy<br>to follow.</p>
+<h2 id="Source-code-layout"><a href="#Source-code-layout" class="headerlink" title="Source code layout"></a>Source code layout</h2><p>The Redis root directory just contains this README, the Makefile which<br>calls the real Makefile inside the <code>src</code> directory and an example<br>configuration for Redis and Sentinel. You can find a few shell<br>scripts that are used in order to execute the Redis, Redis Cluster and<br>Redis Sentinel unit tests, which are implemented inside the <code>tests</code><br>directory.</p>
+<p>Inside the root are the following important directories:</p>
+<ul>
+<li><code>src</code>: contains the Redis implementation, written in C.</li>
+<li><code>tests</code>: contains the unit tests, implemented in Tcl.</li>
+<li><code>deps</code>: contains libraries Redis uses. Everything needed to compile Redis is inside this directory; your system just needs to provide <code>libc</code>, a POSIX compatible interface and a C compiler. Notably <code>deps</code> contains a copy of <code>jemalloc</code>, which is the default allocator of Redis under Linux. Note that under <code>deps</code> there are also things which started with the Redis project, but for which the main repository is not <code>anitrez/redis</code>. An exception to this rule is <code>deps/geohash-int</code> which is the low level geocoding library used by Redis: it originated from a different project, but at this point it diverged so much that it is developed as a separated entity directly inside the Redis repository.</li>
+</ul>
+<p>There are a few more directories but they are not very important for our goals<br>here. We’ll focus mostly on <code>src</code>, where the Redis implementation is contained,<br>exploring what there is inside each file. The order in which files are<br>exposed is the logical one to follow in order to disclose different layers<br>of complexity incrementally.</p>
+<p>Note: lately Redis was refactored quite a bit. Function names and file<br>names have been changed, so you may find that this documentation reflects the<br><code>unstable</code> branch more closely. For instance in Redis 3.0 the <code>server.c</code><br>and <code>server.h</code> files were named to <code>redis.c</code> and <code>redis.h</code>. However the overall<br>structure is the same. Keep in mind that all the new developments and pull<br>requests should be performed against the <code>unstable</code> branch.</p>
+<h2 id="server-h"><a href="#server-h" class="headerlink" title="server.h"></a>server.h</h2><p>The simplest way to understand how a program works is to understand the<br>data structures it uses. So we’ll start from the main header file of<br>Redis, which is <code>server.h</code>.</p>
+<p>All the server configuration and in general all the shared state is<br>defined in a global structure called <code>server</code>, of type <code>struct redisServer</code>.<br>A few important fields in this structure are:</p>
+<ul>
+<li><code>server.db</code> is an array of Redis databases, where data is stored.</li>
+<li><code>server.commands</code> is the command table.</li>
+<li><code>server.clients</code> is a linked list of clients connected to the server.</li>
+<li><code>server.master</code> is a special client, the master, if the instance is a slave.</li>
+</ul>
+<p>There are tons of other fields. Most fields are commented directly inside<br>the structure definition.</p>
+<p>Another important Redis data structure is the one defining a client.<br>In the past it was called <code>redisClient</code>, now just <code>client</code>. The structure<br>has many fields, here we’ll just show the main ones:</p>
+<pre><code>struct client {
+    int fd;
+    sds querybuf;
+    int argc;
+    robj **argv;
+    redisDb *db;
+    int flags;
+    list *reply;
+    char buf[PROTO_REPLY_CHUNK_BYTES];
+    ... many other fields ...
+}
+</code></pre><p>The client structure defines a <em>connected client</em>:</p>
+<ul>
+<li>The <code>fd</code> field is the client socket file descriptor.</li>
+<li><code>argc</code> and <code>argv</code> are populated with the command the client is executing, so that functions implementing a given Redis command can read the arguments.</li>
+<li><code>querybuf</code> accumulates the requests from the client, which are parsed by the Redis server according to the Redis protocol and executed by calling the implementations of the commands the client is executing.</li>
+<li><code>reply</code> and <code>buf</code> are dynamic and static buffers that accumulate the replies the server sends to the client. These buffers are incrementally written to the socket as soon as the file descriptor is writable.</li>
+</ul>
+<p>As you can see in the client structure above, arguments in a command<br>are described as <code>robj</code> structures. The following is the full <code>robj</code><br>structure, which defines a <em>Redis object</em>:</p>
+<pre><code>typedef struct redisObject {
+    unsigned type:4;
+    unsigned encoding:4;
+    unsigned lru:LRU_BITS; /* lru time (relative to server.lruclock) */
+    int refcount;
+    void *ptr;
+} robj;
+</code></pre><p>Basically this structure can represent all the basic Redis data types like<br>strings, lists, sets, sorted sets and so forth. The interesting thing is that<br>it has a <code>type</code> field, so that it is possible to know what type a given<br>object has, and a <code>refcount</code>, so that the same object can be referenced<br>in multiple places without allocating it multiple times. Finally the <code>ptr</code><br>field points to the actual representation of the object, which might vary<br>even for the same type, depending on the <code>encoding</code> used.</p>
+<p>Redis objects are used extensively in the Redis internals, however in order<br>to avoid the overhead of indirect accesses, recently in many places<br>we just use plain dynamic strings not wrapped inside a Redis object.</p>
+<h2 id="server-c"><a href="#server-c" class="headerlink" title="server.c"></a>server.c</h2><p>This is the entry point of the Redis server, where the <code>main()</code> function<br>is defined. The following are the most important steps in order to startup<br>the Redis server.</p>
+<ul>
+<li><code>initServerConfig()</code> setups the default values of the <code>server</code> structure.</li>
+<li><code>initServer()</code> allocates the data structures needed to operate, setup the listening socket, and so forth.</li>
+<li><code>aeMain()</code> starts the event loop which listens for new connections.</li>
+</ul>
+<p>There are two special functions called periodically by the event loop:</p>
+<ol>
+<li><code>serverCron()</code> is called periodically (according to <code>server.hz</code> frequency), and performs tasks that must be performed from time to time, like checking for timedout clients.</li>
+<li><code>beforeSleep()</code> is called every time the event loop fired, Redis served a few requests, and is returning back into the event loop.</li>
+</ol>
+<p>Inside server.c you can find code that handles other vital things of the Redis server:</p>
+<ul>
+<li><code>call()</code> is used in order to call a given command in the context of a given client.</li>
+<li><code>activeExpireCycle()</code> handles eviciton of keys with a time to live set via the <code>EXPIRE</code> command.</li>
+<li><code>freeMemoryIfNeeded()</code> is called when a new write command should be performed but Redis is out of memory according to the <code>maxmemory</code> directive.</li>
+<li>The global variable <code>redisCommandTable</code> defines all the Redis commands, specifying the name of the command, the function implementing the command, the number of arguments required, and other properties of each command.</li>
+</ul>
+<h2 id="networking-c"><a href="#networking-c" class="headerlink" title="networking.c"></a>networking.c</h2><p>This file defines all the I/O functions with clients, masters and slaves<br>(which in Redis are just special clients):</p>
+<ul>
+<li><code>createClient()</code> allocates and initializes a new client.</li>
+<li>the <code>addReply*()</code> family of functions are used by commands implementations in order to append data to the client structure, that will be transmitted to the client as a reply for a given command executed.</li>
+<li><code>writeToClient()</code> transmits the data pending in the output buffers to the client and is called by the <em>writable event handler</em> <code>sendReplyToClient()</code>.</li>
+<li><code>readQueryFromClient()</code> is the <em>readable event handler</em> and accumulates data from read from the client into the query buffer.</li>
+<li><code>processInputBuffer()</code> is the entry point in order to parse the client query buffer according to the Redis protocol. Once commands are ready to be processed, it calls <code>processCommand()</code> which is defined inside <code>server.c</code> in order to actually execute the command.</li>
+<li><code>freeClient()</code> deallocates, disconnects and removes a client.</li>
+</ul>
+<h2 id="aof-c-and-rdb-c"><a href="#aof-c-and-rdb-c" class="headerlink" title="aof.c and rdb.c"></a>aof.c and rdb.c</h2><p>As you can guess from the names these files implement the RDB and AOF<br>persistence for Redis. Redis uses a persistence model based on the <code>fork()</code><br>system call in order to create a thread with the same (shared) memory<br>content of the main Redis thread. This secondary thread dumps the content<br>of the memory on disk. This is used by <code>rdb.c</code> to create the snapshots<br>on disk and by <code>aof.c</code> in order to perform the AOF rewrite when the<br>append only file gets too big.</p>
+<p>The implementation inside <code>aof.c</code> has additional functions in order to<br>implement an API that allows commands to append new commands into the AOF<br>file as clients execute them.</p>
+<p>The <code>call()</code> function defined inside <code>server.c</code> is responsible to call<br>the functions that in turn will write the commands into the AOF.</p>
+<h2 id="db-c"><a href="#db-c" class="headerlink" title="db.c"></a>db.c</h2><p>Certain Redis commands operate on specific data types, others are general.<br>Examples of generic commands are <code>DEL</code> and <code>EXPIRE</code>. They operate on keys<br>and not on their values specifically. All those generic commands are<br>defined inside <code>db.c</code>.</p>
+<p>Moreover <code>db.c</code> implements an API in order to perform certain operations<br>on the Redis dataset without directly accessing the internal data structures.</p>
+<p>The most important functions inside <code>db.c</code> which are used in many commands<br>implementations are the following:</p>
+<ul>
+<li><code>lookupKeyRead()</code> and <code>lookupKeyWrite()</code> are used in order to get a pointer to the value associated to a given key, or <code>NULL</code> if the key does not exist.</li>
+<li><code>dbAdd()</code> and its higher level counterpart <code>setKey()</code> create a new key in a Redis database.</li>
+<li><code>dbDelete()</code> removes a key and its associated value.</li>
+<li><code>emptyDb()</code> removes an entire single database or all the databases defined.</li>
+</ul>
+<p>The rest of the file implements the generic commands exposed to the client.</p>
+<h2 id="object-c"><a href="#object-c" class="headerlink" title="object.c"></a>object.c</h2><p>The <code>robj</code> structure defining Redis objects was already described. Inside<br><code>object.c</code> there are all the functions that operate with Redis objects at<br>a basic level, like functions to allocate new objects, handle the reference<br>counting and so forth. Notable functions inside this file:</p>
+<ul>
+<li><code>incrRefcount()</code> and <code>decrRefCount()</code> are used in order to increment or decrement an object reference count. When it drops to 0 the object is finally freed.</li>
+<li><code>createObject()</code> allocates a new object. There are also specialized functions to allocate string objects having a specific content, like <code>createStringObjectFromLongLong()</code> and similar functions.</li>
+</ul>
+<p>This file also implements the <code>OBJECT</code> command.</p>
+<h2 id="replication-c"><a href="#replication-c" class="headerlink" title="replication.c"></a>replication.c</h2><p>This is one of the most complex files inside Redis, it is recommended to<br>approach it only after getting a bit familiar with the rest of the code base.<br>In this file there is the implementation of both the master and slave role<br>of Redis.</p>
+<p>One of the most important functions inside this file is <code>replicationFeedSlaves()</code> that writes commands to the clients representing slave instances connected<br>to our master, so that the slaves can get the writes performed by the clients:<br>this way their data set will remain synchronized with the one in the master.</p>
+<p>This file also implements both the <code>SYNC</code> and <code>PSYNC</code> commands that are<br>used in order to perform the first synchronization between masters and<br>slaves, or to continue the replication after a disconnection.</p>
+<h2 id="Other-C-files"><a href="#Other-C-files" class="headerlink" title="Other C files"></a>Other C files</h2><ul>
+<li><code>t_hash.c</code>, <code>t_list.c</code>, <code>t_set.c</code>, <code>t_string.c</code> and <code>t_zset.c</code> contains the implementation of the Redis data types. They implement both an API to access a given data type, and the client commands implementations for these data types.</li>
+<li><code>ae.c</code> implements the Redis event loop, it’s a self contained library which is simple to read and understand.</li>
+<li><code>sds.c</code> is the Redis string library, check <a href="http://github.com/antirez/sds" target="_blank" rel="noopener">http://github.com/antirez/sds</a> for more information.</li>
+<li><code>anet.c</code> is a library to use POSIX networking in a simpler way compared to the raw interface exposed by the kernel.</li>
+<li><code>dict.c</code> is an implementation of a non-blocking hash table which rehashes incrementally.</li>
+<li><code>scripting.c</code> implements Lua scripting. It is completely self contained from the rest of the Redis implementation and is simple enough to understand if you are familar with the Lua API.</li>
+<li><code>cluster.c</code> implements the Redis Cluster. Probably a good read only after being very familiar with the rest of the Redis code base. If you want to read <code>cluster.c</code> make sure to read the <a href="http://redis.io/topics/cluster-spec" target="_blank" rel="noopener">Redis Cluster specification</a>.</li>
+</ul>
+<h2 id="Anatomy-of-a-Redis-command"><a href="#Anatomy-of-a-Redis-command" class="headerlink" title="Anatomy of a Redis command"></a>Anatomy of a Redis command</h2><p>All the Redis commands are defined in the following way:</p>
+<pre><code>void foobarCommand(client *c) {
+    printf(&quot;%s&quot;,c-&gt;argv[1]-&gt;ptr); /* Do something with the argument. */
+    addReply(c,shared.ok); /* Reply something to the client. */
+}
+</code></pre><p>The command is then referenced inside <code>server.c</code> in the command table:</p>
+<pre><code>{&quot;foobar&quot;,foobarCommand,2,&quot;rtF&quot;,0,NULL,0,0,0,0,0},
+</code></pre><p>In the above example <code>2</code> is the number of arguments the command takes,<br>while <code>&quot;rtF&quot;</code> are the command flags, as documented in the command table<br>top comment inside <code>server.c</code>.</p>
+<p>After the command operates in some way, it returns a reply to the client,<br>usually using <code>addReply()</code> or a similar function defined inside <code>networking.c</code>.</p>
+<p>There are tons of commands implementations inside th Redis source code<br>that can serve as examples of actual commands implementations. To write<br>a few toy commands can be a good exercise to familiarize with the code base.</p>
+<p>There are also many other files not described here, but it is useless to<br>cover everything. We want to just help you with the first steps.<br>Eventually you’ll find your way inside the Redis code base :-)</p>
+<p>Enjoy!</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/25/FTP协议的工作原理详解/" rel="next" title="FTP协议的工作原理详解及安装流程">
+                <i class="fa fa-chevron-left"></i> FTP协议的工作原理详解及安装流程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/25/taotao项目搭建 SSM框架的maven项目/" rel="prev" title="taotao项目搭建 SSM框架的maven项目">
+                taotao项目搭建 SSM框架的maven项目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description">欢迎</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qq470255867" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:470255867@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://icygrin.club/about/" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://icygrin.club/about/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-weixin"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Redis"><span class="nav-number">1.</span> <span class="nav-text">What is Redis?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Building-Redis"><span class="nav-number">2.</span> <span class="nav-text">Building Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fixing-build-problems-with-dependencies-or-cached-build-options"><span class="nav-number">3.</span> <span class="nav-text">Fixing build problems with dependencies or cached build options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fixing-problems-building-32-bit-binaries"><span class="nav-number">4.</span> <span class="nav-text">Fixing problems building 32 bit binaries</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Allocator"><span class="nav-number">5.</span> <span class="nav-text">Allocator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Verbose-build"><span class="nav-number">6.</span> <span class="nav-text">Verbose build</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-Redis"><span class="nav-number">7.</span> <span class="nav-text">Running Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Playing-with-Redis"><span class="nav-number">8.</span> <span class="nav-text">Playing with Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installing-Redis"><span class="nav-number">9.</span> <span class="nav-text">Installing Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-contributions"><span class="nav-number">10.</span> <span class="nav-text">Code contributions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-internals"><span class="nav-number"></span> <span class="nav-text">Redis internals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-code-layout"><span class="nav-number">1.</span> <span class="nav-text">Source code layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#server-h"><span class="nav-number">2.</span> <span class="nav-text">server.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#server-c"><span class="nav-number">3.</span> <span class="nav-text">server.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#networking-c"><span class="nav-number">4.</span> <span class="nav-text">networking.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aof-c-and-rdb-c"><span class="nav-number">5.</span> <span class="nav-text">aof.c and rdb.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#db-c"><span class="nav-number">6.</span> <span class="nav-text">db.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object-c"><span class="nav-number">7.</span> <span class="nav-text">object.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#replication-c"><span class="nav-number">8.</span> <span class="nav-text">replication.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-C-files"><span class="nav-number">9.</span> <span class="nav-text">Other C files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anatomy-of-a-Redis-command"><span class="nav-number">10.</span> <span class="nav-text">Anatomy of a Redis command</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共36.8k字</span>
+</div>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://icygrin.club/2018/09/25/Redis官方文档/';
+          this.page.identifier = '2018/09/25/Redis官方文档/';
+          this.page.title = 'Redis官方文档';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
