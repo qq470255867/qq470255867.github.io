@@ -81,19 +81,17 @@
 
 
 
-<meta name="description" content="四种文法的判断非常简单，说到到，四种文法就是规定产生式的左和右边的字符的组成规则不同而已，其它的不能理解就不要去想了，你只要知道判断的时候就是以产生式的左边和右边符合的规则进行判断。下面解释一下如何根据产生式左边和右边的特征来进行判断。 首先，应该明确，四种文法，从0型到3型，其规则和约定越来越多，限制条件也越来越多，所以，我们判断时可以从最复杂的3型进行判断，依次向下判断，如果不符合3型的，那再">
+<meta name="description" content="有志不在年高  TreeSet介绍简介 TreeSet 是一个有序的集合，它的作用是提供有序的Set集合。  它继承于AbstractSet抽象类，实现了NavigableSet, Cloneable, java.io.Serializable接口。  TreeSet 继承于AbstractSet，所以它是一个Set集合，具有Set的属性和方法。  TreeSet 实现了NavigableSet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理中，形式语言里怎么区分文法类型">
-<meta property="og:url" content="http://icygrin.club/2018/08/17/编译原理中，形式语言里怎么区分文法类型/index.html">
+<meta property="og:title" content="TreeSet详细介绍(源码解析)和使用示例">
+<meta property="og:url" content="http://icygrin.club/2018/09/26/treeset详细介绍(源码解析)和使用示例/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="四种文法的判断非常简单，说到到，四种文法就是规定产生式的左和右边的字符的组成规则不同而已，其它的不能理解就不要去想了，你只要知道判断的时候就是以产生式的左边和右边符合的规则进行判断。下面解释一下如何根据产生式左边和右边的特征来进行判断。 首先，应该明确，四种文法，从0型到3型，其规则和约定越来越多，限制条件也越来越多，所以，我们判断时可以从最复杂的3型进行判断，依次向下判断，如果不符合3型的，那再">
+<meta property="og:description" content="有志不在年高  TreeSet介绍简介 TreeSet 是一个有序的集合，它的作用是提供有序的Set集合。  它继承于AbstractSet抽象类，实现了NavigableSet, Cloneable, java.io.Serializable接口。  TreeSet 继承于AbstractSet，所以它是一个Set集合，具有Set的属性和方法。  TreeSet 实现了NavigableSet">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://icygrin.club/images/817文法概念.JPG">
-<meta property="og:updated_time" content="2018-08-17T07:42:34.989Z">
+<meta property="og:updated_time" content="2018-09-26T11:25:59.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编译原理中，形式语言里怎么区分文法类型">
-<meta name="twitter:description" content="四种文法的判断非常简单，说到到，四种文法就是规定产生式的左和右边的字符的组成规则不同而已，其它的不能理解就不要去想了，你只要知道判断的时候就是以产生式的左边和右边符合的规则进行判断。下面解释一下如何根据产生式左边和右边的特征来进行判断。 首先，应该明确，四种文法，从0型到3型，其规则和约定越来越多，限制条件也越来越多，所以，我们判断时可以从最复杂的3型进行判断，依次向下判断，如果不符合3型的，那再">
-<meta name="twitter:image" content="http://icygrin.club/images/817文法概念.JPG">
+<meta name="twitter:title" content="TreeSet详细介绍(源码解析)和使用示例">
+<meta name="twitter:description" content="有志不在年高  TreeSet介绍简介 TreeSet 是一个有序的集合，它的作用是提供有序的Set集合。  它继承于AbstractSet抽象类，实现了NavigableSet, Cloneable, java.io.Serializable接口。  TreeSet 继承于AbstractSet，所以它是一个Set集合，具有Set的属性和方法。  TreeSet 实现了NavigableSet">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://icygrin.club/2018/08/17/编译原理中，形式语言里怎么区分文法类型/"/>
+  <link rel="canonical" href="http://icygrin.club/2018/09/26/treeset详细介绍(源码解析)和使用示例/"/>
 
 
 
 
 
-  <title>编译原理中，形式语言里怎么区分文法类型 | 冰笑风云</title>
+  <title>TreeSet详细介绍(源码解析)和使用示例 | 冰笑风云</title>
   
 
 
@@ -310,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/08/17/编译原理中，形式语言里怎么区分文法类型/">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/09/26/treeset详细介绍(源码解析)和使用示例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -327,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编译原理中，形式语言里怎么区分文法类型</h1>
+          <h1 class="post-title" itemprop="name headline">TreeSet详细介绍(源码解析)和使用示例</h1>
         
 
         <div class="post-meta">
@@ -339,8 +337,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-17T15:42:51+08:00">
-                2018-08-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T19:33:21+08:00">
+                2018-09-26
               </time>
             
 
@@ -362,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编译原理/" itemprop="url" rel="index">
-                    <span itemprop="name">编译原理</span>
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
                   </a>
                 </span>
 
@@ -380,9 +378,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/17/编译原理中，形式语言里怎么区分文法类型/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/26/treeset详细介绍(源码解析)和使用示例/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/17/编译原理中，形式语言里怎么区分文法类型/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/26/treeset详细介绍(源码解析)和使用示例/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -410,18 +408,64 @@
       
 
       
-        <p>四种文法的判断非常简单，说到到，四种文法就是规定产生式的左和右边的字符的组成规则不同而已，其它的不能理解就不要去想了，你只要知道判断的时候就是以产生式的左边和右边符合的规则进行判断。下面解释一下如何根据产生式左边和右边的特征来进行判断。</p>
-<p>首先，应该明确，四种文法，从0型到3型，其规则和约定越来越多，限制条件也越来越多，所以，我们判断时可以从最复杂的3型进行判断，依次向下判断，如果不符合3型的，那再看是不是2型的，不是2型的，再看是不是1型的，当然，对于作题作的熟的朋友，不用这么复杂，可以一眼直接看出来。<br>先来看看教科书的解释<br><img src="/images/817文法概念.JPG" alt="image"></p>
-<h2 id="3型文法遵循什么规范呢？"><a href="#3型文法遵循什么规范呢？" class="headerlink" title="3型文法遵循什么规范呢？"></a>3型文法遵循什么规范呢？</h2><ul>
-<li>第一点：左边必须只有一个字符，且必须是非终结符；</li>
-<li>第二点：其右边最多只能有两个字符，且当有两个字符时必须有一个为终结符而另一个为非终结符。当右边只有一个字符时，此字符必须为终结符。</li>
-<li>第三点：对于3型文法中的所有产生式，其右边有两个字符的产生式，这些产生式右边两个字符中终结符和非终结符的相对位置一定要固定，也就是说如果一个产生式右边的两个字符的排列是：终结符＋非终结符，那么所有产生式右边只要有两个字符的，都必须前面是终结符而后面是非终结符。反之亦然，要么，就全是：非终结符＋终结符。</li>
+        <blockquote>
+<p>有志不在年高</p>
+</blockquote>
+<h1 id="TreeSet介绍"><a href="#TreeSet介绍" class="headerlink" title="TreeSet介绍"></a>TreeSet介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li><p>TreeSet 是一个有序的集合，它的作用是提供有序的Set集合。</p>
+</li>
+<li><p>它继承于AbstractSet抽象类，实现了NavigableSet<e>, Cloneable, java.io.Serializable接口。</e></p>
+</li>
+<li><p>TreeSet 继承于AbstractSet，所以它是一个Set集合，具有Set的属性和方法。</p>
+</li>
+<li><p>TreeSet 实现了NavigableSet接口，意味着它支持一系列的导航方法。比如查找与指定目标最匹配项。</p>
+</li>
+<li><p>TreeSet 实现了Cloneable接口，意味着它能被克隆。</p>
+</li>
+<li><p>TreeSet 实现了java.io.Serializable接口，意味着它支持序列化。</p>
+</li>
+<li><p>TreeSet是基于TreeMap实现的。TreeSet中的元素支持2种排序方式：自然排序 或者 根据创建TreeSet 时提供的 Comparator 进行排序。这取决于使用的构造方法。</p>
+</li>
+<li><p>TreeSet为基本操作（add、remove 和 contains）提供受保证的 log(n) 时间开销。<br>另外，TreeSet是非同步的。 它的iterator 方法返回的迭代器是fail-fast的。</p>
+</li>
 </ul>
-<h2 id="再看2型文法如何判断："><a href="#再看2型文法如何判断：" class="headerlink" title="再看2型文法如何判断："></a>再看2型文法如何判断：</h2><p>第一点：与3型文法的第一点相同，即：左边必须有且仅有一个非终结符。<br>第二点：2型文法所有产生式的右边可以含有若干个终结符和非终结符（只要是有限的就行，没有个数限制）。</p>
-<p>依2型文法的判断规则，你的三个文法都属于2型文法，即：上下文无关文法。</p>
-<h2 id="再看1型文法如何判断："><a href="#再看1型文法如何判断：" class="headerlink" title="再看1型文法如何判断："></a>再看1型文法如何判断：</h2><p>第一点：1型文法所有产生式左边可以含有一个、两个或两个以上的字符，但其中必须至少有一个非终结符。<br>第二点：与2型文法第二点相同。</p>
-<p>依1型文法判断规则，显然，你的文法也是属于1型的。</p>
-<p>最后是0型文法，这个就不用看了，只要你能描述出来，都属于这个类型，即0型。</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 默认构造函数。使用该构造函数，TreeSet中的元素按照自然排序进行排列。</span><br><span class="line">TreeSet()</span><br><span class="line"></span><br><span class="line">// 创建的TreeSet包含collection</span><br><span class="line">TreeSet(Collection&lt;? extends E&gt; collection)</span><br><span class="line"></span><br><span class="line">// 指定TreeSet的比较器</span><br><span class="line">TreeSet(Comparator&lt;? super E&gt; comparator)</span><br><span class="line"></span><br><span class="line">// 创建的TreeSet包含set</span><br><span class="line">TreeSet(SortedSet&lt;E&gt; set)</span><br></pre></td></tr></table></figure>
+<p>(01) TreeSet实际上是TreeMap实现的。当我们构造TreeSet时；若使用不带参数的构造函数，则TreeSet的使用自然比较器；若用户需要使用自定义的比较器，则需要使用带比较器的参数。<br>(02) TreeSet是非线程安全的。<br>(03) TreeSet实现java.io.Serializable的方式。当写入到输出流时，依次写入“比较器、容量、全部元素”；当读出输入流时，再依次读取。</p>
+<h1 id="TreeSet遍历方式"><a href="#TreeSet遍历方式" class="headerlink" title="TreeSet遍历方式"></a>TreeSet遍历方式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class TreeSetIteratorTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        TreeSet set = new TreeSet();</span><br><span class="line">        set.add(&quot;aaa&quot;);</span><br><span class="line">        set.add(&quot;aaa&quot;);</span><br><span class="line">        set.add(&quot;bbb&quot;);</span><br><span class="line">        set.add(&quot;eee&quot;);</span><br><span class="line">        set.add(&quot;ddd&quot;);</span><br><span class="line">        set.add(&quot;ccc&quot;);</span><br><span class="line"></span><br><span class="line">        // 顺序遍历TreeSet</span><br><span class="line">        ascIteratorThroughIterator(set) ;</span><br><span class="line">        // 逆序遍历TreeSet</span><br><span class="line">        descIteratorThroughIterator(set);</span><br><span class="line">        // 通过for-each遍历TreeSet。不推荐！此方法需要先将Set转换为数组</span><br><span class="line">        foreachTreeSet(set);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 顺序遍历TreeSet</span><br><span class="line">    public static void ascIteratorThroughIterator(TreeSet set) &#123;</span><br><span class="line">        System.out.print(&quot;\n ---- Ascend Iterator ----\n&quot;);</span><br><span class="line">        for(Iterator iter = set.iterator(); iter.hasNext(); ) &#123;</span><br><span class="line">            System.out.printf(&quot;asc : %s\n&quot;, iter.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 逆序遍历TreeSet</span><br><span class="line">    public static void descIteratorThroughIterator(TreeSet set) &#123;</span><br><span class="line">        System.out.printf(&quot;\n ---- Descend Iterator ----\n&quot;);</span><br><span class="line">        for(Iterator iter = set.descendingIterator(); iter.hasNext(); )</span><br><span class="line">            System.out.printf(&quot;desc : %s\n&quot;, (String)iter.next());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 通过for-each遍历TreeSet。不推荐！此方法需要先将Set转换为数组</span><br><span class="line">    private static void foreachTreeSet(TreeSet set) &#123;</span><br><span class="line">        System.out.printf(&quot;\n ---- For-each ----\n&quot;);</span><br><span class="line">        String[] arr = (String[])set.toArray(new String[0]);</span><br><span class="line">        for (String str:arr)</span><br><span class="line">            System.out.printf(&quot;for each : %s\n&quot;, str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果</p>
+<p>—- Ascend Iterator —-<br>asc : aaa<br>asc : bbb<br>asc : ccc<br>asc : ddd<br>asc : eee</p>
+<p> —- Descend Iterator —-<br>desc : eee<br>desc : ddd<br>desc : ccc<br>desc : bbb<br>desc : aaa</p>
+<p> —- For-each —-<br>for each : aaa<br>for each : bbb<br>for each : ccc<br>for each : ddd<br>for each : eee</p>
+<h2 id="Set中不允许重复元素"><a href="#Set中不允许重复元素" class="headerlink" title="Set中不允许重复元素"></a>Set中不允许重复元素</h2><p>下面是支持 TreeSet 类的构造函数。<br>序号 |    构造函数的说明<br>—|—<br>1    | TreeSet （)            此构造函数构造空树集，将在根据其元素的自然顺序按升序排序。</p>
+<p>2 |   TreeSet (集合c)此构造函数生成树的集合，它包含素的集合 c。</p>
+<p>3    |  TreeSet (比较器 comp)<br>此构造函数构造一个空树集，将根据给定的比较器进行排序。</p>
+<p>4    |   TreeSet (SortedSet ss)<br>此构造函数生成包含给定 SortedSet 的元素 TreeSet</p>
+<p>TreeSet的方法总结：</p>
+<table>
+<thead>
+<tr>
+<th>修饰符和类型</th>
+<th>方法和描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>boolean    add(E e)<br>将指定的元素添加到这套，如果它已不存在。</p>
+<p>boolean    addAll(Collection&lt;? extends E&gt; c)<br>在加入这一组指定的集合中添加的所有元素。</p>
+<p>E    ceiling(E e)<br>返回最小的元素在这一组大于或等于给定的元素，则null如果没有这样的元素。</p>
+<p>void    clear()<br>从这一组中移除所有元素。</p>
+<p>Object    clone()<br>返回此TreeSet实例浅表副本。</p>
+<p>Comparator&lt;? super E&gt;    comparator()<br>返回用于排序在这集，或空元素，如果这套使用自然排序其元素的比较。</p>
+<p>boolean    contains(Object o)<br>如果此集合包含指定的元素，则返回true 。</p>
+<p>Iterator<e>    descendingIterator()<br>返回迭代器中这套降序排序的元素。</e></p>
+<p>NavigableSet<e>    descendingSet()<br>返回逆序视图中包含的元素这一套。</e></p>
+<p>E    first()<br>返回第一个 （最低） 元素当前在这一套。</p>
+<p>E    floor(E e)<br>返回的最大元素在这一组小于或等于null如果没有这样的元素。</p>
+<p>SortedSet<e>    headSet(E toElement)<br>返回其元素是严格小于toElement这套的部分视图.<br>NavigableSet<e>    headSet(E toElement, boolean inclusive)<br>返回一个视图的这部分设置的元素都小于 （或等于，如果inclusive是真的） toElement.<br>E    higher(E e)<br>返回最小的元素在这套严格大于给定的元素，则null如果没有这样的元素。<br>boolean    isEmpty()<br>如果此集不包含任何元素，则返回true 。<br>Iterator<e>    iterator()<br>返回迭代器中这套以升序排序的元素。<br>E    last()<br>在这套目前返回的最后一个 （最高） 的元素。<br>E    lower(E e)<br>在这一套严格的小于给定的元素，则null返回的最大元素，如果没有这样的元素。<br>E    pollFirst()<br>检索和删除第一个 （最低） 元素，或如果此集合为空，则返回null 。<br>E    pollLast()<br>检索和删除的最后一个 （最高） 的元素，或如果此集合为空，则返回null 。<br>boolean    remove(Object o)<br>从这一组中移除指定的元素，如果它存在。<br>int    size()<br>在这套 （其基数） 中返回的元素的数目。<br>NavigableSet<e>    subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)<br>返回此集的部分视图的元素范围从fromElement到toElement.<br>SortedSet<e>    subSet(E fromElement, E toElement)<br>返回视图的部分的这一套的元素范围从fromElement，具有包容性，到toElement，独家。<br>SortedSet<e>    tailSet(E fromElement)<br>返回其元素是大于或等于fromElement这套的部分视图.<br>NavigableSet<e>    tailSet(E fromElement, boolean inclusive)<br>返回其元素是大于 （或等于，如果inclusive是真的） 这套的部分视图f </e></e></e></e></e></e></e></p>
 
       
     </div>
@@ -446,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/16/编译原理：短语、直接短语、句柄、素短语/" rel="next" title="编译原理：短语、直接短语、句柄、素短语">
-                <i class="fa fa-chevron-left"></i> 编译原理：短语、直接短语、句柄、素短语
+              <a href="/2018/09/25/taotao项目搭建 SSM框架的maven项目/" rel="next" title="taotao项目搭建 SSM框架的maven项目">
+                <i class="fa fa-chevron-left"></i> taotao项目搭建 SSM框架的maven项目
               </a>
             
           </div>
@@ -456,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/17/DFA最小化--分割法/" rel="prev" title="DFA最小化--分割法">
-                DFA最小化--分割法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/26/JAVA 集合类 list map queue set 实用场景梳理/" rel="prev" title="JAVA 集合类 list map queue set 实用场景梳理">
+                JAVA 集合类 list map queue set 实用场景梳理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3型文法遵循什么规范呢？"><span class="nav-number">1.</span> <span class="nav-text">3型文法遵循什么规范呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再看2型文法如何判断："><span class="nav-number">2.</span> <span class="nav-text">再看2型文法如何判断：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再看1型文法如何判断："><span class="nav-number">3.</span> <span class="nav-text">再看1型文法如何判断：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TreeSet介绍"><span class="nav-number">1.</span> <span class="nav-text">TreeSet介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">1.2.</span> <span class="nav-text">构造函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TreeSet遍历方式"><span class="nav-number">2.</span> <span class="nav-text">TreeSet遍历方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Set中不允许重复元素"><span class="nav-number">2.1.</span> <span class="nav-text">Set中不允许重复元素</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -815,9 +859,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://icygrin.club/2018/08/17/编译原理中，形式语言里怎么区分文法类型/';
-          this.page.identifier = '2018/08/17/编译原理中，形式语言里怎么区分文法类型/';
-          this.page.title = '编译原理中，形式语言里怎么区分文法类型';
+          this.page.url = 'http://icygrin.club/2018/09/26/treeset详细介绍(源码解析)和使用示例/';
+          this.page.identifier = '2018/09/26/treeset详细介绍(源码解析)和使用示例/';
+          this.page.title = 'TreeSet详细介绍(源码解析)和使用示例';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
