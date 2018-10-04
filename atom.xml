@@ -6,10 +6,64 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://icygrin.club/"/>
-  <updated>2018-09-27T14:48:48.772Z</updated>
+  <updated>2018-10-04T14:25:07.531Z</updated>
   <id>http://icygrin.club/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式介绍及Java描述---单例模式</title>
+    <link href="http://icygrin.club/2018/10/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%BB%8B%E7%BB%8D%E5%8F%8AJava%E6%8F%8F%E8%BF%B0---%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://icygrin.club/2018/10/04/设计模式介绍及Java描述---单例模式/</id>
+    <published>2018-10-04T14:25:07.470Z</published>
+    <updated>2018-10-04T14:25:07.531Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;时间在你的眼角写下几丝愁&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://icygrin.club/categories/JAVA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://icygrin.club/2018/09/28/java%E4%B8%ADHashMap%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%AE%9E%E4%BE%8B%EF%BC%89/"/>
+    <id>http://icygrin.club/2018/09/28/java中HashMap详解（实例）/</id>
+    <published>2018-09-28T13:34:39.599Z</published>
+    <updated>2018-09-28T13:34:39.778Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: java中HashMap详解（实例）&lt;br&gt;categories: JAVA&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;a &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;HashMap 和 HashSet 是 Java Collection
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>利用Http协议和Ftp协议搭载一个远程的图片服务器</title>
@@ -482,60 +536,6 @@
 &lt;/blockquote&gt;
 &lt;p&gt;正规式与NFAg关系对照图&lt;br&gt;&lt;img src=&quot;/images/817转化.JPG&quot; alt=&quot;image&quot;&gt;&lt;br&gt;注意优先级关系，闭包运算*最高，连接运算.次之，或运算最低&lt;/p&gt;
 &lt;h1
-        
-      
-    
-    </summary>
-    
-      <category term="编译原理" scheme="http://icygrin.club/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>DFA最小化--分割法</title>
-    <link href="http://icygrin.club/2018/08/17/DFA%E6%9C%80%E5%B0%8F%E5%8C%96--%E5%88%86%E5%89%B2%E6%B3%95/"/>
-    <id>http://icygrin.club/2018/08/17/DFA最小化--分割法/</id>
-    <published>2018-08-17T11:16:21.717Z</published>
-    <updated>2018-08-18T08:16:21.245Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;千里之行始于足下&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;FA的最小化就是寻求最小状态DFA&lt;/p&gt;
-&lt;p&gt;最小状态DFA的含义: &lt;/p&gt;
-&lt;h2 id=&quot;1-没有多余状态-死状态&quot;&gt;&lt;a href=&quot;#1-没有多余状态-死状态&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="编译原理" scheme="http://icygrin.club/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>编译原理中，形式语言里怎么区分文法类型</title>
-    <link href="http://icygrin.club/2018/08/17/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%AD%EF%BC%8C%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E9%87%8C%E6%80%8E%E4%B9%88%E5%8C%BA%E5%88%86%E6%96%87%E6%B3%95%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://icygrin.club/2018/08/17/编译原理中，形式语言里怎么区分文法类型/</id>
-    <published>2018-08-17T07:42:51.475Z</published>
-    <updated>2018-08-17T07:42:34.989Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;四种文法的判断非常简单，说到到，四种文法就是规定产生式的左和右边的字符的组成规则不同而已，其它的不能理解就不要去想了，你只要知道判断的时候就是以产生式的左边和右边符合的规则进行判断。下面解释一下如何根据产生式左边和右边的特征来进行判断。&lt;/p&gt;
-&lt;p&gt;首先，应该明确，四种文
         
       
     
