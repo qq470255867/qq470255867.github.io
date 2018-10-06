@@ -81,17 +81,24 @@
 
 
 
-<meta name="description" content="#java say hello world">
-<meta property="og:type" content="website">
-<meta property="og:title" content="java">
-<meta property="og:url" content="http://icygrin.club/java/index.html">
+<meta name="description" content="大晚上的不想睡，，一天不写博客感觉浑身难受 先从前台开始捋把  首页商品类目展示流程 数据传输过程 这是前台jsp映射的url  callback 应该是传到后台方法的参数 rest的controller层功能是将从service层取出的字符串转换成json再拼接成前台所适应的字符串形式  callback + “(“ + json + “)1234567891011121314151617181">
+<meta property="og:type" content="article">
+<meta property="og:title" content="屡一下taotao前台系统商品分类展示">
+<meta property="og:url" content="http://icygrin.club/2018/10/07/屡一下taotao前台系统商品分类展示/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="#java say hello world">
+<meta property="og:description" content="大晚上的不想睡，，一天不写博客感觉浑身难受 先从前台开始捋把  首页商品类目展示流程 数据传输过程 这是前台jsp映射的url  callback 应该是传到后台方法的参数 rest的controller层功能是将从service层取出的字符串转换成json再拼接成前台所适应的字符串形式  callback + “(“ + json + “)1234567891011121314151617181">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T05:48:31.726Z">
+<meta property="og:image" content="http://icygrin.club/images/1065.首页商品类目展示流程.JPG">
+<meta property="og:image" content="http://icygrin.club/images/106taotao过程.JPG">
+<meta property="og:image" content="http://icygrin.club/images/106映射url.JPG">
+<meta property="og:image" content="http://icygrin.club/images/106taotao数据库.JPG">
+<meta property="og:image" content="http://icygrin.club/images/106JSON格式数据.JPG">
+<meta property="og:image" content="http://icygrin.club/images/107跨域问题.JPG">
+<meta property="og:updated_time" content="2018-10-06T16:02:53.528Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java">
-<meta name="twitter:description" content="#java say hello world">
+<meta name="twitter:title" content="屡一下taotao前台系统商品分类展示">
+<meta name="twitter:description" content="大晚上的不想睡，，一天不写博客感觉浑身难受 先从前台开始捋把  首页商品类目展示流程 数据传输过程 这是前台jsp映射的url  callback 应该是传到后台方法的参数 rest的controller层功能是将从service层取出的字符串转换成json再拼接成前台所适应的字符串形式  callback + “(“ + json + “)1234567891011121314151617181">
+<meta name="twitter:image" content="http://icygrin.club/images/1065.首页商品类目展示流程.JPG">
 
 
 
@@ -121,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://icygrin.club/java/"/>
+  <link rel="canonical" href="http://icygrin.club/2018/10/07/屡一下taotao前台系统商品分类展示/"/>
 
 
 
 
 
-  <title>java | 冰笑风云</title>
+  <title>屡一下taotao前台系统商品分类展示 | 冰笑风云</title>
   
 
 
@@ -296,34 +303,190 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/10/07/屡一下taotao前台系统商品分类展示/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">java</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>#java say hello world</p>
-
+          <h1 class="post-title" itemprop="name headline">屡一下taotao前台系统商品分类展示</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-07T00:02:53+08:00">
+                2018-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目实战/" itemprop="url" rel="index">
+                    <span itemprop="name">项目实战</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/07/屡一下taotao前台系统商品分类展示/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/07/屡一下taotao前台系统商品分类展示/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>大晚上的不想睡，，一天不写博客感觉浑身难受</p>
+<p>先从前台开始捋把 </p>
+<h1 id="首页商品类目展示流程"><a href="#首页商品类目展示流程" class="headerlink" title="首页商品类目展示流程"></a>首页商品类目展示流程</h1><p><img src="/images/1065.首页商品类目展示流程.JPG" alt=""></p>
+<h1 id="数据传输过程"><a href="#数据传输过程" class="headerlink" title="数据传输过程"></a>数据传输过程</h1><p><img src="/images/106taotao过程.JPG" alt=""></p>
+<p>这是前台jsp映射的url  callback 应该是传到后台方法的参数<br><img src="/images/106映射url.JPG" alt=""></p>
+<p>rest的controller层<br>功能是将从service层取出的字符串转换成json再拼接成前台所适应的字符串形式  callback + “(“ + json + “)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class ItemCatController &#123;</span><br><span class="line"></span><br><span class="line">	@Autowired</span><br><span class="line">	ItemCatService itemCatService;</span><br><span class="line"></span><br><span class="line">	@RequestMapping(value=&quot;/itemcat/list&quot;,</span><br><span class="line">			produces=MediaType.APPLICATION_JSON_VALUE+&quot;;charset=UTF-8&quot;)</span><br><span class="line">	@ResponseBody</span><br><span class="line">	public String getItemcatList(String callback) &#123;</span><br><span class="line"></span><br><span class="line">		CatResult catResult = itemCatService.getItemCatList();</span><br><span class="line">		// 把pojo转换成字符串</span><br><span class="line">		String json = JsonUtils.objectToJson(catResult);</span><br><span class="line">		String result = callback + &quot;(&quot; + json + &quot;);&quot;;</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>getItemCatList 这个方法实现在service层<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public CatResult getItemCatList() &#123;</span><br><span class="line"></span><br><span class="line">		CatResult catResult = new CatResult();</span><br><span class="line">		// 查询分类列表</span><br><span class="line">		catResult.setData(getCatList(0));</span><br><span class="line">		return catResult;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>关键来了   这个getCatList()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">private List&lt;?&gt; getCatList(long parentId) &#123;</span><br><span class="line"></span><br><span class="line">		// 创建查询条件</span><br><span class="line">		TbItemCatExample example = new TbItemCatExample();</span><br><span class="line">		com.taotao.pojo.TbItemCatExample.Criteria criteria = example.createCriteria();</span><br><span class="line">		criteria.andParentIdEqualTo(parentId);</span><br><span class="line">		List&lt;TbItemCat&gt; list = itemCatMapper.selectByExample(example);</span><br><span class="line">		List resultList = new ArrayList&lt;&gt;();</span><br><span class="line">		for (TbItemCat itemCat : list) &#123;</span><br><span class="line">			// 判断是否是fu结点</span><br><span class="line">			if (itemCat.getIsParent()) &#123;</span><br><span class="line">				CatNode catNode = new CatNode();</span><br><span class="line">				if (parentId == 0) &#123;</span><br><span class="line"></span><br><span class="line">					catNode.setName(&quot;&lt;a href=&apos;/products/&quot; + itemCat.getId() + &quot;.html&apos;&gt;&quot; + itemCat.getName() + &quot;&lt;/a&gt;&quot;);</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					catNode.setName(itemCat.getName());</span><br><span class="line">				&#125;</span><br><span class="line">				catNode.setUrl(&quot;/products/&quot; + itemCat.getId() + &quot;.html&quot;);</span><br><span class="line">				catNode.setItem(getCatList(itemCat.getId()));</span><br><span class="line"></span><br><span class="line">				resultList.add(catNode);</span><br><span class="line"></span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				resultList.add(&quot;/products/&quot; + itemCat.getId() + &quot;.html|&quot; + itemCat.getName());</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		return resultList;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过是否是父节点将从数据库取出的杂乱的数据循环遍历按一定顺序拼装成jsp可以理解的json格式数据   装进list里</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/106taotao数据库.JPG" alt=""></h2><p><img src="/images/106JSON格式数据.JPG" alt=""></p>
+<p>以上就是数据库数据展示到jsp 的过程  </p>
+<h1 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h1><p>使用json数据测试。如果ajax请求的是同一个工程中taotao-portal的json数据没有问题，可以直接显示出来。如果请求的是taotao-rest工程中json数据，会发生错误。</p>
+<p>跨域问题：浏览器一个安全的限制，不允许js跨域请求资源，</p>
+<p><a href="http://www.taotao.com" target="_blank" rel="noopener">www.taotao.com</a>    manage.taotao.com 跨域</p>
+<p><a href="http://www.taotao.com" target="_blank" rel="noopener">www.taotao.com</a>  <a href="http://www.taotao.com" target="_blank" rel="noopener">www.taotao.com</a>  非跨域</p>
+<p><a href="http://www.taotao.com" target="_blank" rel="noopener">www.taotao.com</a>  <a href="http://www.taotao.com:8081" target="_blank" rel="noopener">www.taotao.com:8081</a>  跨域</p>
+<p>如何解决跨域问题：使用jsonp来解决跨域问题。</p>
+<p>jsonp的原理：<br>浏览器在js请求中，是允许通过script标签的src跨域请求，可以在请求的结果中添加回调方法名，在请求页面中定义方法，既可获取到跨域请求的数据。</p>
+<p><img src="/images/107跨域问题.JPG" alt=""></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/04/设计模式介绍及Java描述---单例模式/" rel="next" title="设计模式介绍及Java描述---单例模式">
+                <i class="fa fa-chevron-left"></i> 设计模式介绍及Java描述---单例模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -366,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,6 +625,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首页商品类目展示流程"><span class="nav-number">1.</span> <span class="nav-text">首页商品类目展示流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据传输过程"><span class="nav-number">2.</span> <span class="nav-text">数据传输过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域问题"><span class="nav-number">3.</span> <span class="nav-text">跨域问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -636,9 +824,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://icygrin.club/java/index.html';
-          this.page.identifier = 'java/index.html';
-          this.page.title = 'java';
+          this.page.url = 'http://icygrin.club/2018/10/07/屡一下taotao前台系统商品分类展示/';
+          this.page.identifier = '2018/10/07/屡一下taotao前台系统商品分类展示/';
+          this.page.title = '屡一下taotao前台系统商品分类展示';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
