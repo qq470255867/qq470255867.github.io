@@ -6,10 +6,61 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://icygrin.club/"/>
-  <updated>2018-10-06T16:02:53.528Z</updated>
+  <updated>2018-10-08T14:53:19.992Z</updated>
   <id>http://icygrin.club/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>taotao的redis集群缓存池</title>
+    <link href="http://icygrin.club/2018/10/08/taotao%E7%9A%84redis%E9%9B%86%E7%BE%A4%E7%BC%93%E5%AD%98%E6%B1%A0/"/>
+    <id>http://icygrin.club/2018/10/08/taotao的redis集群缓存池/</id>
+    <published>2018-10-08T14:53:19.922Z</published>
+    <updated>2018-10-08T14:53:19.992Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;mmp现在就开始做集群是不是太早了，，既然用到了那就开始学吧&lt;br&gt;刚刚发小给发了个喝酒的视频   瞬间笑喷   真羡慕他们   能和故交知己坐一起痛饮该是世界上最大快事吧&lt;/p&gt;
+&lt;p&gt;服务器已配置好单机的redis&lt;/p&gt;
+&lt;h1 id=&quot;为啥用redis&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="redis" scheme="http://icygrin.club/categories/redis/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>捋一下门户首页大广告实现方案</title>
+    <link href="http://icygrin.club/2018/10/08/%E6%8D%8B%E4%B8%80%E4%B8%8B%E9%97%A8%E6%88%B7%E9%A6%96%E9%A1%B5%E5%A4%A7%E5%B9%BF%E5%91%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/"/>
+    <id>http://icygrin.club/2018/10/08/捋一下门户首页大广告实现方案/</id>
+    <published>2018-10-08T11:29:39.999Z</published>
+    <updated>2018-10-08T11:40:31.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近没有涉及到新的技术，项目做的一帆风顺吧，好吧 我又来捋一捋了&lt;/p&gt;
+&lt;h1 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h1&gt;&lt;p&gt;首先从jsp开始  发现首页大广告位置的&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="项目实战" scheme="http://icygrin.club/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>屡一下taotao前台系统商品分类展示</title>
@@ -489,58 +540,6 @@
     </summary>
     
       <category term="编译原理" scheme="http://icygrin.club/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2018 天津</title>
-    <link href="http://icygrin.club/2018/08/26/2018%20%E5%A4%A9%E6%B4%A5,%E9%9A%8F%E7%AC%94/"/>
-    <id>http://icygrin.club/2018/08/26/2018 天津,随笔/</id>
-    <published>2018-08-25T16:00:04.693Z</published>
-    <updated>2018-08-25T15:59:15.481Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;另外，我想说，异乡的告别真痛苦&lt;br&gt;&lt;img src=&quot;/images/825车票2.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/825车票1.JPG&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="旅行" scheme="http://icygrin.club/categories/%E6%97%85%E8%A1%8C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2018 天津</title>
-    <link href="http://icygrin.club/2018/08/18/2018%20%E5%A4%A9%E6%B4%A5/"/>
-    <id>http://icygrin.club/2018/08/18/2018 天津/</id>
-    <published>2018-08-18T08:15:30.233Z</published>
-    <updated>2018-08-25T16:00:38.165Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;后来多少人想起了他们会在那样的地方告别，也忘记了告别的时候要再用力一点，多一句话说不定就是最后一句，多看一眼也说不定就是最后一眼吧。2018 相聚有时，后会无期&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="旅行" scheme="http://icygrin.club/categories/%E6%97%85%E8%A1%8C/"/>
     
     
   </entry>

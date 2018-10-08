@@ -81,16 +81,23 @@
 
 
 
-<meta name="description" content="欢迎">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冰笑风云">
-<meta property="og:url" content="http://icygrin.club/categories/JavaScript/index.html">
+<meta name="description" content="最近没有涉及到新的技术，项目做的一帆风顺吧，好吧 我又来捋一捋了 分析首先从jsp开始  发现首页大广告位置的 取出那条json格式化之后发现 jsp的大广告这部分接受这样格式的json数据和之前不同的是，portal层没有dao层，不能从数据库中取出数据然后转换json，需要调用rest层的服务rest层可以从数据库取出数据然后转换成json，（因为httpclient传递的是json数据）然后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="捋一下门户首页大广告实现方案">
+<meta property="og:url" content="http://icygrin.club/2018/10/08/捋一下门户首页大广告实现方案/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="欢迎">
+<meta property="og:description" content="最近没有涉及到新的技术，项目做的一帆风顺吧，好吧 我又来捋一捋了 分析首先从jsp开始  发现首页大广告位置的 取出那条json格式化之后发现 jsp的大广告这部分接受这样格式的json数据和之前不同的是，portal层没有dao层，不能从数据库中取出数据然后转换json，需要调用rest层的服务rest层可以从数据库取出数据然后转换成json，（因为httpclient传递的是json数据）然后">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://icygrin.club/images/10.8大广告位.JPG">
+<meta property="og:image" content="http://icygrin.club/images/10.8广告json.JPG">
+<meta property="og:image" content="http://icygrin.club/images/10.8restjson.JPG">
+<meta property="og:image" content="http://icygrin.club/images/10.8restjson.JPG">
+<meta property="og:image" content="http://icygrin.club/images/10.8广告json.JPG">
+<meta property="og:updated_time" content="2018-10-08T11:40:31.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冰笑风云">
-<meta name="twitter:description" content="欢迎">
+<meta name="twitter:title" content="捋一下门户首页大广告实现方案">
+<meta name="twitter:description" content="最近没有涉及到新的技术，项目做的一帆风顺吧，好吧 我又来捋一捋了 分析首先从jsp开始  发现首页大广告位置的 取出那条json格式化之后发现 jsp的大广告这部分接受这样格式的json数据和之前不同的是，portal层没有dao层，不能从数据库中取出数据然后转换json，需要调用rest层的服务rest层可以从数据库取出数据然后转换成json，（因为httpclient传递的是json数据）然后">
+<meta name="twitter:image" content="http://icygrin.club/images/10.8大广告位.JPG">
 
 
 
@@ -120,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://icygrin.club/categories/JavaScript/"/>
+  <link rel="canonical" href="http://icygrin.club/2018/10/08/捋一下门户首页大广告实现方案/"/>
 
 
 
 
 
-  <title>Category: JavaScript | 冰笑风云</title>
+  <title>捋一下门户首页大广告实现方案 | 冰笑风云</title>
   
 
 
@@ -145,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,55 +300,194 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JavaScript<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/10/08/捋一下门户首页大广告实现方案/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/15/JSON语法/" itemprop="url">
-              
-                <span itemprop="name">JSON语法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">捋一下门户首页大广告实现方案</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-15T18:33:10+08:00"
-              content="2018-09-15" >
-          09-15
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-08T19:29:39+08:00">
+                2018-10-08
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目实战/" itemprop="url" rel="index">
+                    <span itemprop="name">项目实战</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/08/捋一下门户首页大广告实现方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/08/捋一下门户首页大广告实现方案/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近没有涉及到新的技术，项目做的一帆风顺吧，好吧 我又来捋一捋了</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>首先从jsp开始  发现首页大广告位置的<br><img src="/images/10.8大广告位.JPG" alt=""></p>
+<p>取出那条json格式化之后发现<br><img src="/images/10.8广告json.JPG" alt=""></p>
+<p>jsp的大广告这部分接受这样格式的json数据<br>和之前不同的是，portal层没有dao层，不能从数据库中取出数据然后转换json，需要调用rest层的服务<br>rest层可以从数据库取出数据然后转换成json，（因为httpclient传递的是json数据）然后由portal的service层取出字符串  剥丝抽茧  把数据data取出来<br><img src="/images/10.8restjson.JPG" alt=""><br>转化成list对象，然后遍历，对照上一条json把该加的内容加进去</p>
+<p>使用modelAndView对象把json字符串传递给jsp。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var data = $&#123;ad1&#125;;</span><br></pre></td></tr></table></figure>
+<p>↓↓↓↓↓↓↓↓↓↓↓↓↓<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addAttribute(&quot;ad1&quot;,adJSON);</span><br></pre></td></tr></table></figure></p>
+<h1 id="restful层"><a href="#restful层" class="headerlink" title="restful层"></a>restful层</h1><p>其实rest相当于给portal的dao层，只是这样方便后期扩展的门户继续调用这个restful形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ContentServiceimpl implements ContentService &#123;</span><br><span class="line">	@Autowired</span><br><span class="line">	private TbContentMapper contentMapper;</span><br><span class="line">	@Override</span><br><span class="line">	public List&lt;TbContent&gt; getContentList(long contentCid) &#123;</span><br><span class="line">		// 查询商品列表</span><br><span class="line">		TbContentExample example = new TbContentExample();</span><br><span class="line">		Criteria criteria = example.createCriteria();</span><br><span class="line">		criteria.andCategoryIdEqualTo(contentCid);</span><br><span class="line">		List&lt;TbContent&gt; list =contentMapper.selectByExample(example);</span><br><span class="line">		</span><br><span class="line">		return list;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据分类contentid把content内容信息全取出来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/content&quot;)</span><br><span class="line">public class ContentController &#123;</span><br><span class="line"></span><br><span class="line">	@Autowired</span><br><span class="line">	private ContentService contentService;</span><br><span class="line"></span><br><span class="line">	@RequestMapping(&quot;/list/&#123;contentCategoryId&#125;&quot;)</span><br><span class="line">	@ResponseBody</span><br><span class="line">	public TaotaoResult getContentList(@PathVariable Long contentCategoryId) &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			List&lt;TbContent&gt; list = contentService.getContentList(contentCategoryId);</span><br><span class="line">			return TaotaoResult.ok(list);</span><br><span class="line">			</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return TaotaoResult.build(500, com.taotao.common.utils.ExceptionUtil.getStackTrace(e));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>写好控制层在浏览器输入对应url便可以将json数据取出来，但此时json数据并不符合jsp所要展示的相应格式<br><img src="/images/10.8restjson.JPG" alt=""><br>对比<br><img src="/images/10.8广告json.JPG" alt=""></p>
+<h1 id="portal-层"><a href="#portal-层" class="headerlink" title="portal 层"></a>portal 层</h1><p>需要使用httpclient调用taotao-rest的服务。<br>根据内容分类id查询分类的内容列表，需要使用httpclient调用taotao-rest的服务。<br>得到一个json字符串。需要把字符串转换成java对象taotaoResult对象。<br>从taotaoResult对象中取data属性，得到内容列表。把内容列表转换成jsp页面要求的json格式。<br>返回一个json字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class ContentServiceImpl implements ContentService &#123;</span><br><span class="line"></span><br><span class="line">	@Value(&quot;$&#123;REST_BASE_URL&#125;&quot;)</span><br><span class="line">	public String REST_BASE_URL;</span><br><span class="line">	@Value(&quot;$&#123;REST_INDEX_AD_URL&#125;&quot;)</span><br><span class="line">	public String REST_INDEX_AD_URL;  //这里的属性在一个配置文件</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public String getContentList() &#123;</span><br><span class="line">		String result = HttpClientUtil.doGet(REST_BASE_URL + REST_INDEX_AD_URL); </span><br><span class="line"></span><br><span class="line">         //访问的REST_BASE_URL = http://localhost:8081/rest/   而  REST_INDEX_AD_URL = /content/list/89</span><br><span class="line"></span><br><span class="line">		try &#123;</span><br><span class="line">			//类型转换   把字符串转换成TaotaoResult</span><br><span class="line">			TaotaoResult formatToList = TaotaoResult.formatToList(result, TbContent.class); </span><br><span class="line">            //取出data</span><br><span class="line">			List&lt;TbContent&gt; list = (List&lt;TbContent&gt;) formatToList.getData();</span><br><span class="line">			</span><br><span class="line">			List&lt;Map&gt; resultList = new ArrayList&lt;&gt;();</span><br><span class="line">            //创建一个jsp页码要求的pojo列表</span><br><span class="line">			for (TbContent tbContent : list) &#123;</span><br><span class="line">				Map map =new HashMap&lt;&gt;();</span><br><span class="line">				map.put(&quot;src&quot;, tbContent.getPic());</span><br><span class="line">				map.put(&quot;height&quot;, 240);</span><br><span class="line">				map.put(&quot;width&quot;, 670);</span><br><span class="line">				map.put(&quot;srcB&quot;, tbContent.getPic2());</span><br><span class="line">				map.put(&quot;widthB&quot;, 550);</span><br><span class="line">				map.put(&quot;heightB&quot;, 240);</span><br><span class="line">				map.put(&quot;href&quot;, tbContent.getUrl());</span><br><span class="line">				map.put(&quot;alt&quot;, tbContent.getSubTitle());</span><br><span class="line">				resultList.add(map);</span><br><span class="line"></span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			return JsonUtils.objectToJson(resultList);</span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/index&quot;)</span><br><span class="line">	public String showIndex(Model model) &#123;</span><br><span class="line">		String adJson = contentService.getContentList();</span><br><span class="line">		model.addAttribute(&quot;ad1&quot;, adJson);</span><br><span class="line">		</span><br><span class="line">		return &quot;index&quot;;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>到这里信息交流的变化过程就是</p>
+<p>taotaoresultlist对象 → taotaoresult json → string字符串 → taotaoresultlist对象 → tbcontent对象 → 详细的tbcontentlist的对象 → 可以响应的json</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/07/屡一下taotao前台系统商品分类展示/" rel="next" title="屡一下taotao前台系统商品分类展示">
+                <i class="fa fa-chevron-left"></i> 屡一下taotao前台系统商品分类展示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/08/taotao的redis集群缓存池/" rel="prev" title="taotao的redis集群缓存池">
+                taotao的redis集群缓存池 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +495,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -369,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,6 +625,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#restful层"><span class="nav-number">2.</span> <span class="nav-text">restful层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#portal-层"><span class="nav-number">3.</span> <span class="nav-text">portal 层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#controller"><span class="nav-number">3.1.</span> <span class="nav-text">controller</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -615,6 +800,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -632,6 +821,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://icygrin.club/2018/10/08/捋一下门户首页大广告实现方案/';
+          this.page.identifier = '2018/10/08/捋一下门户首页大广告实现方案/';
+          this.page.title = '捋一下门户首页大广告实现方案';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

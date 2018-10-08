@@ -81,16 +81,21 @@
 
 
 
-<meta name="description" content="欢迎">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冰笑风云">
-<meta property="og:url" content="http://icygrin.club/categories/JavaScript/index.html">
+<meta name="description" content="mmp现在就开始做集群是不是太早了，，既然用到了那就开始学吧刚刚发小给发了个喝酒的视频   瞬间笑喷   真羡慕他们   能和故交知己坐一起痛饮该是世界上最大快事吧 服务器已配置好单机的redis 为啥用redis项目中使用redis，主要是从两个角度去考虑:性能和并发 我们在碰到需要执行耗时特别久，且结果不频繁变动的SQL，就特别适合将运行结果放入缓存 后面的请求就去缓存中读取，使得请求能够迅速">
+<meta property="og:type" content="article">
+<meta property="og:title" content="taotao的redis集群缓存池">
+<meta property="og:url" content="http://icygrin.club/2018/10/08/taotao的redis集群缓存池/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="欢迎">
+<meta property="og:description" content="mmp现在就开始做集群是不是太早了，，既然用到了那就开始学吧刚刚发小给发了个喝酒的视频   瞬间笑喷   真羡慕他们   能和故交知己坐一起痛饮该是世界上最大快事吧 服务器已配置好单机的redis 为啥用redis项目中使用redis，主要是从两个角度去考虑:性能和并发 我们在碰到需要执行耗时特别久，且结果不频繁变动的SQL，就特别适合将运行结果放入缓存 后面的请求就去缓存中读取，使得请求能够迅速">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://icygrin.club/images/124yuhajhflaf.jpg">
+<meta property="og:image" content="http://icygrin.club/images/12hrfuaiuhff.JPG">
+<meta property="og:image" content="http://icygrin.club/images/12ourh89fyasf7y71.jpg">
+<meta property="og:updated_time" content="2018-10-08T14:53:19.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冰笑风云">
-<meta name="twitter:description" content="欢迎">
+<meta name="twitter:title" content="taotao的redis集群缓存池">
+<meta name="twitter:description" content="mmp现在就开始做集群是不是太早了，，既然用到了那就开始学吧刚刚发小给发了个喝酒的视频   瞬间笑喷   真羡慕他们   能和故交知己坐一起痛饮该是世界上最大快事吧 服务器已配置好单机的redis 为啥用redis项目中使用redis，主要是从两个角度去考虑:性能和并发 我们在碰到需要执行耗时特别久，且结果不频繁变动的SQL，就特别适合将运行结果放入缓存 后面的请求就去缓存中读取，使得请求能够迅速">
+<meta name="twitter:image" content="http://icygrin.club/images/124yuhajhflaf.jpg">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://icygrin.club/categories/JavaScript/"/>
+  <link rel="canonical" href="http://icygrin.club/2018/10/08/taotao的redis集群缓存池/"/>
 
 
 
 
 
-  <title>Category: JavaScript | 冰笑风云</title>
+  <title>taotao的redis集群缓存池 | 冰笑风云</title>
   
 
 
@@ -145,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,55 +298,200 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JavaScript<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/10/08/taotao的redis集群缓存池/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/15/JSON语法/" itemprop="url">
-              
-                <span itemprop="name">JSON语法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">taotao的redis集群缓存池</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-15T18:33:10+08:00"
-              content="2018-09-15" >
-          09-15
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-08T22:53:19+08:00">
+                2018-10-08
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/08/taotao的redis集群缓存池/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/08/taotao的redis集群缓存池/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>mmp现在就开始做集群是不是太早了，，既然用到了那就开始学吧<br>刚刚发小给发了个喝酒的视频   瞬间笑喷   真羡慕他们   能和故交知己坐一起痛饮该是世界上最大快事吧</p>
+<p>服务器已配置好单机的redis</p>
+<h1 id="为啥用redis"><a href="#为啥用redis" class="headerlink" title="为啥用redis"></a>为啥用redis</h1><p>项目中使用redis，主要是从两个角度去考虑:性能和并发</p>
+<p>我们在碰到需要执行耗时特别久，且结果不频繁变动的SQL，就特别适合将运行结果放入缓存</p>
+<p>后面的请求就去缓存中读取，使得请求能够迅速响应。</p>
+<h1 id="redis的数据类型，以及每种数据类型的使用场景"><a href="#redis的数据类型，以及每种数据类型的使用场景" class="headerlink" title="redis的数据类型，以及每种数据类型的使用场景"></a>redis的数据类型，以及每种数据类型的使用场景</h1><p>String</p>
+<p>这个其实没啥好说的，最常规的set/get操作，value可以是String也可以是数字。一般做一些复杂的计数功能的缓存。</p>
+<p>hash</p>
+<p>这里value存放的是结构化的对象，比较方便的就是操作其中的某个字段。博主在做单点登录的时候，就是用这种数据结构存储用户信息，以cookieId作为key，设置30分钟为缓存过期时间，能很好的模拟出类似session的效果。</p>
+<p>list</p>
+<p>使用List的数据结构，可以做简单的消息队列的功能。另外还有一个就是，可以利用lrange命令，做基于redis的分页功能，性能极佳，用户体验好。本人还用一个场景，很合适—取行情信息。就也是个生产者和消费者的场景。LIST可以很好的完成排队，先进先出的原则。</p>
+<p>set</p>
+<p>因为set堆放的是一堆不重复值的集合。所以可以做全局去重的功能。为什么不用JVM自带的Set进行去重？因为我们的系统一般都是集群部署，使用JVM自带的Set，比较麻烦，难道为了一个做一个全局去重，再起一个公共服务，太麻烦了。</p>
+<p>另外，就是利用交集、并集、差集等操作，可以计算共同喜好，全部的喜好，自己独有的喜好等功能。</p>
+<p>sorted set</p>
+<p>sorted set多了一个权重参数score,集合中的元素能够按score进行排列。可以做排行榜应用，取TOP N操作。</p>
+<p>以上是redis相关概念</p>
+<p>接下来说集群</p>
+<p><img src="/images/124yuhajhflaf.jpg" alt=""></p>
+<p>redis-cluster把所有的物理节点映射到[0-16383]slot上,<br>cluster 负责维护node<->slot<->value<br>Redis 集群中内置了 16384 个哈希槽，<br>当需要在 Redis 集群中放置一个 key-value 时，<br>redis 先对 key 使用 crc16 算法算出一个结果，<br>然后把结果对 16384 求余数，<br>这样每个 key 都会对应一个编号在 0-16383 之间的哈希槽，<br>redis 会根据节点数量大致均等的将哈希槽映射到不同的节点</-></-></p>
+<p><img src="/images/12hrfuaiuhff.JPG" alt=""></p>
+<p>Key:a<br>计算a的hash值，例如值为100，100这个槽在server1上，所以a应该放到server1.</p>
+<p>Key:hello<br>Hash值：10032，此槽在server2上。Hell可以应该存在server2.<br><img src="/images/12ourh89fyasf7y71.jpg" alt=""></p>
+<p>(1)领着投票过程是集群中所有master参与,如果半数以上master节点与master节点通信超过(cluster-node-timeout),认为当前master节点挂掉.<br>(2):什么时候整个集群不可用(cluster_state:fail)?<br>    a:如果集群任意master挂掉,且当前master没有slave.集群进入fail状态,也可以理解成集群的slot映射[0-16383]不完成时进入fail状态. ps : redis-3.0.0.rc1加入cluster-require-full-coverage参数,默认关闭,打开集群兼容部分失败.<br>    b:如果集群超过半数以上master挂掉，无论是否有slave集群进入fail状态.<br>  ps:当集群不可用时,所有对集群的操作做都不可用，收到((error) CLUSTERDOWN The cluster is down)错误</p>
+<p>心头一颤 </p>
+<p>看样子需要3个节点 才能完成一个最小的集群  然后就是一主一备  6个虚拟机。。心疼一波我的老伙计</p>
+<p>需要使用一个官方提供额ruby脚本呢</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/08/捋一下门户首页大广告实现方案/" rel="next" title="捋一下门户首页大广告实现方案">
+                <i class="fa fa-chevron-left"></i> 捋一下门户首页大广告实现方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +499,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -369,8 +533,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,6 +629,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为啥用redis"><span class="nav-number">1.</span> <span class="nav-text">为啥用redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#redis的数据类型，以及每种数据类型的使用场景"><span class="nav-number">2.</span> <span class="nav-text">redis的数据类型，以及每种数据类型的使用场景</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -615,6 +804,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -632,6 +825,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://icygrin.club/2018/10/08/taotao的redis集群缓存池/';
+          this.page.identifier = '2018/10/08/taotao的redis集群缓存池/';
+          this.page.title = 'taotao的redis集群缓存池';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
