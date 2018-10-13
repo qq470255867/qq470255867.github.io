@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="冰笑风云" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前方泥土太多 走出才能洒脱  是时候写一篇质量很高的博客了呢 为啥我一背井离乡那个坑逼就回来了呢，兄弟团聚这么难啊 家乡现在通暖气了吧  霜冻真的冷 想家，想爸妈，想兄弟，想她 好吧 开始写吧 序 可以看出搜索是个大的项目块，与数据库并无关联，由portal直接调用SearchService，再乡下由项目调用solr服务，联系到solr自带的索引库  从首页的jsp中 找到1&amp;lt;script">
+<meta property="og:type" content="article">
+<meta property="og:title" content="solr的应用---taotao项目搜索功能实现">
+<meta property="og:url" content="http://icygrin.club/2018/10/13/solr的应用---taotao项目搜索功能实现/index.html">
+<meta property="og:site_name" content="冰笑风云">
+<meta property="og:description" content="前方泥土太多 走出才能洒脱  是时候写一篇质量很高的博客了呢 为啥我一背井离乡那个坑逼就回来了呢，兄弟团聚这么难啊 家乡现在通暖气了吧  霜冻真的冷 想家，想爸妈，想兄弟，想她 好吧 开始写吧 序 可以看出搜索是个大的项目块，与数据库并无关联，由portal直接调用SearchService，再乡下由项目调用solr服务，联系到solr自带的索引库  从首页的jsp中 找到1&amp;lt;script">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://icygrin.club/images/23元92飓风哈撒算法.jpg">
+<meta property="og:image" content="http://icygrin.club/images/2y97fya9yf7asyhfj2.jpg">
+<meta property="og:image" content="http://icygrin.club/images/21yuhfnjashfyiasgfb.JPG">
+<meta property="og:image" content="http://icygrin.club/images/21hfigafbhiasbfna.JPG">
+<meta property="og:updated_time" content="2018-10-13T15:50:04.579Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="solr的应用---taotao项目搜索功能实现">
+<meta name="twitter:description" content="前方泥土太多 走出才能洒脱  是时候写一篇质量很高的博客了呢 为啥我一背井离乡那个坑逼就回来了呢，兄弟团聚这么难啊 家乡现在通暖气了吧  霜冻真的冷 想家，想爸妈，想兄弟，想她 好吧 开始写吧 序 可以看出搜索是个大的项目块，与数据库并无关联，由portal直接调用SearchService，再乡下由项目调用solr服务，联系到solr自带的索引库  从首页的jsp中 找到1&amp;lt;script">
+<meta name="twitter:image" content="http://icygrin.club/images/23元92飓风哈撒算法.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://icygrin.club/2018/10/13/solr的应用---taotao项目搜索功能实现/"/>
+
+
+
+
+
+  <title>solr的应用---taotao项目搜索功能实现 | 冰笑风云</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冰笑风云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/10/13/solr的应用---taotao项目搜索功能实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰笑风云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">solr的应用---taotao项目搜索功能实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-13T23:50:04+08:00">
+                2018-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目实战/" itemprop="url" rel="index">
+                    <span itemprop="name">项目实战</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/13/solr的应用---taotao项目搜索功能实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/13/solr的应用---taotao项目搜索功能实现/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>前方泥土太多 走出才能洒脱</p>
+</blockquote>
+<p>是时候写一篇质量很高的博客了呢</p>
+<p>为啥我一背井离乡那个坑逼就回来了呢，兄弟团聚这么难啊</p>
+<p>家乡现在通暖气了吧  霜冻真的冷</p>
+<p>想家，想爸妈，想兄弟，想她</p>
+<p>好吧 开始写吧</p>
+<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p><img src="/images/23元92飓风哈撒算法.jpg" alt=""></p>
+<p>可以看出搜索是个大的项目块，与数据库并无关联，由portal直接调用SearchService，再乡下由项目调用solr服务，联系到solr自带的索引库</p>
+<p><img src="/images/2y97fya9yf7asyhfj2.jpg" alt=""></p>
+<p>从首页的jsp中 找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/base-v1.js&quot; charset=&quot;utf-8&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;button&quot; value=&quot;搜索&quot; class=&quot;button&quot; onclick=&quot;search(&apos;key&apos;);return false;&quot; clstag=&quot;homepage|keycount|home2013|03a&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>这两段</p>
+<p>得出从basev1.js中找search的片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function search(a) &#123;</span><br><span class="line">    var b = &quot;http://localhost:8082/search.html?q=&quot; + encodeURIComponent(document.getElementById(a).value);</span><br><span class="line">    return window.location.href = b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里得到了将来portal的controller的响应条件</p>
+<p>请求url：<a href="http://localhost:8082/search.html?q=查询条件" target="_blank" rel="noopener">http://localhost:8082/search.html?q=查询条件</a></p>
+<h1 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h1><p>搭建solr服务器的过程不再赘述<br>需要jdk tomcat 比较繁琐</p>
+<p>关键是配置</p>
+<p><field name="item_title" type="text_ik" indexed="true" stored="true"></field></p>
+<p><field name="item_sell_point" type="text_ik" indexed="true" stored="true"></field></p>
+<p><field name="item_price" type="long" indexed="true" stored="true"></field></p>
+<p><field name="item_image" type="string" indexed="false" stored="true"></field></p>
+<p><field name="item_category_name" type="string" indexed="true" stored="true"></field></p>
+<field name="item_desc" type="text_ik" indexed="true" stored="false">
+
+<p><field name="item_keywords" type="text_ik" indexed="true" stored="false" multivalued="true"></field></p>
+<p><copyfield source="item_title" dest="item_keywords"></copyfield></p>
+<p><copyfield source="item_sell_point" dest="item_keywords"></copyfield></p>
+<p><copyfield source="item_category_name" dest="item_keywords"></copyfield></p>
+<p><copyfield source="item_desc" dest="item_keywords"><br>这里定义数据格式 才能根据这个完成导入和取出数据</copyfield></p>
+<p>solr 通过你导入的长篇大论分析出各种词汇 然后根据你输入词汇返回查询的对象<br>这里重点介绍java代码调用solr的服务</p>
+<p>首先需要把数据库的数据取出  传输到solr库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;getItemList&quot; resultType=&quot;com.taotao.search.pojo.Item&quot;&gt;</span><br><span class="line">		SELECT</span><br><span class="line">			a.id,</span><br><span class="line">			a.title,</span><br><span class="line">			a.sell_point,</span><br><span class="line">			a.price,</span><br><span class="line">			a.image,</span><br><span class="line">			b. NAME category_name</span><br><span class="line">		FROM</span><br><span class="line">			tb_item a</span><br><span class="line">		LEFT JOIN tb_item_cat b ON a.cid = b.id</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<p>List&lt;com.taotao.search.pojo.Item&gt; getItemList();</p>
+<p>这里从数据库中取出数据<br>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public TaotaoResult importAllItem()  &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		</span><br><span class="line">		try &#123;</span><br><span class="line">			List&lt;Item&gt; list=itemMapper.getItemList();</span><br><span class="line">			</span><br><span class="line">			for (Item item : list) &#123;</span><br><span class="line">				</span><br><span class="line">				SolrInputDocument document = new SolrInputDocument();</span><br><span class="line">				document.setField(&quot;id&quot;, item.getId());</span><br><span class="line">				document.setField(&quot;item_title&quot;, item.getTitle());</span><br><span class="line">				document.setField(&quot;item_sell_point&quot;, item.getSell_point());</span><br><span class="line">				document.setField(&quot;item_price&quot;, item.getId());</span><br><span class="line">				document.setField(&quot;item_image&quot;, item.getId());</span><br><span class="line">				document.setField(&quot;item_category_name&quot;, item.getCategory_name());</span><br><span class="line">				document.setField(&quot;item_desc&quot;, item.getItem_desc());</span><br><span class="line">				</span><br><span class="line">				solrserver.add(document);</span><br><span class="line">			&#125;</span><br><span class="line">			solrserver.commit();</span><br><span class="line">			</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			// TODO: handle exception</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));</span><br><span class="line">		&#125;</span><br><span class="line">		return TaotaoResult.ok();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写一个循环的方法  把取出来的整个list挨个写入solr库</p>
+<p>@RequestMapping(“/manager”)<br>public class ItemController {</p>
+<pre><code>@Autowired
+ItemService itemService;
+//导入所有商品数据
+@RequestMapping(&quot;/importall&quot;)
+@ResponseBody
+public TaotaoResult importAllItem(){        
+    TaotaoResult result=itemService.importAllItem();
+    return result;
+
+}
+</code></pre><p>浏览器输入这个url 数据量大的话浏览器加载时间会长，不过只执行一次的模块。</p>
+<p>去solr库看 成功导入数据库取出数据</p>
+<p><img src="/images/21yuhfnjashfyiasgfb.JPG" alt=""></p>
+<h1 id="编写服务"><a href="#编写服务" class="headerlink" title="编写服务"></a>编写服务</h1><p>然后就能用java代码取出这些数据操作 (dao层)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">@Repository</span><br><span class="line">public class SearchDaoImpl implements SearchDao &#123;</span><br><span class="line"></span><br><span class="line">	@Autowired</span><br><span class="line">	private SolrServer solrServer;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line"></span><br><span class="line">	public SearchResult searchDao(SolrQuery solrQuery) throws SolrServerException &#123;</span><br><span class="line"></span><br><span class="line">		SearchResult searchResult = new SearchResult();</span><br><span class="line"></span><br><span class="line">		// 根据查询结果查询索引库</span><br><span class="line">		QueryResponse queryResponse = solrServer.query(solrQuery);</span><br><span class="line"></span><br><span class="line">		SolrDocumentList solrDocumentList = queryResponse.getResults();</span><br><span class="line">		//</span><br><span class="line">		Map&lt;String, Map&lt;String, List&lt;String&gt;&gt;&gt; highlighting = queryResponse.getHighlighting();</span><br><span class="line"></span><br><span class="line">		long numFound = solrDocumentList.getNumFound();</span><br><span class="line"></span><br><span class="line">		searchResult.setRecordCount(numFound);</span><br><span class="line"></span><br><span class="line">		List&lt;Item&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		for (SolrDocument solrDocument : solrDocumentList) &#123;</span><br><span class="line">			Item item = new Item();</span><br><span class="line">			item.setId((String) solrDocument.get(&quot;id&quot;));</span><br><span class="line">			List&lt;String&gt; list2 = highlighting.get(solrDocument.get(&quot;id&quot;)).get(&quot;item_title&quot;);</span><br><span class="line">			String str = &quot;&quot;;</span><br><span class="line">			if (list2 != null &amp;&amp; list2.size() &gt; 0) &#123;</span><br><span class="line">				str = list2.get(0);</span><br><span class="line"></span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				str = (String) solrDocument.get(&quot;item_category_name&quot;);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			item.setCategory_name((String) solrDocument.get(&quot;item_category_name&quot;));</span><br><span class="line">			item.setPrice((long) solrDocument.get(&quot;item_price&quot;));</span><br><span class="line">			item.setTitle((String) solrDocument.get(&quot;item_title&quot;));</span><br><span class="line">			item.setImage((String) solrDocument.get(&quot;item_image&quot;));</span><br><span class="line">			item.setSell_point((String) solrDocument.get(&quot;item_sell_point&quot;));</span><br><span class="line">			list.add(item);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		searchResult.setList(list);</span><br><span class="line">		return searchResult;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里通过传入的查询词汇的参数，把从solr中取出的数据包装成一个个item对象（list）</p>
+<p>public class SearchResult {<br>    private List<item> list;<br>    private long pageCount;<br>    private long curPage;<br>    private long recordCount;<br>searchresult长这样</item></p>
+<p>service层调用dao层</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">public class SearchServiceImpl implements SearchService &#123;</span><br><span class="line">	</span><br><span class="line">	@Autowired</span><br><span class="line">	SearchDao searchDao;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public SearchResult search(String queryString, int page, int rows) throws SolrServerException &#123;</span><br><span class="line">		</span><br><span class="line">		SolrQuery query = new SolrQuery();</span><br><span class="line">		</span><br><span class="line">		query.setQuery(queryString);</span><br><span class="line">		</span><br><span class="line">		query.setStart((page-1)*rows);</span><br><span class="line">		</span><br><span class="line">		query.set(&quot;df&quot;, &quot;item_keywords&quot;);</span><br><span class="line">		</span><br><span class="line">		query.setHighlight(true);</span><br><span class="line">		query.addHighlightField(&quot;item_title&quot;);</span><br><span class="line">		query.setHighlightSimplePre(&quot;&lt;em style=\&quot;color:red\&quot;&gt;&quot;);</span><br><span class="line">		query.setHighlightSimplePost(&quot;&lt;/em&gt;&quot;);</span><br><span class="line">		</span><br><span class="line">		SearchResult searchResult = searchDao.searchDao(query);</span><br><span class="line">		</span><br><span class="line">		long recordCount =searchResult.getRecordCount();</span><br><span class="line">		long pageCount = recordCount / rows;</span><br><span class="line">		</span><br><span class="line">		if (recordCount %rows&gt;0) &#123;</span><br><span class="line">			</span><br><span class="line">			pageCount++;</span><br><span class="line">			</span><br><span class="line">		&#125;		</span><br><span class="line">		searchResult.setPageCount(pageCount);</span><br><span class="line">		</span><br><span class="line">		searchResult.setCurPage(page);</span><br><span class="line">		</span><br><span class="line">		return searchResult;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>传的参数String query 的具体的值是不会变的</p>
+<p>关键的逻辑<br>query.setStart((page-1)*rows);<br>定义了分页展示</p>
+<p>controller层  通过浏览器就可以取出数据</p>
+<p>@Controller<br>public class SearchController {</p>
+<pre><code>@Autowired
+private SearchService service;
+
+@RequestMapping(value = &quot;/query&quot;, method = RequestMethod.GET)
+@ResponseBody
+private TaotaoResult search(@RequestParam(defaultValue = &quot;1&quot;) Integer page,
+        @RequestParam(defaultValue = &quot;60&quot;) Integer rows, @RequestParam(&quot;q&quot;) String queryString) {
+    if (StringUtils.isBlank(queryString)) {
+
+        return TaotaoResult.build(400, &quot;查询条件不能为空&quot;);
+    }
+    SearchResult result = null;
+    try {
+        queryString = new String(queryString.getBytes(&quot;iso8859-1&quot;), &quot;utf-8&quot;);
+        result = service.search(queryString, page, rows);
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return TaotaoResult.ok(result);
+
+}
+</code></pre><p>}<br>这句话很关键<br>queryString = new String(queryString.getBytes(“iso8859-1”), “utf-8”</p>
+<p>解决了传输到浏览器的乱码问题</p>
+<p>输入url取出的taotaoresult型数据<br><img src="/images/21hfigafbhiasbfna.JPG" alt=""></p>
+<h1 id="调用服务"><a href="#调用服务" class="headerlink" title="调用服务"></a>调用服务</h1><p>portal 层调用写好的服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class SearchServiceImpl implements SearchService &#123;</span><br><span class="line">	</span><br><span class="line">	@Value(&quot;$&#123;SOLR_BASE_URL&#125;&quot;)</span><br><span class="line">	public String SOLR_BASE_URL;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public SearchResult getSearchResult(String query, int page) &#123;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		Map&lt;String, String&gt; param=  new HashMap&lt;&gt;();</span><br><span class="line">		param.put(&quot;q&quot;, query);</span><br><span class="line">		param.put(&quot;page&quot;, page+&quot;&quot;);</span><br><span class="line">		//	</span><br><span class="line">		String json = HttpClientUtil.doGet(SOLR_BASE_URL,param);</span><br><span class="line">		</span><br><span class="line">		TaotaoResult tresult = TaotaoResult.formatToPojo(json, SearchResult.class);</span><br><span class="line">		</span><br><span class="line">		SearchResult sresult = (SearchResult) tresult.getData();</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		return sresult;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里HttpClientUtil.doGet 有带参数的url的方法 参数是map类型  page+“”是将page强制转换成string类型</p>
+<p>取出刚刚截图的taotaoresult 的String类型消息  先格式化成searchresult的pojo再转换成taotaoresult型对象 再取出后面的data 强制转换成SearchResult   </p>
+<p>这里需要taotaoresult经手是为了方便查看异常 和关键的formatToPojo方法</p>
+<p>controller 层<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class SearchController &#123;</span><br><span class="line"></span><br><span class="line">	@Autowired</span><br><span class="line">	SearchService searchService;</span><br><span class="line"></span><br><span class="line">	@RequestMapping(&quot;/search&quot;)</span><br><span class="line">	public String showSearch(@RequestParam(&quot;q&quot;) String query, @RequestParam(defaultValue = &quot;1&quot;) Integer page,</span><br><span class="line">			Model model) &#123;</span><br><span class="line">		if (query!=null) &#123;</span><br><span class="line">			</span><br><span class="line">			try &#123;</span><br><span class="line">				query = new String(query.getBytes(&quot;iso8859-1&quot;), &quot;utf-8&quot;);</span><br><span class="line">			&#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">				// TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		SearchResult result = searchService.getSearchResult(query, page);</span><br><span class="line">		</span><br><span class="line">		model.addAttribute(&quot;query&quot;, query);</span><br><span class="line">		model.addAttribute(&quot;totalPages&quot;, result.getPageCount());</span><br><span class="line">		model.addAttribute(&quot;page&quot;, page);</span><br><span class="line">		model.addAttribute(&quot;itemList&quot;, result.getList());</span><br><span class="line"></span><br><span class="line">		return &quot;search&quot;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用到了springmvc 响应前端的</p>
+<p>这里可能会出一个空指针异常 来自</p>
+<p>@RequestParam(defaultValue = “1”) Integer page</p>
+<p>这个地方  如果 page没有定义默认参数 而且传入了一个null  将会让逐个下一层的int page 都传入一个null的参数 导致产生了空引用</p>
+<title>${query} - 商品搜索 - 淘淘</title>
+
+<pre><code>&lt;div class=&quot;crumb&quot;&gt;全部结果&amp;nbsp;&amp;gt;&amp;nbsp;&lt;strong&gt;&quot;${query}&quot;&lt;/strong&gt;&lt;/div&gt;
+</code></pre><p><a href="search?keyword=java&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2" class="next">下一页<b></b></a><br>    <span class="page-skip"><em>&nbsp;&nbsp;共${totalPages}页&nbsp;&nbsp;&nbsp;&nbsp;到第</em></span></p>
+<p>c:forEach items=”${itemList}” var=”item”&gt;</p>
+<p><li class="item-book" bookid="11078102"><br>    <div class="p-img"><br>        <a target="_blank" href="/item/${item.id }.html"><br>            <img width="160" height="160" data-img="1" data-lazyload="${item.image}"><br>        </a><br>    </div><br>    <div class="p-name"><br>        <a target="_blank" href="/item/${item.id }.html"><br>            ${item.title}<br>        </a><br>    </div></li></p>
+<p>去响应jsp定义好的回显功能</p>
+</field>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+               
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/08/taotao的redis集群缓存池/" rel="next" title="taotao的redis集群缓存池">
+                <i class="fa fa-chevron-left"></i> taotao的redis集群缓存池
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description">欢迎</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qq470255867" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:470255867@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://icygrin.club/about/" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://icygrin.club/about/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-weixin"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入数据"><span class="nav-number">2.</span> <span class="nav-text">导入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写服务"><span class="nav-number">3.</span> <span class="nav-text">编写服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用服务"><span class="nav-number">4.</span> <span class="nav-text">调用服务</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共59.5k字</span>
+</div>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://icygrin.club/2018/10/13/solr的应用---taotao项目搜索功能实现/';
+          this.page.identifier = '2018/10/13/solr的应用---taotao项目搜索功能实现/';
+          this.page.title = 'solr的应用---taotao项目搜索功能实现';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
