@@ -81,20 +81,23 @@
 
 
 
-<meta name="description" content="异乡的孤独  冒泡排序原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。 举例说明要排序数组：int[] arr={6,3,8,2,9,1};    第一趟排序： 　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6">
+<meta name="description" content="如果后来有人看到这篇文章，我告诉你，这项目每个模块都有一个坎….  端口互相占用问题经验不足所致，认为看到tomcat开启项目成功运行，结果8080加载不出来，在tomcat本身上掉进去一个坑。后来发现其实是控制台日志现实太少所致，再加上tomcat-plugin不太会用。tomcat本身没有问题。 ps 学会了一个关闭端口进程的方法123netstat -ano|findstr 8080tas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三种必须掌握的排序算法">
-<meta property="og:url" content="http://icygrin.club/2018/09/15/三种必须掌握的排序算法/index.html">
+<meta property="og:title" content="icycraft项目遇到的bug及解决分析">
+<meta property="og:url" content="http://icygrin.club/2018/11/17/icycraft项目遇到的bug及解决分析/index.html">
 <meta property="og:site_name" content="冰笑风云">
-<meta property="og:description" content="异乡的孤独  冒泡排序原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。 举例说明要排序数组：int[] arr={6,3,8,2,9,1};    第一趟排序： 　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6">
+<meta property="og:description" content="如果后来有人看到这篇文章，我告诉你，这项目每个模块都有一个坎….  端口互相占用问题经验不足所致，认为看到tomcat开启项目成功运行，结果8080加载不出来，在tomcat本身上掉进去一个坑。后来发现其实是控制台日志现实太少所致，再加上tomcat-plugin不太会用。tomcat本身没有问题。 ps 学会了一个关闭端口进程的方法123netstat -ano|findstr 8080tas">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://icygrin.club/images/冒泡时间复杂度.JPG">
-<meta property="og:image" content="http://icygrin.club/images/915插入排序.JPG">
-<meta property="og:updated_time" content="2018-09-15T02:52:49.688Z">
+<meta property="og:image" content="http://icygrin.club/images/921success.JPG">
+<meta property="og:image" content="http://icygrin.club/images/104url.JPG">
+<meta property="og:image" content="http://icygrin.club/images/105service.JPG">
+<meta property="og:image" content="http://icygrin.club/images/105controller.JPG">
+<meta property="og:image" content="http://icygrin.club/images/123124的发生发放%20.JPG">
+<meta property="og:updated_time" content="2018-11-17T13:18:05.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三种必须掌握的排序算法">
-<meta name="twitter:description" content="异乡的孤独  冒泡排序原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。 举例说明要排序数组：int[] arr={6,3,8,2,9,1};    第一趟排序： 　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6">
-<meta name="twitter:image" content="http://icygrin.club/images/冒泡时间复杂度.JPG">
+<meta name="twitter:title" content="icycraft项目遇到的bug及解决分析">
+<meta name="twitter:description" content="如果后来有人看到这篇文章，我告诉你，这项目每个模块都有一个坎….  端口互相占用问题经验不足所致，认为看到tomcat开启项目成功运行，结果8080加载不出来，在tomcat本身上掉进去一个坑。后来发现其实是控制台日志现实太少所致，再加上tomcat-plugin不太会用。tomcat本身没有问题。 ps 学会了一个关闭端口进程的方法123netstat -ano|findstr 8080tas">
+<meta name="twitter:image" content="http://icygrin.club/images/921success.JPG">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://icygrin.club/2018/09/15/三种必须掌握的排序算法/"/>
+  <link rel="canonical" href="http://icygrin.club/2018/11/17/icycraft项目遇到的bug及解决分析/"/>
 
 
 
 
 
-  <title>三种必须掌握的排序算法 | 冰笑风云</title>
+  <title>icycraft项目遇到的bug及解决分析 | 冰笑风云</title>
   
 
 
@@ -311,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/09/15/三种必须掌握的排序算法/">
+    <link itemprop="mainEntityOfPage" href="http://icygrin.club/2018/11/17/icycraft项目遇到的bug及解决分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -328,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">三种必须掌握的排序算法</h1>
+          <h1 class="post-title" itemprop="name headline">icycraft项目遇到的bug及解决分析</h1>
         
 
         <div class="post-meta">
@@ -340,8 +343,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-15T10:53:13+08:00">
-                2018-09-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-17T21:18:05+08:00">
+                2018-11-17
               </time>
             
 
@@ -363,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/项目实战/" itemprop="url" rel="index">
+                    <span itemprop="name">项目实战</span>
                   </a>
                 </span>
 
@@ -381,9 +384,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/15/三种必须掌握的排序算法/#comments" itemprop="discussionUrl">
+                <a href="/2018/11/17/icycraft项目遇到的bug及解决分析/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/15/三种必须掌握的排序算法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/11/17/icycraft项目遇到的bug及解决分析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,76 +415,67 @@
 
       
         <blockquote>
-<p>异乡的孤独</p>
+<p>如果后来有人看到这篇文章，我告诉你，这项目每个模块都有一个坎….</p>
 </blockquote>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>原理：升序排列就是比较两个相邻的元素，将值大的元素交换至右端。较大数再与下个数比较，保持较大者在右，一直循环之后仿佛冒泡一样将较大的数放在了最后一个。第二趟排序最右边数一定是最大数，所以只将前面N-1个数重复以上过程。</p>
-<h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><p>要排序数组：int[] arr={6,3,8,2,9,1};   </p>
-<p>第一趟排序：</p>
-<p>　　　　第一次排序：6和3比较，6大于3，交换位置：  3  6  8  2  9  1</p>
-<p>　　　　第二次排序：6和8比较，6小于8，不交换位置：3  6  8  2  9  1</p>
-<p>　　　　第三次排序：8和2比较，8大于2，交换位置：  3  6  2  8  9  1</p>
-<p>　　　　第四次排序：8和9比较，8小于9，不交换位置：3  6  2  8  9  1</p>
-<p>　　　　第五次排序：9和1比较：9大于1，交换位置：  3  6  2  8  1  9</p>
-<p>　　　　第一趟总共进行了5次比较， 排序结果：      3  6  2  8  1  9</p>
-<hr>
-<p>第二趟排序：</p>
-<p>　　　　第一次排序：3和6比较，3小于6，不交换位置：3  6  2  8  1  9</p>
-<p>　　　　第二次排序：6和2比较，6大于2，交换位置：  3  2  6  8  1  9</p>
-<p>　　　　第三次排序：6和8比较，6大于8，不交换位置：3  2  6  8  1  9</p>
-<p>　　　　第四次排序：8和1比较，8大于1，交换位置：  3  2  6  1  8  9</p>
-<p>　　　　第二趟总共进行了4次比较， 排序结果：      3  2  6  1  8  9</p>
-<hr>
-<p>第三趟排序：</p>
-<p>　　　　第一次排序：3和2比较，3大于2，交换位置：  2  3  6  1  8  9</p>
-<p>　　　　第二次排序：3和6比较，3小于6，不交换位置：2  3  6  1  8  9</p>
-<p>　　　　第三次排序：6和1比较，6大于1，交换位置：  2  3  1  6  8  9</p>
-<p>　　　　第二趟总共进行了3次比较， 排序结果：         2  3  1  6  8  9</p>
-<hr>
-<p>第四趟排序：</p>
-<p>　　　　第一次排序：2和3比较，2小于3，不交换位置：2  3  1  6  8  9</p>
-<p>　　　　第二次排序：3和1比较，3大于1，交换位置：  2  1  3  6  8  9</p>
-<p>　　　　第二趟总共进行了2次比较， 排序结果：        2  1  3  6  8  9</p>
-<hr>
-<p>第五趟排序：</p>
-<p>　　　　第一次排序：2和1比较，2大于1，交换位置：  1  2  3  6  8  9</p>
-<p>　　　　第二趟总共进行了1次比较， 排序结果：  1  2  3  6  8  9</p>
-<hr>
-<p>最终结果：1  2  3  6  8  9</p>
-<hr>
-<h3 id="NOTE：由此可见"><a href="#NOTE：由此可见" class="headerlink" title="NOTE：由此可见"></a>NOTE：由此可见</h3><p>N个数要完成排序，要排列N-1趟（最小的数已经在N-1趟时候排在了第一位）。而第i趟比较的次数是N-i次。</p>
-<p>控制循环的基本思想：用双重循环语句，外层控制循环多少趟，内层控制每一趟的循环次数，即</p>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>1.如果我们的数据正序，只需要走一趟即可完成排序。所需的比较次数C和记录移动次数M均达到最小值，即：Cmin=n-1;Mmin=0;所以，冒泡排序最好的时间复杂度为O(n)。</p>
-<p>　　2.如果很不幸我们的数据是反序的，则需要进行n-1趟排序。每趟排序要进行n-i次比较(1≤i≤n-1)，且每次比较都必须移动记录三次来达到交换记录位置。<br>　　<img src="/images/冒泡时间复杂度.JPG" alt=""><br>　　在这种情况下，比较和移动次数均达到最大值：冒泡排序的最坏时间复杂度为：O(n2) 。</p>
-<p>综上所述：冒泡排序总的平均时间复杂度为：O(n2) 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(int i=1;i&lt;arr.length;i++)&#123;</span><br><span class="line"></span><br><span class="line">    for(int j=1;j&lt;arr.length-i;j++)&#123;</span><br><span class="line"></span><br><span class="line">    //交换位置</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="冒泡排序的优点：每进行一趟排序，就会少比较一次"><a href="#冒泡排序的优点：每进行一趟排序，就会少比较一次" class="headerlink" title="冒泡排序的优点：每进行一趟排序，就会少比较一次"></a>冒泡排序的优点：每进行一趟排序，就会少比较一次</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package 作业;</span><br><span class="line"></span><br><span class="line">public class Bubble &#123;</span><br><span class="line">	</span><br><span class="line">	public static int[] prod(int n) &#123;//生成一组随机数的方法</span><br><span class="line">		int[] b=new int[n];</span><br><span class="line">		for(int i=0;i&lt;b.length;i++) &#123;</span><br><span class="line">			b[i]=(int) (Math.random()*100);</span><br><span class="line">			System.out.print(b[i]);</span><br><span class="line">			System.out.print(&apos; &apos;);</span><br><span class="line">							</span><br><span class="line">		&#125;</span><br><span class="line">		return b;</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;排序前&quot;);</span><br><span class="line">		int[] a=prod(5);</span><br><span class="line">		int temp;</span><br><span class="line">		for (int i = 0; i &lt; a.length-1; i++) &#123;//外层循环N-1次</span><br><span class="line"></span><br><span class="line">			for (int j = 0; j &lt; a.length-(i+1); j++) &#123;//这里想了很久才明白，i+1才是趟数</span><br><span class="line">				</span><br><span class="line">				if (a[j]&gt;a[j+1]) &#123;//这里只需要改变这个大小与号就可以控制升序or降序</span><br><span class="line">					temp=a[j];</span><br><span class="line">					a[j]=a[j+1];</span><br><span class="line">					a[j+1]=temp;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">											</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	System.out.println();</span><br><span class="line">	System.out.println(&quot;排完后&quot;);</span><br><span class="line">	for (int i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">		System.out.print(a[i]);</span><br><span class="line">		System.out.print(&quot; &quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>在要排序的一组数中，选出最小的一个数与第一个位置的数交换；然后在剩下的数当中再找最小的与第二个位置的数交换，如此循环到倒数第二个数和最后一个数比较为止。</p>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>数组 int[] arr={5,2,8,4,9,1};</p>
-<hr>
-<p>第一趟排序： 原始数据：5  2  8  4  9  1</p>
-<p>最小数据1，把1放在首位，也就是1和5互换位置，</p>
-<p>排序结果：1  2  8  4  9  5</p>
-<hr>
-<p>第二趟排序：</p>
-<p>第1以外的数据{2  8  4  9  5}进行比较，2最小，</p>
-<p>排序结果：1  2  8  4  9  5</p>
-<hr>
-<p>第三趟排序：</p>
-<p>除1、2以外的数据{8  4  9  5}进行比较，4最小，8和4交换</p>
-<p>排序结果：1  2  4  8  9  5</p>
-<hr>
-<p>第四趟排序：</p>
-<p>除第1、2、4以外的其他数据{8  9  5}进行比较，5最小，8和5交换</p>
-<p>排序结果：1  2  4  5  9  8</p>
-<hr>
-<p>第五趟排序：</p>
-<p>除第1、2、4、5以外的其他数据{9  8}进行比较，8最小，8和9交换</p>
-<p>排序结果：1  2  4  5  8  9</p>
-<h3 id="NOTE："><a href="#NOTE：" class="headerlink" title="NOTE："></a>NOTE：</h3><p>依旧是熟悉的N-1趟排序，排序的算法关键是掌握循环的次数。每一趟排序都是获得最小数的方法：for循环进行比较，定义一个第三个变量temp，首先前两个数比较，把较小的数放在temp中，然后用temp再去跟剩下的数据比较，如果出现比temp小的数据，就用它代替temp中原有的数据。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Selection &#123;</span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) &#123; </span><br><span class="line">	int[] a=Bubble.prod(10);//随机产生10个数</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	for (int i = 0; i &lt; a.length-1; i++) &#123;</span><br><span class="line">		int k=i;</span><br><span class="line">		for (int j = k+1; j &lt; a.length; j++) &#123;</span><br><span class="line">			</span><br><span class="line">			if (a[j]&lt;a[k]) &#123;</span><br><span class="line">				k=j; //每一次内循环的任务就是寻找最小数的下标							</span><br><span class="line">			&#125;														</span><br><span class="line">		&#125;</span><br><span class="line">		if (i!=k)//如果i=k说明最小的数就是此时与后面比较的数a[i]。 &#123;//外循环的任务就是将最小数与当前数组外循环的的数进行调换</span><br><span class="line">			int temp = a[i];</span><br><span class="line">			a[i]=a[k];</span><br><span class="line">			a[k]=temp;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Bubble.print(a);</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>排序过程的某一中间时刻，R被划分成两个子区间R[1．．i-1]（已排好序的有序区）和R[i．．n]（当前未排序的部分，可称无序区）。<br>插入排序的基本操作是将当前无序区的第1个记录R[i]插人到有序区R[1．．i-1]中适当的<br>位置上，使R[1．．i]变为新的有序区。因为这种方法每次使有序区增加1个记录，通常称增量法。<br>插入排序与打扑克时整理手上的牌非常类似。摸来的第1张牌无须整理，此后每次从桌上的牌(无序区)中摸最上面的1张并插入左手的牌(有序区)中正确的位置上。为了找到这个正确<br>的位置，须自左向右(或自右向左)将摸来的牌与左手中已有的牌逐一比较。</p>
-<p><img src="/images/915插入排序.JPG" alt=""></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>算法进行的过程中会把数组分为一部分有序数组，后面的是无序数组，找到无序数组的第一个数只需要和有序数组的最后一个数比较，无序大则break，小则继续倒序比较。关键是掌握数组前移的方法。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Insertion &#123;</span><br><span class="line">		</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int[] a=Bubble.prod(6);</span><br><span class="line">		for (int i = 1; i &lt; a.length; i++) &#123;//第一个数a[0]不做不比较</span><br><span class="line">			int key=a[i];//做比较和插入的数</span><br><span class="line">			int j =i-1;</span><br><span class="line">			for (; j &gt;=0; j--) &#123;//倒序比较，无序数组取出的第一个数key比前面有序数组最后一个a[j]（最大的数）大，就不需要与前面比较了</span><br><span class="line">				if (a[j]&lt;key) &#123;</span><br><span class="line">					break;					</span><br><span class="line">				&#125;</span><br><span class="line">				else &#123;</span><br><span class="line">					a[j+1]=a[j];//假如待插入数字不比最大的一个数字大，就依次跟前面的数字比较，同时把比较过的数字位置依次右移</span><br><span class="line">				&#125;</span><br><span class="line">					</span><br><span class="line">			&#125;</span><br><span class="line">			a[j + 1] = key; //最后找到合适的位置插入数组</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		Bubble.print(a);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="端口互相占用问题"><a href="#端口互相占用问题" class="headerlink" title="端口互相占用问题"></a>端口互相占用问题</h2><p>经验不足所致，认为看到tomcat开启项目成功运行，结果8080加载不出来，在tomcat本身上掉进去一个坑。后来发现其实是控制台日志现实太少所致，再加上tomcat-plugin不太会用。tomcat本身没有问题。</p>
+<p>ps 学会了一个关闭端口进程的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano|findstr 8080</span><br><span class="line"></span><br><span class="line">taskkill /f /pid PID</span><br></pre></td></tr></table></figure></p>
+<h2 id="项目运行卡在"><a href="#项目运行卡在" class="headerlink" title="项目运行卡在"></a>项目运行卡在</h2><p>Initializing Spring root WebApplicationContext</p>
+<p>这个问题也是一个坑，网上搜了很多解决方法都很模糊，大部分集中在数据库本身及数据库链接的配置问题上。创建了一个测试数据库的jdbc程序，证明数据库及jar包可以使用 。然后尝试着使用debug模式查找更详细的报错原因。尝试着使用了log4j 发现使用很简单 只要导入jar包以后，创建一个<br>log4j.properties<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">log4j.rootLogger=DEBUG,A1</span><br><span class="line">log4j.logger.org.mybatis = DEBUG</span><br><span class="line">log4j.appender.A1=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.A1.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.A1.layout.ConversionPattern=%-d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; [%t] [%c]-[%p] %m%n</span><br></pre></td></tr></table></figure></p>
+<h2 id="mapper-xml类重复"><a href="#mapper-xml类重复" class="headerlink" title="mapper.xml类重复"></a>mapper.xml类重复</h2><p>Result Maps collection already contains value for xxxMapper.BaseResultMap</p>
+<p>  解决这个问题上差点崩溃，一度想到放弃。</p>
+<p>  想起那年大二，因为tomcat配置了三天茶饭不思，一度以为程序员之路死在了配置tomcat上</p>
+<p>  /generatorSqlmapCustom 这个根据数据库自动生成实体映射文件的类千万不要运行第二次，哪怕数据库大到或者机器卡死运行了5分钟都刷新不出来生成的包。<br>  在当时认为大工告成时候，重新替换了遍，甚至删除源文件报错依旧继续到怀疑人生。。</p>
+<p>  下午重新开电脑发现问题消失。。也是柳暗花明又一村吧</p>
+<h2 id="Service-bean无法注入"><a href="#Service-bean无法注入" class="headerlink" title="Service bean无法注入"></a>Service bean无法注入</h2><p>Error creating bean with name ‘contentCategoryController’: Injection of autowired dependencies failed; - jiaxian17 -</p>
+<p>下午惊喜的看到报错变了，惊喜的发现原来自己写的不是bug，是个黑洞。。</p>
+<p>这个问题解决容易多了 原来是测试的serviceimpl类上忘记加注解@service导致spring容器无法扫描到</p>
+<h2 id="数据库连接出错"><a href="#数据库连接出错" class="headerlink" title="数据库连接出错"></a>数据库连接出错</h2><p>Communications link failure The last packet sent successfully to the server</p>
+<p>db.properties文件   url填写的ip地址有误，为cv下来并不是本机真实ip地址，改为端口localhost3306解决</p>
+<h2 id="springmvc-xml标签报错"><a href="#springmvc-xml标签报错" class="headerlink" title="springmvc.xml标签报错"></a>springmvc.xml标签报错</h2><p>虽然暂时并不影响运行，但有报错不修复很痛苦</p>
+<p>这是报错的约束信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</span><br><span class="line">	xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">	xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd</span><br><span class="line">        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>改为以下解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; </span><br><span class="line">	xmlns:p=&quot;http://www.springframework.org/schema/p&quot;  </span><br><span class="line">	xmlns:context=&quot;http://www.springframework.org/schema/context&quot; </span><br><span class="line">	xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;</span><br><span class="line">        http://www.springframework.org/schema/beans </span><br><span class="line">        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span><br><span class="line">        http://www.springframework.org/schema/context </span><br><span class="line">        http://www.springframework.org/schema/context/spring-context-3.0.xsd </span><br><span class="line">        http://www.springframework.org/schema/mvc </span><br><span class="line">        http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到原先少了很多xsi模式地址</p>
+<p>至此项目测试已成功通路，附上两天的成果</p>
+<h2 id="springmvc-xml标签"><a href="#springmvc-xml标签" class="headerlink" title="springmvc.xml标签"></a>springmvc.xml标签</h2><p><img src="/images/921success.JPG" alt=""><br>9.21 下午</p>
+<p>商品查询的时候遇到的都是小问题</p>
+<h2 id="找不到service即无法注入问题"><a href="#找不到service即无法注入问题" class="headerlink" title="找不到service即无法注入问题"></a>找不到service即无法注入问题</h2><p>没有安装到本地，或许是maven的特性  maven- install</p>
+<h2 id="clean-run"><a href="#clean-run" class="headerlink" title="clean run"></a>clean run</h2><p>Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:2.5:clean</p>
+<p>出现这种错误，通常是由于您已启动了另一个tomcat 进程或者运行的javaw.exe进程，导致报错。</p>
+<p>解决方法：</p>
+<ol>
+<li>鼠标点击 X 进行关闭运行失败的 Console页，（如果运行多次，程序的console都只会放在这里）</li>
+</ol>
+<p>关闭后，应该可以看到，红色小正方形。点击，使tomcat进程或运行的javaw.exe进程停止。</p>
+<p>再重新编译即可。</p>
+<h2 id="选择列表无法显示问题"><a href="#选择列表无法显示问题" class="headerlink" title="选择列表无法显示问题"></a>选择列表无法显示问题</h2><p>json数据传的有问题导致jsp无法解析，没有报错，但极难发现</p>
+<h2 id="junit-4-找不到测试类"><a href="#junit-4-找不到测试类" class="headerlink" title="junit 4 找不到测试类"></a>junit 4 找不到测试类</h2><p>maven中运行junit4报测试类class not found<br>其实要运行Junit必须在target/test-classes找到编译类。<br>在pom.xml文件中，Run As —&gt; maven test，会发现target/test-classes编译的类。console中可以看到运行maven test的相关信息或错误，在surefire-reports文件夹也可以找到编译的信息。这样再运行就可以了。 </p>
+<h2 id="nginx-服务搭建"><a href="#nginx-服务搭建" class="headerlink" title="nginx 服务搭建"></a>nginx 服务搭建</h2><p>里程碑的bug</p>
+<p>ftp上传图片没有问题 ，但使用http服务访问服务器  nginx遇到了大麻烦</p>
+<p>。。<br>开始安装找不到启动的路径 相当棘手<br>环境配置上老师没有说  真的坑</p>
+<p>网上找了一堆办法<br>最后感谢博主 凡阿爸的博客<br> <a href="https://blog.csdn.net/weixin_40144050/article/details/78945738" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40144050/article/details/78945738</a><br>你的配图真是。。oldest driver </p>
+<p>location /images/ {<br>    root  /home/ftpuser/www/;<br>    autoindex on;<br>}<br>这个把图片的访问路径改为 root/images/xxx.JPG<br>好了 满满的成就感<br>!()[/images/925成就.JPG]</p>
+<h2 id="后端页面图片无法上传"><a href="#后端页面图片无法上传" class="headerlink" title="后端页面图片无法上传"></a>后端页面图片无法上传</h2><p> ftp http都好使 为啥就是spring传不上去呢</p>
+<p>  问题出在 FILI_UPLOAD_PATH=/home/ftpuser/www/images<br>  理解成了本地的路径 </p>
+<p>  其实本地的路径是通过io流input方法获取的 </p>
+<p>  幸好还有一段 测试代码 可以参考传的参数<br>  不然这个封装的fileupload方法传的东西还得拖延很长时间才能发现</p>
+<h2 id="项目规格参数打不开"><a href="#项目规格参数打不开" class="headerlink" title="项目规格参数打不开"></a>项目规格参数打不开</h2><p><img src="/images/104url.JPG" alt=""></p>
+<p>划线参数名必须一致</p>
+<p>不然报url丢失错误</p>
+<h2 id="itemparam无法展示信息"><a href="#itemparam无法展示信息" class="headerlink" title="itemparam无法展示信息"></a>itemparam无法展示信息</h2><p>说不上bug  是自己第一次独立写一个模块遇到的点小问题。。说的再多不如自己亲手做一次</p>
+<p>昨夜突发奇想之前商品信息展示只用到了分页插件的调用<br>就想的是不是可以移植一下，， 研究了一下模块的调用过程发现还算不难，<br><img src="/images/105service.JPG" alt=""><br>这是service的流程</p>
+<p><img src="/images/105controller.JPG" alt=""><br>这是controller调用</p>
+<p>开始时候忘记有个全局resequestmapping，结果把整个url全复制到局部，，改了之后还是无法显示，再去找控制台发现select 语句儿没有去找paramdata，想起了昨天的那个selectwithblob方法，修改之后还是无法显示，仔细研究后认为没有问题，就尝试安装了一次service到本地，大功告成。 这可能是涉及到spring注入时候本身无法实时在本地上修改的问题</p>
+<h1 id="商品分类展示问题"><a href="#商品分类展示问题" class="headerlink" title="商品分类展示问题"></a>商品分类展示问题</h1><p>10.18更新<br>发现jsp上是写死的  自己动手试试</p>
+<p>一早上写好了 rest层 现在能取出数据了</p>
+<p>发现的问题是如果pom.xml不配置<br><img src="/images/123124的发生发放 .JPG" alt=""></p>
+<p>会出现invalid bound statement (not found) </p>
+<p>无法加载mapper文件</p>
+<p>还有就是实体类名需要与mapper文件中取出数据名称对应</p>
+<p>空指针异常 。这是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TaotaoResult pojo = TaotaoResult.formatToPojo(httpResult, CatName.class);</span><br></pre></td></tr></table></figure>
+<p>常会发生的事<br>这个方法的实现过程是吧json截串，然后用getset方法创建一个对象，要是截出来的串而想转化的pojo中没有，就会导致无法创建对象，从而产生空引用。</p>
+<h1 id="规格参数无法展示"><a href="#规格参数无法展示" class="headerlink" title="规格参数无法展示"></a>规格参数无法展示</h1><p>一个前期写项目粗心发生的bug  导致后期浪费了许多时间去找，，，试了好多数据，发现旧数据能展示，但悲催的是新添加数据就展示不出来，调服务也不好使 悲催的发现数据库没有对应的itemid，原来是之前setid是param的id不是item的id导致没有添加进数据库。。。尴尬</p>
+<h1 id="服务器无法登陆问题"><a href="#服务器无法登陆问题" class="headerlink" title="服务器无法登陆问题"></a>服务器无法登陆问题</h1><p>cpu占用太高会导致很难登陆。。因为中病毒了<br>cpu占用率百分之百<br>只能暂时先top 然后kill<br>如果问题继续严重会重装系统</p>
 
       
     </div>
@@ -506,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/03/编译原理 LL1分析法/" rel="next" title="编译原理 LL1分析法">
-                <i class="fa fa-chevron-left"></i> 编译原理 LL1分析法
+              <a href="/2018/11/13/SpringBoot热部署技术/" rel="next" title="SpringBoot热部署技术">
+                <i class="fa fa-chevron-left"></i> SpringBoot热部署技术
               </a>
             
           </div>
@@ -516,8 +510,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/15/JSON语法/" rel="prev" title="JSON语法">
-                JSON语法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/17/记录一次与linux病毒搏斗的经历/" rel="prev" title="记录一次与linux病毒搏斗的经历">
+                记录一次与linux病毒搏斗的经历 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -686,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举例说明"><span class="nav-number">1.1.</span> <span class="nav-text">举例说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTE：由此可见"><span class="nav-number">1.2.</span> <span class="nav-text">NOTE：由此可见</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.3.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序的优点：每进行一趟排序，就会少比较一次"><span class="nav-number">1.4.</span> <span class="nav-text">冒泡排序的优点：每进行一趟排序，就会少比较一次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.5.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">2.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTE："><span class="nav-number">2.3.</span> <span class="nav-text">NOTE：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码："><span class="nav-number">2.4.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序"><span class="nav-number">3.</span> <span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理-1"><span class="nav-number">3.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">3.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#端口互相占用问题"><span class="nav-number">1.</span> <span class="nav-text">端口互相占用问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目运行卡在"><span class="nav-number">2.</span> <span class="nav-text">项目运行卡在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapper-xml类重复"><span class="nav-number">3.</span> <span class="nav-text">mapper.xml类重复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-bean无法注入"><span class="nav-number">4.</span> <span class="nav-text">Service bean无法注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库连接出错"><span class="nav-number">5.</span> <span class="nav-text">数据库连接出错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springmvc-xml标签报错"><span class="nav-number">6.</span> <span class="nav-text">springmvc.xml标签报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springmvc-xml标签"><span class="nav-number">7.</span> <span class="nav-text">springmvc.xml标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找不到service即无法注入问题"><span class="nav-number">8.</span> <span class="nav-text">找不到service即无法注入问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clean-run"><span class="nav-number">9.</span> <span class="nav-text">clean run</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择列表无法显示问题"><span class="nav-number">10.</span> <span class="nav-text">选择列表无法显示问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#junit-4-找不到测试类"><span class="nav-number">11.</span> <span class="nav-text">junit 4 找不到测试类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx-服务搭建"><span class="nav-number">12.</span> <span class="nav-text">nginx 服务搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后端页面图片无法上传"><span class="nav-number">13.</span> <span class="nav-text">后端页面图片无法上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目规格参数打不开"><span class="nav-number">14.</span> <span class="nav-text">项目规格参数打不开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itemparam无法展示信息"><span class="nav-number">15.</span> <span class="nav-text">itemparam无法展示信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#商品分类展示问题"><span class="nav-number"></span> <span class="nav-text">商品分类展示问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#规格参数无法展示"><span class="nav-number"></span> <span class="nav-text">规格参数无法展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器无法登陆问题"><span class="nav-number"></span> <span class="nav-text">服务器无法登陆问题</span></a></div>
             
 
           </div>
@@ -875,9 +869,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://icygrin.club/2018/09/15/三种必须掌握的排序算法/';
-          this.page.identifier = '2018/09/15/三种必须掌握的排序算法/';
-          this.page.title = '三种必须掌握的排序算法';
+          this.page.url = 'http://icygrin.club/2018/11/17/icycraft项目遇到的bug及解决分析/';
+          this.page.identifier = '2018/11/17/icycraft项目遇到的bug及解决分析/';
+          this.page.title = 'icycraft项目遇到的bug及解决分析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
