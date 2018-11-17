@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://icygrin.club/images/105service.JPG">
 <meta property="og:image" content="http://icygrin.club/images/105controller.JPG">
 <meta property="og:image" content="http://icygrin.club/images/123124的发生发放%20.JPG">
-<meta property="og:updated_time" content="2018-11-17T13:18:05.665Z">
+<meta property="og:updated_time" content="2018-11-17T14:44:13.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="icycraft项目遇到的bug及解决分析">
 <meta name="twitter:description" content="如果后来有人看到这篇文章，我告诉你，这项目每个模块都有一个坎….  端口互相占用问题经验不足所致，认为看到tomcat开启项目成功运行，结果8080加载不出来，在tomcat本身上掉进去一个坑。后来发现其实是控制台日志现实太少所致，再加上tomcat-plugin不太会用。tomcat本身没有问题。 ps 学会了一个关闭端口进程的方法123netstat -ano|findstr 8080tas">
@@ -452,8 +452,8 @@
 <h2 id="nginx-服务搭建"><a href="#nginx-服务搭建" class="headerlink" title="nginx 服务搭建"></a>nginx 服务搭建</h2><p>里程碑的bug</p>
 <p>ftp上传图片没有问题 ，但使用http服务访问服务器  nginx遇到了大麻烦</p>
 <p>。。<br>开始安装找不到启动的路径 相当棘手<br>环境配置上老师没有说  真的坑</p>
-<p>网上找了一堆办法<br>最后感谢博主 凡阿爸的博客<br> <a href="https://blog.csdn.net/weixin_40144050/article/details/78945738" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40144050/article/details/78945738</a><br>你的配图真是。。oldest driver </p>
-<p>location /images/ {<br>    root  /home/ftpuser/www/;<br>    autoindex on;<br>}<br>这个把图片的访问路径改为 root/images/xxx.JPG<br>好了 满满的成就感<br>!()[/images/925成就.JPG]</p>
+<p>网上找了一堆办法<br>最后感谢博主 凡阿爸的博客<br> <a href="https://blog.csdn.net/weixin_40144050/article/details/78945738" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40144050/article/details/78945738</a><br>你的配图真是。。oldest driver<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location /images/ &#123;</span><br><span class="line">    root  /home/ftpuser/www/;</span><br><span class="line">    autoindex on;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个把图片的访问路径改为 root/images/xxx.JPG<br>好了 满满的成就感<br>!()[/images/925成就.JPG]</p>
 <h2 id="后端页面图片无法上传"><a href="#后端页面图片无法上传" class="headerlink" title="后端页面图片无法上传"></a>后端页面图片无法上传</h2><p> ftp http都好使 为啥就是spring传不上去呢</p>
 <p>  问题出在 FILI_UPLOAD_PATH=/home/ftpuser/www/images<br>  理解成了本地的路径 </p>
 <p>  其实本地的路径是通过io流input方法获取的 </p>
